@@ -10,6 +10,7 @@
 
   let avatar: string | null = null;
   let track: Track | null = null;
+  let isNowPlaying: boolean = false;
 
   const projects = [
     // ------ game projects ------
@@ -174,6 +175,7 @@
     // get last.fm track
     response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
     data = await response.json();
+    isNowPlaying = data.recenttracks.track[0]["@attr"].nowplaying;
     track = {
       title: data.recenttracks.track[0].name,
       artist: data.recenttracks.track[0].artist["#text"],
@@ -232,23 +234,32 @@
 
     <div class="flex gap-4 mt-10 w-full">
       <!-- music -->
-      <div class="flex border-2 border-fg p-2 gap-2 w-1/2">
+      <div class="flex border-2 border-fg p-2 gap-2 w1/2 grow">
         <div
           class="bg-cover bg-center size-18"
-          style:background-image="url('{track?.cover ? track.cover : "https://placehold.co/400"}')"
+          style:background-image="url('{track?.cover ? track.cover : "https://images.squarespace-cdn.com/content/v1/5d2e2c5ef24531000113c2a4/1564770283101-36J6KM8EIK71FOCGGDM2/album-placeholder.png"}')"
         ></div>
 
-        <div class="flex flex-col justify-between">
-          <p class="text-muted text-sm">last played track</p>
-          <h3 class="font-bold text-lg">{track?.title ? track.title : "No recent track"}</h3>
-          <p class="text-muted">{track?.artist ? track.artist : "No artist"}</p>
+        <div class="flex flex-col justify-center">
+          <p class="text-muted font-bold text-xs">{isNowPlaying ? "NOW LISTENING" : "last played track"}</p>
+          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "no recent track"}</h3>
+          <p class="text-muted font-bold">{track?.artist ? track.artist : "no artist"}</p>
         </div>
       </div>
 
       <!-- game -->
-      <div class="flex border-2 border-fg p-2 w-1/2">
+      <!-- <div class="flex border-2 border-fg p-2 gap-2 w-1/2">
+        <div
+          class="bg-cover bg-center size-18"
+          style:background-image="url('{track?.cover ? track.cover : "https://images.squarespace-cdn.com/content/v1/5d2e2c5ef24531000113c2a4/1564770283101-36J6KM8EIK71FOCGGDM2/album-placeholder.png"}')"
+        ></div>
 
-      </div>
+        <div class="flex flex-col justify-center">
+          <p class="text-muted text-sm">last played track</p>
+          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "no recent track"}</h3>
+          <p class="text-muted">{track?.artist ? track.artist : "no artist"}</p>
+        </div>
+      </div> -->
     </div>
 
     <ul class="w-full flex justify-between mt-10">
