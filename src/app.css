@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fg: var(--color-zinc-100);
+  --color-bg: var(--color-zinc-950);
+  --color-bg-1: var(--color-zinc-900);
+  --color-bg-2: var(--color-zinc-800);
+  --color-muted: var(--color-zinc-500);
+}
+
+.grid-background {
+  background-size: 30px 30px;
+  background-position: 15px 15px;
+  background-image:
+    linear-gradient(to right, var(--color-bg-2) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-bg-2) 1px, transparent 1px);
+}
+
+body {
+  @apply bg-bg text-fg font-mono;
+}
