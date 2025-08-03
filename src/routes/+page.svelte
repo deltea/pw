@@ -175,14 +175,12 @@
     // get last.fm track
     response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
     data = await response.json();
-    isNowPlaying = data.recenttracks.track[0]["@attr"].nowplaying;
+    isNowPlaying = data.recenttracks.track[0]["@attr"]?.nowplaying;
     track = {
       title: data.recenttracks.track[0].name,
       artist: data.recenttracks.track[0].artist["#text"],
       cover: data.recenttracks.track[0].image[2]["#text"]
     }
-
-    console.log(track);
   });
 </script>
 
@@ -241,7 +239,7 @@
         ></div>
 
         <div class="flex flex-col justify-center">
-          <p class="text-muted font-bold text-xs">{isNowPlaying ? "NOW LISTENING" : "last played track"}</p>
+          <p class="text-muted font-bold text-xs">{isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}</p>
           <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "no recent track"}</h3>
           <p class="text-muted font-bold">{track?.artist ? track.artist : "no artist"}</p>
         </div>
