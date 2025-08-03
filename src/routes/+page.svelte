@@ -239,7 +239,14 @@
         ></div>
 
         <div class="flex flex-col justify-center">
-          <p class="text-muted font-bold text-xs">{isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}</p>
+          <p class="text-muted font-bold text-xs flex items-center gap-2">
+            {#if isNowPlaying}
+              <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
+            {/if}
+
+            {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+          </p>
+
           <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "-----"}</h3>
           <p class="text-muted font-bold">{track?.artist ? track.artist : "-----"}</p>
         </div>
