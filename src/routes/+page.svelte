@@ -173,7 +173,7 @@
     avatar = data.avatar_url;
 
     // get last.fm track
-    response = await fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
+    response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
     data = await response.json();
     isNowPlaying = data.recenttracks.track[0]["@attr"]?.nowplaying;
     track = {
