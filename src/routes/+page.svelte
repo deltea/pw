@@ -260,7 +260,7 @@
       </div> -->
     </div>
 
-    <ul class="w-full flex justify-between mt-10">
+    <!-- <ul class="w-full flex justify-between mt-10">
       {#each tech as t}
         <a
           href={t.link}
@@ -271,6 +271,6 @@
           <iconify-icon icon={t.icon} class="text-lg"></iconify-icon>
         </a>
       {/each}
-    </ul>
+    </ul> -->
   </main>
 </div>
