@@ -11,6 +11,7 @@
   let avatar: string | null = null;
   let track: Track | null = null;
   let isNowPlaying: boolean = false;
+  let languages: any[] = [];
 
   const projects = [
     // ------ game projects ------
@@ -103,74 +104,16 @@
     }
   ];
 
-  const tech = [
-    {
-      icon: "ri:svelte-fill",
-      color: "#F54419",
-      link: "https://svelte.dev",
-    },
-    {
-      icon: "ri:tailwind-css-fill",
-      color: "#00B5F7",
-      link: "https://tailwindcss.com/",
-    },
-    {
-      icon: "simple-icons:github",
-      color: "#E6ECF3",
-      link: "https://github.com",
-    },
-    {
-      icon: "mdi:language-typescript",
-      color: "#3175C0",
-      link: "https://www.typescriptlang.org/",
-    },
-    {
-      icon: "simple-icons:obsidian",
-      color: "#A186F1",
-      link: "https://obsidian.md/",
-    },
-    {
-      icon: "mingcute:arc-browser-fill",
-      color: "#F49495",
-      link: "https://arc.net",
-    },
-    {
-      icon: "simple-icons:godotengine",
-      color: "#4C8BBB",
-      link: "https://godotengine.org/",
-    },
-    {
-      icon: "tabler:brand-vercel-filled",
-      color: "#F5F5F6",
-      link: "https://vercel.com/",
-    },
-    {
-      icon: "simple-icons:bambulab",
-      color: "#12A742",
-      link: "https://bambulab.com/",
-    },
-    {
-      icon: "cib:itch-io",
-      color: "#F55959",
-      link: "https://itch.io/",
-    },
-    {
-      icon: "mingcute:vscode-fill",
-      color: "#27A3E9",
-      link: "https://code.visualstudio.com/",
-    },
-    {
-      icon: "simple-icons:astro",
-      color: "#FF5D10",
-      link: "https://astro.build/",
-    },
-  ]
-
   onMount(async () => {
     // get pfp
     let response = await fetch("https://api.github.com/users/deltea");
     let data = await response.json();
     avatar = data.avatar_url;
+
+    // get wakatime data
+    response = await fetch("/api/wakatime");
+    data = await response.json();
+    languages = data.languages.slice(0, 5);
 
     // get last.fm track
     response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
@@ -179,13 +122,13 @@
     track = {
       title: data.recenttracks.track[0].name,
       artist: data.recenttracks.track[0].artist["#text"],
-      cover: data.recenttracks.track[0].image[2]["#text"]
+      cover: data.recenttracks.track[0].image[1]["#text"]
     }
   });
 </script>
 
 <div class="min-h-screen flex justify-center py-8">
-  <main class="gridbackground w-full max-w-2xl flex flex-col items-start">
+  <main class="gridbackground w-full max-w-2xl flex flex-col items-start px-4">
     <!-- banner -->
     <div class="grid-background border-2 border-fg w-full h-24"></div>
 
@@ -198,14 +141,14 @@
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
         <h1 class="font-bold text-3xl">@deltea</h1>
-        <h2 class="text-base font-normal text-fg">the wips are wip-ing</h2>
+        <h2 class="text-base font-normal text-fg">professional wip-er</h2>
       </div>
     </div>
 
     <!-- <hr class="border-zinc-900 mb-8 w-full" /> -->
 
     <p class="text-base text-muted">
-      hi! i'm leo, and this is my personal website where i put the things i make, including games, web apps, stats, and other random stuff!
+      hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
     </p>
 
     <h2 class="font-bold mt-10 mb-4">GAMES</h2>
@@ -230,15 +173,37 @@
       {/each}
     </ul>
 
-    <div class="flex gap-4 mt-10 w-full">
+    <h2 class="font-bold mt-10 mb-6">LANGUAGES</h2>
+
+    <div class="flex flex-col gap-4 w-full bg-bg1 px-8 text-sm">
+      {#each languages as language}
+        <div class="flex flex-col gap-2 fontbold">
+          <div class="flex items-center lowercase justify-between">
+            <h2>{language.name}</h2>
+            <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
+          </div>
+
+          <div class="w-full h-2 bg-bg-2 overflow-hidden">
+            <div
+              class="h-full bg-fg"
+              style:width="{language.percent}%"
+            ></div>
+          </div>
+        </div>
+      {/each}
+    </div>
+
+    <h2 class="font-bold mt-10 mb-6">OTHER STUFF</h2>
+
+    <div class="flex gap-4 w-full">
       <!-- music -->
-      <div class="flex border-2 border-fg p-2 gap-2 w1/2 grow">
+      <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
         <div
           class="bg-cover bg-center size-18"
-          style:background-image="url('{track?.cover ? track.cover : "https://images.squarespace-cdn.com/content/v1/5d2e2c5ef24531000113c2a4/1564770283101-36J6KM8EIK71FOCGGDM2/album-placeholder.png"}')"
+          style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
         ></div>
 
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col justify-between">
           <p class="text-muted font-bold text-xs flex items-center gap-2">
             {#if isNowPlaying}
               <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
@@ -247,12 +212,12 @@
             {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
           </p>
 
-          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "-----"}</h3>
-          <p class="text-muted font-bold">{track?.artist ? track.artist : "-----"}</p>
+          <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
+          <p class="text-muted font-bold">{track?.artist ? track.artist : "----------"}</p>
         </div>
       </div>
 
-      <!-- game -->
+      <!-- last played game -->
       <!-- <div class="flex border-2 border-fg p-2 gap-2 w-1/2">
         <div
           class="bg-cover bg-center size-18"
@@ -267,17 +232,6 @@
       </div> -->
     </div>
 
-    <!-- <ul class="w-full flex justify-between mt-10">
-      {#each tech as t}
-        <a
-          href={t.link}
-          aria-label="button"
-          target="_blank"
-          class="border-2 border-bg-2 text-muted hover:border-fg hover:text-fg size-10 flex justify-center items-center"
-        >
-          <iconify-icon icon={t.icon} class="text-lg"></iconify-icon>
-        </a>
-      {/each}
-    </ul> -->
+    <!-- <img src="https://ghchart.rshah.org/000000/deltea" class="invert mt-10" alt="github contribution graph"> -->
   </main>
 </div>

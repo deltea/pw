@@ -17,5 +17,5 @@
 }
 
 body {
-  @apply bg-bg text-fg font-mono;
+  @apply bg-bg text-fg font-mono underline-offset-2;
 }
