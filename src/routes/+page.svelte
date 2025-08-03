@@ -240,8 +240,8 @@
 
         <div class="flex flex-col justify-center">
           <p class="text-muted font-bold text-xs">{isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}</p>
-          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "no recent track"}</h3>
-          <p class="text-muted font-bold">{track?.artist ? track.artist : "no artist"}</p>
+          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "-----"}</h3>
+          <p class="text-muted font-bold">{track?.artist ? track.artist : "-----"}</p>
         </div>
       </div>
 
