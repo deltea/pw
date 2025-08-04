@@ -105,6 +105,25 @@
     }
   ];
 
+  const buttons = [
+    "button-now",
+    "crashout",
+    "flipnote",
+    "godot",
+    "homebrew",
+    "internet-archive",
+    "itch-io",
+    "kris-where-are-we",
+    "last-fm",
+    "neocities",
+    "peek",
+    "rain-world",
+    "rice-place",
+    "spamton",
+    "transistor",
+    "yeah"
+  ];
+
   onMount(async () => {
     // get pfp
     let response = await fetch("https://api.github.com/users/deltea");
@@ -185,13 +204,13 @@
       {/each}
     </ul>
 
-    <h2 class="font-bold mt-10 mb-6">LANGUAGES</h2>
+    <h2 class="font-bold mt-10 mb-6">STATS</h2>
 
-    <div class="flex flex-col gap-4 w-full bg-bg1 border-2 border-fg p-6 lg:px8 text-sm">
+    <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:px8 text-sm">
       {#each languages as language}
         <div class="flex flex-col gap-2 font-bold">
           <div class="flex items-center lowercase justify-between">
-            <h2>{language.name}</h2>
+            <h2>[{language.name}]</h2>
             <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
           </div>
 
@@ -207,15 +226,15 @@
 
     <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
 
-    <div class="flex gap-4 w-full">
+    <div class="flex md:flex-row flex-col gap-4 w-full">
       <!-- music -->
       <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
         <div
-          class="bg-cover bg-center size-18"
+          class="bg-cover bg-center min-w-[4.5rem] aspect-square"
           style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
         ></div>
 
-        <div class="flex flex-col justify-between">
+        <div class="flex flex-col justify-between min-w-0">
           <p class="text-muted font-bold text-xs flex items-center gap-2">
             {#if isNowPlaying}
               <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
@@ -224,8 +243,8 @@
             {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
           </p>
 
-          <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
-          <p class="text-muted font-bold">{track?.artist ? track.artist : "----------"}</p>
+          <h3 class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
+          <p class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.artist ? track.artist : "----------"}</p>
         </div>
       </div>
 
@@ -233,23 +252,30 @@
       {#if game}
         <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
           <div
-            class="bg-cover bg-center size-18"
+            class="bg-cover bg-center min-w-[4.5rem] aspect-square"
             style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
           ></div>
 
-          <div class="flex flex-col justify-between">
+          <div class="flex flex-col justify-between min-w-0">
             <p class="text-muted font-bold text-xs flex items-center gap-2">
               MOST PLAYED GAME (2 WEEKS)
             </p>
 
-            <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{game.name}</h3>
+            <h3 class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{game.name}</h3>
             <p class="text-muted font-bold">{minutesToReadable(game.playtime_forever)}</p>
           </div>
         </div>
       {/if}
     </div>
 
-    <footer class="font-bold mt-12 mb-6 flex justify-between items-center w-full">
+    <!-- antipixel buttons -->
+    <div class="fle flex-wrap text-center space-x-1 space-y-1 gap-1 mb-8 mt-16 w-full">
+      {#each buttons as button}
+        <img class="inline pixelated" src="/antipixel/{button}.png" alt="web button">
+      {/each}
+    </div>
+
+    <footer class="font-bold mb-6 flex justify-between items-center w-full">
       <div class="flex gap-4 underline">
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>

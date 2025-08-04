@@ -16,6 +16,10 @@
     linear-gradient(to bottom, var(--color-bg-2) 1px, transparent 1px);
 }
 
+.pixelated {
+  image-rendering: pixelated;
+}
+
 body {
   @apply bg-bg text-fg font-mono underline-offset-[3px];
 }
