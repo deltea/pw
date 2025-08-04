@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>deltea</title>
+  <title>@deltea</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

@@ -130,7 +130,6 @@
     response = await fetch("/api/steam");
     data = await response.json();
     game = data.games[0] || null;
-    console.log(game);
   });
 
   function minutesToReadable(minutes: number): string {
@@ -190,7 +189,7 @@
 
     <div class="flex flex-col gap-4 w-full bg-bg1 border-2 border-fg p-6 lg:px8 text-sm">
       {#each languages as language}
-        <div class="flex flex-col gap-2 fontbold">
+        <div class="flex flex-col gap-2 font-bold">
           <div class="flex items-center lowercase justify-between">
             <h2>{language.name}</h2>
             <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
@@ -249,5 +248,15 @@
         </div>
       {/if}
     </div>
+
+    <footer class="font-bold mt-12 mb-6 flex justify-between items-center w-full">
+      <div class="flex gap-4 underline">
+        <a target="_blank" href="https://github.com/deltea">github</a>
+        <a target="_blank" href="https://deltea.itch.io">itch.io</a>
+        <a target="_blank" href="https://twitter.com/@_deltea">twitter</a>
+      </div>
+
+      <span class="font-normal text-muted">made with svelte</span>
+    </footer>
   </main>
 </div>
