@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-fg: var(--color-zinc-100);
-  --color-bg: var(--color-zinc-950);
-  --color-bg-1: var(--color-zinc-900);
-  --color-bg-2: var(--color-zinc-800);
-  --color-muted: var(--color-zinc-500);
+  --color-fg: var(--color-neutral-100);
+  --color-bg: var(--color-neutral-950);
+  --color-bg-1: var(--color-neutral-900);
+  --color-bg-2: var(--color-neutral-800);
+  --color-muted: var(--color-neutral-500);
 }
 
 .grid-background {

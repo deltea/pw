@@ -12,6 +12,7 @@
   let track: Track | null = null;
   let isNowPlaying: boolean = false;
   let languages: any[] = [];
+  let game: any | null = null;
 
   const projects = [
     // ------ game projects ------
@@ -124,7 +125,19 @@
       artist: data.recenttracks.track[0].artist["#text"],
       cover: data.recenttracks.track[0].image[1]["#text"]
     }
+
+    // get steam last played game
+    response = await fetch("/api/steam");
+    data = await response.json();
+    game = data.games[0] || null;
+    console.log(game);
   });
+
+  function minutesToReadable(minutes: number): string {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours}h ${mins}m`;
+  }
 </script>
 
 <div class="min-h-screen flex justify-center py-8">
@@ -175,7 +188,7 @@
 
     <h2 class="font-bold mt-10 mb-6">LANGUAGES</h2>
 
-    <div class="flex flex-col gap-4 w-full bg-bg1 lg:px-8 text-sm">
+    <div class="flex flex-col gap-4 w-full bg-bg1 border-2 border-fg p-6 lg:px8 text-sm">
       {#each languages as language}
         <div class="flex flex-col gap-2 fontbold">
           <div class="flex items-center lowercase justify-between">
@@ -212,26 +225,29 @@
             {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
           </p>
 
-          <h3 class="font-bold underline text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
+          <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
           <p class="text-muted font-bold">{track?.artist ? track.artist : "----------"}</p>
         </div>
       </div>
 
       <!-- last played game -->
-      <!-- <div class="flex border-2 border-fg p-2 gap-2 w-1/2">
-        <div
-          class="bg-cover bg-center size-18"
-          style:background-image="url('{track?.cover ? track.cover : "https://images.squarespace-cdn.com/content/v1/5d2e2c5ef24531000113c2a4/1564770283101-36J6KM8EIK71FOCGGDM2/album-placeholder.png"}')"
-        ></div>
+      {#if game}
+        <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
+          <div
+            class="bg-cover bg-center size-18"
+            style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
+          ></div>
 
-        <div class="flex flex-col justify-center">
-          <p class="text-muted text-sm">last played track</p>
-          <h3 class="font-bold text-lg w-[14rem] overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "no recent track"}</h3>
-          <p class="text-muted">{track?.artist ? track.artist : "no artist"}</p>
+          <div class="flex flex-col justify-between">
+            <p class="text-muted font-bold text-xs flex items-center gap-2">
+              MOST PLAYED GAME (2 WEEKS)
+            </p>
+
+            <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{game.name}</h3>
+            <p class="text-muted font-bold">{minutesToReadable(game.playtime_forever)}</p>
+          </div>
         </div>
-      </div> -->
+      {/if}
     </div>
-
-    <!-- <img src="https://ghchart.rshah.org/000000/deltea" class="invert mt-10" alt="github contribution graph"> -->
   </main>
 </div>
