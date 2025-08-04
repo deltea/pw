@@ -275,14 +275,14 @@
       {/each}
     </div>
 
-    <footer class="font-bold mb-6 flex justify-between items-center w-full">
+    <footer class="font-bold mb-6 flex sm:justify-between justify-center items-center w-full">
       <div class="flex gap-4 underline">
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>
         <a target="_blank" href="https://twitter.com/@_deltea">twitter</a>
       </div>
 
-      <span class="font-normal text-muted">made with svelte</span>
+      <span class="font-normal text-muted sm:block hidden">made with svelte</span>
     </footer>
   </main>
 </div>
