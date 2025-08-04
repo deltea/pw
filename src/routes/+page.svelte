@@ -228,7 +228,7 @@
 
     <div class="flex md:flex-row flex-col gap-4 w-full">
       <!-- music -->
-      <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
+      <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
         <div
           class="bg-cover bg-center min-w-[4.5rem] aspect-square"
           style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
@@ -250,7 +250,7 @@
 
       <!-- last played game -->
       {#if game}
-        <div class="flex border-2 border-fg p-2 gap-3 w1/2 w-full overflow-hidden overflow-ellipsis">
+        <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
           <div
             class="bg-cover bg-center min-w-[4.5rem] aspect-square"
             style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
