@@ -26,7 +26,7 @@
     {
       title: "Catalyst",
       type: "game",
-      description: "a bullet hell boss rush game made for a long game jam",
+      description: "a bullet hell boss rush game made for a month long game jam",
       image: "/images/projects/catalyst.png",
       link: "https://deltea.itch.io/catalyst",
       source: "https://github.com/deltea/brj-exchange"
@@ -97,7 +97,7 @@
     {
       title: "Color Pong",
       type: "web",
-      description: "a cool looking screensaver-ahh pong game",
+      description: "a cool looking screensaver-ahh pong simulation",
       image: "/images/projects/color-pong.png",
       link: "https://color-pong.vercel.app/",
       source: "https://github.com/deltea/color-pong",
@@ -128,7 +128,7 @@
 </script>
 
 <div class="min-h-screen flex justify-center py-8">
-  <main class="gridbackground w-full max-w-2xl flex flex-col items-start px-4">
+  <main class="gridbackground w-full max-w-3xl flex flex-col items-start px-4">
     <!-- banner -->
     <div class="grid-background border-2 border-fg w-full h-24"></div>
 
@@ -141,7 +141,7 @@
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
         <h1 class="font-bold text-3xl">@deltea</h1>
-        <h2 class="text-base font-normal text-fg">professional wip-er</h2>
+        <h2 class="text-base font-bold text-fg">professional wip-er</h2>
       </div>
     </div>
 
@@ -153,22 +153,22 @@
 
     <h2 class="font-bold mt-10 mb-4">GAMES</h2>
 
-    <ul class="list-disc pl-8">
+    <ul class="list-['-_'] pl-8">
       {#each projects.filter(p => p.type === "game") as project}
         <li class="space-x-0">
-          <a href={project.link} target="_blank" class="font-bold underline lowercase">{project.title}</a>
-          <span class="text-muted">~ {project.description}</span>
+          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+          <span class="text-muted">/ {project.description}</span>
         </li>
       {/each}
     </ul>
 
     <h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
 
-    <ul class="list-disc pl-8">
+    <ul class="list-['-_'] pl-8">
       {#each projects.filter(p => p.type === "web") as project}
         <li class="space-x-0">
-          <a href={project.link} target="_blank" class="font-bold underline lowercase">{project.title}</a>
-          <span class="text-muted">~ {project.description}</span>
+          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+          <span class="text-muted">/ {project.description}</span>
         </li>
       {/each}
     </ul>
@@ -212,7 +212,7 @@
             {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
           </p>
 
-          <h3 class="font-bold text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
+          <h3 class="font-bold underline text-lg w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
           <p class="text-muted font-bold">{track?.artist ? track.artist : "----------"}</p>
         </div>
       </div>

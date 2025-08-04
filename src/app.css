@@ -17,5 +17,9 @@
 }
 
 body {
-  @apply bg-bg text-fg font-mono underline-offset-2;
+  @apply bg-bg text-fg font-mono underline-offset-[3px];
+}
+
+* {
+  @apply decoration-2;
 }
