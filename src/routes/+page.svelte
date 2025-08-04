@@ -206,7 +206,7 @@
 
     <h2 class="font-bold mt-10 mb-6">STATS</h2>
 
-    <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:px8 text-sm">
+    <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
       {#each languages as language}
         <div class="flex flex-col gap-2 font-bold">
           <div class="flex items-center lowercase justify-between">
