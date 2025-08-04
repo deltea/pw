@@ -30,6 +30,7 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^1.5.0",
 		"iconify-icon": "^3.0.0"
 	}
 }
