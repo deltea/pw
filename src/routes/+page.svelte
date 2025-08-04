@@ -132,9 +132,9 @@
     <!-- banner -->
     <div class="grid-background border-2 border-fg w-full h-24"></div>
 
-    <div class="flex gap-6 -translate-y-10 translate-x-8">
+    <div class="flex gap-6 sm:-translate-y-10 -translate-y-3 sm:translate-x-8 translate-x-6">
       <!-- pfp -->
-      <div class="size-28 rounded-full outline-[16px] outline-bg bg-bg">
+      <div class="sm:size-28 size-20 rounded-full outline-[16px] outline-bg bg-bg">
         <div class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg" style:background-image="url({avatar})"></div>
       </div>
 
@@ -147,7 +147,7 @@
 
     <!-- <hr class="border-zinc-900 mb-8 w-full" /> -->
 
-    <p class="text-base text-muted">
+    <p class="text-base text-muted mt-6 sm:mt-0">
       hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
     </p>
 
@@ -175,7 +175,7 @@
 
     <h2 class="font-bold mt-10 mb-6">LANGUAGES</h2>
 
-    <div class="flex flex-col gap-4 w-full bg-bg1 px-8 text-sm">
+    <div class="flex flex-col gap-4 w-full bg-bg1 lg:px-8 text-sm">
       {#each languages as language}
         <div class="flex flex-col gap-2 fontbold">
           <div class="flex items-center lowercase justify-between">
@@ -193,7 +193,7 @@
       {/each}
     </div>
 
-    <h2 class="font-bold mt-10 mb-6">OTHER STUFF</h2>
+    <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
 
     <div class="flex gap-4 w-full">
       <!-- music -->
