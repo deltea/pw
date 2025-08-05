@@ -5,6 +5,7 @@
   --color-bg: var(--color-neutral-950);
   --color-bg-1: var(--color-neutral-900);
   --color-bg-2: var(--color-neutral-800);
+  --color-bg-3: var(--color-neutral-700);
   --color-muted: var(--color-neutral-500);
 }
 
@@ -12,8 +13,8 @@
   background-size: 30px 30px;
   background-position: 15px 15px;
   background-image:
-    linear-gradient(to right, var(--color-bg-2) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-bg-2) 1px, transparent 1px);
+    linear-gradient(to right, var(--color-bg-2) 2px, transparent 1px),
+    linear-gradient(to bottom, var(--color-bg-2) 2px, transparent 1px);
 }
 
 .pixelated {
