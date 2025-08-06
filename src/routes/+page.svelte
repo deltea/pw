@@ -271,7 +271,7 @@
     <!-- antipixel buttons -->
     <div class="fle flex-wrap text-center space-x-1 space-y-1 gap-1 mb-8 mt-16 w-full">
       {#each buttons as button}
-        <img class="inline pixelated" src="/antipixel/{button}.png" alt="web button">
+        <img class="inline pixelated" src="/antipixel/{button}.webp" alt="web button">
       {/each}
     </div>
 
