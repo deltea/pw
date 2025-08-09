@@ -269,7 +269,7 @@
             </p>
 
             <h3 class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{game.name}</h3>
-            <p class="text-muted font-bold">{minutesToReadable(game.playtime_forever)} total</p>
+            <p class="text-muted font-bold">{minutesToReadable(game.playtime_forever)}</p>
           </div>
         </div>
       {/if}
