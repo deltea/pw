@@ -131,9 +131,14 @@
     avatar = data.avatar_url;
 
     // get wakatime data
-    response = await fetch("/api/wakatime");
-    data = await response.json();
-    languages = data.languages.slice(0, 5);
+    try {
+      response = await fetch("/api/wakatime");
+      data = await response.json();
+      languages = data.languages.slice(0, 5);
+    } catch (error) {
+      console.error("failed to fetch hackatime data:", error);
+      languages = [];
+    }
 
     // get last.fm track
     response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
@@ -204,25 +209,27 @@
       {/each}
     </ul>
 
-    <h2 class="font-bold mt-10 mb-6">STATS</h2>
+    {#if languages.length > 0}
+      <h2 class="font-bold mt-10 mb-6">STATS</h2>
 
-    <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
-      {#each languages as language}
-        <div class="flex flex-col gap-2 font-bold">
-          <div class="flex items-center lowercase justify-between">
-            <h2>[{language.name}]</h2>
-            <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
-          </div>
+      <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
+        {#each languages as language}
+          <div class="flex flex-col gap-2 font-bold">
+            <div class="flex items-center lowercase justify-between">
+              <h2>[{language.name}]</h2>
+              <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
+            </div>
 
-          <div class="w-full h-2 bg-bg-2 overflow-hidden">
-            <div
-              class="h-full bg-fg"
-              style:width="{language.percent}%"
-            ></div>
+            <div class="w-full h-2 bg-bg-2 overflow-hidden">
+              <div
+                class="h-full bg-fg"
+                style:width="{language.percent}%"
+              ></div>
+            </div>
           </div>
-        </div>
-      {/each}
-    </div>
+        {/each}
+      </div>
+    {/if}
 
     <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
 
