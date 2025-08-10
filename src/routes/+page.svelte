@@ -278,7 +278,8 @@
       <div class="flex gap-4 underline">
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>
-        <a target="_blank" href="https://twitter.com/@_deltea">twitter</a>
+        <!-- <a target="_blank" href="https://twitter.com/@_deltea">twitter</a> -->
+        <a target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
       </div>
 
       <span class="font-normal text-muted sm:block hidden">made with svelte</span>
