@@ -68,7 +68,7 @@
       type: "web",
       description: "basically omegle but it's chatgpt",
       image: "/images/projects/chatjippity.png",
-      link: "https://chatjippity.vercel.app/",
+      link: "https://chatjippity.deltea.space/",
       source: "https://github.com/deltea/chat-jippity"
     },
     {
@@ -76,7 +76,7 @@
       type: "web",
       description: "higher or lower game, but with movies",
       image: "/images/projects/the-movie-game.png",
-      link: "https://the-movie-game.vercel.app/",
+      link: "https://movie-game.deltea.space/",
       source: "https://github.com/deltea/themoviegame",
     },
     {
@@ -84,7 +84,7 @@
       type: "web",
       description: "higher or lower game, but with youtube videos",
       image: "/images/projects/youguess.png",
-      link: "https://youguess.vercel.app/",
+      link: "https://youguess.deltea.space/",
       source: "https://github.com/deltea/youguess",
     },
     {
@@ -100,7 +100,7 @@
       type: "web",
       description: "a cool looking screensaver-ahh pong simulation",
       image: "/images/projects/color-pong.png",
-      link: "https://color-pong.vercel.app/",
+      link: "https://color-pong.deltea.space/",
       source: "https://github.com/deltea/color-pong",
     }
   ];
