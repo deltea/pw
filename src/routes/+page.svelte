@@ -20,7 +20,6 @@
       title: "Power Cut",
       type: "game",
       description: "a short puzzle platformer made for a game jam",
-      image: "/images/projects/power-cut.png",
       link: "https://deltea.itch.io/power-cut",
       source: "https://github.com/deltea/power-cut"
     },
@@ -28,7 +27,6 @@
       title: "Catalyst",
       type: "game",
       description: "a bullet hell boss rush game made for a month long game jam",
-      image: "/images/projects/catalyst.png",
       link: "https://deltea.itch.io/catalyst",
       source: "https://github.com/deltea/brj-exchange"
     },
@@ -36,7 +34,6 @@
       title: "JetCat",
       type: "game",
       description: "a fast-paced speedrun platformer with a cat that can fly",
-      image: "/images/projects/jetcat.png",
       link: "https://deltea.itch.io/jetcat",
       source: "https://github.com/deltea/Gravity"
     },
@@ -44,38 +41,33 @@
       title: "G R A P P L E",
       type: "game",
       description: "grappling in the 90s",
-      image: "/images/projects/grapple.png",
       link: "https://deltea.itch.io/grapple",
     },
     {
       title: "RPGeometry",
       type: "game",
       description: "a horde game made for bullet hell game jam 2023",
-      image: "/images/projects/rpgeometry.png",
       link: "https://deltea.itch.io/rpgeometry",
     },
     {
       title: "Long Shot",
       type: "game",
       description: "an abstract shooter with a weird movement mechanic",
-      image: "/images/projects/long-shot.png",
       link: "https://deltea.itch.io/long-shot",
     },
 
     // ------ web projects ------
     {
-      title: "ChatJippity",
+      title: "Downbeat",
       type: "web",
-      description: "basically omegle but it's chatgpt",
-      image: "/images/projects/chatjippity.png",
-      link: "https://chatjippity.deltea.space/",
-      source: "https://github.com/deltea/chat-jippity"
+      description: "sync gifs with the beat of music",
+      link: "https://downbeat.deltea.space/",
+      source: "https://github.com/deltea/downbeat"
     },
     {
       title: "The Movie Game",
       type: "web",
       description: "higher or lower game, but with movies",
-      image: "/images/projects/the-movie-game.png",
       link: "https://movie-game.deltea.space/",
       source: "https://github.com/deltea/themoviegame",
     },
@@ -83,7 +75,6 @@
       title: "YouGuess",
       type: "web",
       description: "higher or lower game, but with youtube videos",
-      image: "/images/projects/youguess.png",
       link: "https://youguess.deltea.space/",
       source: "https://github.com/deltea/youguess",
     },
@@ -91,7 +82,6 @@
       title: "Atlas Academy",
       type: "web",
       description: "a blog made to document our travels",
-      image: "/images/projects/atlas-academy.png",
       link: "https://atlasacademy.blog/",
       source: "https://github.com/deltea/atlasacademy.blog",
     },
@@ -99,7 +89,6 @@
       title: "Color Pong",
       type: "web",
       description: "a cool looking screensaver-ahh pong simulation",
-      image: "/images/projects/color-pong.png",
       link: "https://color-pong.deltea.space/",
       source: "https://github.com/deltea/color-pong",
     }
