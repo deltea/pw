@@ -187,17 +187,7 @@
       hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
     </p>
 
-    <h2 class="font-bold mt-10 mb-4">GAMES</h2>
-
-    <ul class="list-['-_'] pl-8">
-      {#each projects.filter(p => p.type === "game") as project}
-        <li class="space-x-0">
-          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
-          <span class="text-muted">/ {project.description}</span>
-        </li>
-      {/each}
-    </ul>
-
+    <!-- web apps -->
     <h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
 
     <ul class="list-['-_'] pl-8">
@@ -209,6 +199,19 @@
       {/each}
     </ul>
 
+    <!-- games -->
+    <h2 class="font-bold mt-10 mb-4">GAMES</h2>
+
+    <ul class="list-['-_'] pl-8">
+      {#each projects.filter(p => p.type === "game") as project}
+        <li class="space-x-0">
+          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+          <span class="text-muted">/ {project.description}</span>
+        </li>
+      {/each}
+    </ul>
+
+    <!-- stats -->
     {#if languages.length > 0}
       <h2 class="font-bold mt-10 mb-6">STATS</h2>
 
