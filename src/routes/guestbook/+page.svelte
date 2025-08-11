@@ -42,7 +42,7 @@
       name="name"
       type="text"
       class="border-2 border-fg p-2 w-full"
-      placeholder="anon"
+      placeholder="guest"
     />
   </div>
 
