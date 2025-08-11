@@ -226,26 +226,32 @@
     <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
 
     <div class="flex md:flex-row flex-col gap-4 w-full">
-      <!-- music -->
-      <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
-        <div
-          class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-          style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
-        ></div>
+      {#if track}
+        <!-- music -->
+        <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+          <div
+            class="bg-cover bg-center min-w-[4.5rem] aspect-square"
+            style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
+          ></div>
 
-        <div class="flex flex-col justify-between min-w-0">
-          <p class="text-muted font-bold text-xs flex items-center gap-2">
-            {#if isNowPlaying}
-              <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
-            {/if}
+          <div class="flex flex-col justify-between min-w-0">
+            <p class="text-muted font-bold text-xs flex items-center gap-2">
+              {#if isNowPlaying}
+                <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
+              {/if}
 
-            {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
-          </p>
+              {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+            </p>
 
-          <h3 class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.title ? track.title : "----------"}</h3>
-          <p class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">{track?.artist ? track.artist : "----------"}</p>
+            <h3 title={track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
+              {track.title ? track.title : "----------"}
+            </h3>
+            <p title={track.artist} class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
+              {track.artist ? track.artist : "----------"}
+            </p>
+          </div>
         </div>
-      </div>
+      {/if}
 
       <!-- last played game -->
       {#if game}
@@ -260,8 +266,12 @@
               MOST PLAYED GAME (2 WEEKS)
             </p>
 
-            <h3 class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">{game.name}</h3>
-            <p class="text-muted font-bold">{minutesToReadable(game.playtime_forever)}</p>
+            <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+              {game.name}
+            </h3>
+            <p title={minutesToReadable(game.playtime_forever)} class="text-muted font-bold">
+              {minutesToReadable(game.playtime_forever)}
+            </p>
           </div>
         </div>
       {/if}
