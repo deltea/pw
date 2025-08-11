@@ -57,7 +57,7 @@
 
     // ------ web projects ------
     {
-      title: "Downbeat",
+      title: "downbeat",
       type: "web",
       description: "sync gifs with the beat of music",
       link: "https://downbeat.deltea.space/",
