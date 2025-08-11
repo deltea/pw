@@ -99,9 +99,11 @@
   </button>
 </form>
 
+<hr class="border-bg-2 w-full border-1 mt-8">
+
 <!-- guestbook entries -->
 {#if isLoading}
-  <p class="font-bold mt-10">loading guestbook...</p>
+  <p class="font-bold mt-8">loading guestbook...</p>
 {/if}
 
 <ul class="list['-_'] mt-10 flex flex-col gap-4">
