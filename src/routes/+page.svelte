@@ -149,6 +149,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>@deltea</title>
+</svelte:head>
+
 <!-- web apps -->
 <h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
 
