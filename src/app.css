@@ -22,7 +22,7 @@
 }
 
 body {
-  @apply bg-bg text-fg font-mono underline-offset-[2px];
+  @apply bg-bg text-fg font-mono sm:text-base text-sm underline-offset-[2px];
 }
 
 * {
