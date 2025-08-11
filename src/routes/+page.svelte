@@ -8,7 +8,6 @@
     cover: string;
   }
 
-  let avatar: string | null = null;
   let track: Track | null = null;
   let isNowPlaying: boolean = false;
   let languages: any[] = [];
@@ -114,10 +113,8 @@
   ];
 
   onMount(async () => {
-    // get pfp
-    let response = await fetch("https://api.github.com/users/deltea");
-    let data = await response.json();
-    avatar = data.avatar_url;
+    let response;
+    let data;
 
     // get wakatime data
     try {
@@ -152,147 +149,113 @@
   }
 </script>
 
-<div class="min-h-screen flex justify-center py-8">
-  <main class="gridbackground w-full max-w-3xl flex flex-col items-start px-4">
-    <!-- banner -->
-    <div class="grid-background border-2 border-fg w-full h-24"></div>
+<!-- web apps -->
+<h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
 
-    <div class="flex gap-6 sm:-translate-y-10 -translate-y-3 sm:translate-x-8 translate-x-6">
-      <!-- pfp -->
-      <div class="sm:size-28 size-20 rounded-full outline-[16px] outline-bg bg-bg">
-        <div class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg" style:background-image="url({avatar})"></div>
-      </div>
+<ul class="list-['-_'] pl-8">
+  {#each projects.filter(p => p.type === "web") as project}
+    <li class="space-x-0">
+      <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+      <span class="text-muted">/ {project.description}</span>
+    </li>
+  {/each}
+</ul>
 
-      <!-- title card -->
-      <div class="flex flex-col gap-0 justify-end">
-        <h1 class="font-bold text-3xl">@deltea</h1>
-        <h2 class="text-base font-bold text-fg">professional wip-er</h2>
-      </div>
-    </div>
+<!-- games -->
+<h2 class="font-bold mt-10 mb-4">GAMES</h2>
 
-    <!-- <hr class="border-zinc-900 mb-8 w-full" /> -->
+<ul class="list-['-_'] pl-8">
+  {#each projects.filter(p => p.type === "game") as project}
+    <li class="space-x-0">
+      <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+      <span class="text-muted">/ {project.description}</span>
+    </li>
+  {/each}
+</ul>
 
-    <p class="text-base text-muted mt-6 sm:mt-0">
-      hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
-    </p>
+<!-- stats -->
+{#if languages.length > 0}
+  <h2 class="font-bold mt-10 mb-6">STATS</h2>
 
-    <!-- web apps -->
-    <h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
-
-    <ul class="list-['-_'] pl-8">
-      {#each projects.filter(p => p.type === "web") as project}
-        <li class="space-x-0">
-          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
-          <span class="text-muted">/ {project.description}</span>
-        </li>
-      {/each}
-    </ul>
-
-    <!-- games -->
-    <h2 class="font-bold mt-10 mb-4">GAMES</h2>
-
-    <ul class="list-['-_'] pl-8">
-      {#each projects.filter(p => p.type === "game") as project}
-        <li class="space-x-0">
-          <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
-          <span class="text-muted">/ {project.description}</span>
-        </li>
-      {/each}
-    </ul>
-
-    <!-- stats -->
-    {#if languages.length > 0}
-      <h2 class="font-bold mt-10 mb-6">STATS</h2>
-
-      <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
-        {#each languages as language}
-          <div class="flex flex-col gap-2 font-bold">
-            <div class="flex items-center lowercase justify-between">
-              <h2>[{language.name}]</h2>
-              <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
-            </div>
-
-            <div class="w-full h-2 bg-bg-2 overflow-hidden">
-              <div
-                class="h-full bg-fg"
-                style:width="{language.percent}%"
-              ></div>
-            </div>
-          </div>
-        {/each}
-      </div>
-    {/if}
-
-    <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
-
-    <div class="flex md:flex-row flex-col gap-4 w-full">
-      {#if track}
-        <!-- music -->
-        <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
-          <div
-            class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-            style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
-          ></div>
-
-          <div class="flex flex-col justify-between min-w-0">
-            <p class="text-muted font-bold text-xs flex items-center gap-2">
-              {#if isNowPlaying}
-                <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
-              {/if}
-
-              {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
-            </p>
-
-            <h3 title={track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
-              {track.title ? track.title : "----------"}
-            </h3>
-            <p title={track.artist} class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
-              {track.artist ? track.artist : "----------"}
-            </p>
-          </div>
+  <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
+    {#each languages as language}
+      <div class="flex flex-col gap-2 font-bold">
+        <div class="flex items-center lowercase justify-between">
+          <h2>[{language.name}]</h2>
+          <p class="text-muted font-normal">{language.text} ({language.percent}%)</p>
         </div>
-      {/if}
 
-      <!-- last played game -->
-      {#if game}
-        <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+        <div class="w-full h-2 bg-bg-2 overflow-hidden">
           <div
-            class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-            style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
+            class="h-full bg-fg"
+            style:width="{language.percent}%"
           ></div>
-
-          <div class="flex flex-col justify-between min-w-0">
-            <p class="text-muted font-bold text-xs flex items-center gap-2">
-              MOST PLAYED GAME (2 WEEKS)
-            </p>
-
-            <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
-              {game.name}
-            </h3>
-            <p title={minutesToReadable(game.playtime_forever)} class="text-muted font-bold">
-              {minutesToReadable(game.playtime_forever)}
-            </p>
-          </div>
         </div>
-      {/if}
-    </div>
-
-    <!-- antipixel buttons -->
-    <div class="fle flex-wrap text-center space-x-1 space-y-1 gap-1 mb-8 mt-16 w-full">
-      {#each buttons as button}
-        <img class="inline pixelated" src="/antipixel/{button}.webp" alt="web button">
-      {/each}
-    </div>
-
-    <footer class="font-bold mb-6 flex sm:justify-between justify-center items-center w-full">
-      <div class="flex gap-4 underline">
-        <a target="_blank" href="https://github.com/deltea">github</a>
-        <a target="_blank" href="https://deltea.itch.io">itch.io</a>
-        <!-- <a target="_blank" href="https://twitter.com/@_deltea">twitter</a> -->
-        <a target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
       </div>
+    {/each}
+  </div>
+{/if}
 
-      <span class="font-normal text-muted sm:block hidden">made with svelte</span>
-    </footer>
-  </main>
+<h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
+
+<div class="flex md:flex-row flex-col gap-4 w-full">
+  {#if track}
+    <!-- music -->
+    <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+      <div
+        class="bg-cover bg-center min-w-[4.5rem] aspect-square"
+        style:background-image="url('{track?.cover ? track.cover : "/music-placeholder.webp"}')"
+      ></div>
+
+      <div class="flex flex-col justify-between min-w-0">
+        <p class="text-muted font-bold text-xs flex items-center gap-2">
+          {#if isNowPlaying}
+            <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
+          {/if}
+
+          {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+        </p>
+
+        <h3 title={track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
+          {track.title ? track.title : "----------"}
+        </h3>
+        <p title={track.artist} class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
+          {track.artist ? track.artist : "----------"}
+        </p>
+      </div>
+    </div>
+  {/if}
+
+  <!-- last played game -->
+  {#if game}
+    <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+      <div
+        class="bg-cover bg-center min-w-[4.5rem] aspect-square"
+        style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
+      ></div>
+
+      <div class="flex flex-col justify-between min-w-0">
+        <p class="text-muted font-bold text-xs flex items-center gap-2">
+          MOST PLAYED GAME (2 WEEKS)
+        </p>
+
+        <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+          {game.name}
+        </h3>
+        <p title={minutesToReadable(game.playtime_forever)} class="text-muted font-bold">
+          {minutesToReadable(game.playtime_forever)}
+        </p>
+      </div>
+    </div>
+  {/if}
+</div>
+
+<!-- guestbook button -->
+<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-16 font-bold block">open guestbook</a>
+
+<!-- antipixel buttons -->
+<div class="flex-wrap text-center space-x-1 space-y-1 gap-1 mt-6 w-full">
+  {#each buttons as button}
+    <img class="inline pixelated" src="/antipixel/{button}.webp" alt="web button">
+  {/each}
 </div>
