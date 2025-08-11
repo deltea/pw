@@ -18,7 +18,7 @@
     <!-- banner -->
     <div class="grid-background border-2 border-fg w-full h-24"></div>
 
-    <div class="flex gap-6 sm:-translate-y-10 -translate-y-3 sm:translate-x-8 translate-x-6">
+    <div class="flex gap-6 sm:-translate-y-10 -translate-y-5 sm:translate-x-8 translate-x-6">
       <!-- pfp -->
       <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-[16px] outline-bg bg-bg">
         <div
@@ -29,12 +29,12 @@
 
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
-        <h1 class="font-bold text-3xl">@deltea</h1>
-        <h2 class="text-base font-bold text-fg">professional wip-er</h2>
+        <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
+        <h2 class="font-bold text-fg">professional wip-er</h2>
       </div>
     </div>
 
-    <p class="text-base text-muted mt-6 sm:mt-0">
+    <p class="text-muted mt-6 sm:mt-0">
       hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
     </p>
 
