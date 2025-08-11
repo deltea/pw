@@ -34,7 +34,7 @@
 <h2 class="font-bold mt-10 mb-6">GUESTBOOK</h2>
 
 <!-- submit guestbook entry -->
-<form method="POST" class="border2 border-fg p-6 w-full flex flex-col gap-4">
+<form method="POST" class="border2 border-fg lg:px-6 w-full flex flex-col gap-4">
   <div class="flex flex-col gap-2">
     <label class="font-bold" for="name">name: </label>
     <input
@@ -112,7 +112,6 @@
         <div class="flex gap-4">
           <p class="font-bold text-fg">[{entry.name}]</p>
           {#if entry.website}
-            <span>/</span>
             <a class="underline" target="_blank" href={entry.website}>
               {prettyURL(entry.website)}
             </a>
@@ -122,12 +121,15 @@
         <!-- date -->
         <p>
           {new Date(entry.timestamp).toLocaleDateString()}
-          at
-          {new Date(entry.timestamp).toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true
-          }).toLowerCase()}</p>
+          <span class="hidden sm:inline">
+            at
+            {new Date(entry.timestamp).toLocaleTimeString("en-US", {
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true
+            }).toLowerCase()}
+          </span>
+        </p>
       </div>
 
       {#if entry.music}
