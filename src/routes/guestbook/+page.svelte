@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   interface GuestbookEntry {
     name?: string;
     timestamp: string;
@@ -9,30 +11,16 @@
   }
 
   let isSending = $state(false);
-  let guestbook: GuestbookEntry[] = $state([
-    {
-      name: "leo",
-      timestamp: new Date().toISOString(),
-      website: "https://deltea.itch.io",
-      music: "Birdbrain by Jamie Paige",
-      food: "sushi",
-      message: "hi! this is my guestbook, feel free to leave a message!"
-    },
-    {
-      name: "anon",
-      timestamp: new Date().toISOString(),
-      food: "pizza",
-      message: "this is a test entry, you can delete it if you want"
-    },
-    {
-      name: "guest",
-      timestamp: new Date().toISOString(),
-      website: "https://example.com",
-      music: "some cool song",
-      food: "ice cream",
-      message: "i love your website!"
-    }
-  ]);
+  let isLoading = $state(true);
+  let guestbook: GuestbookEntry[] = $state([]);
+
+  onMount(async () => {
+    isLoading = true;
+    const response = await fetch("/api/guestbook");
+    const data = await response.json();
+    guestbook = data || [];
+    isLoading = false;
+  });
 
   function prettyURL(url: string): string {
     return url.replace(/https?:\/\//, "").replace(/www\./, "");
@@ -46,7 +34,7 @@
 <h2 class="font-bold mt-10 mb-6">GUESTBOOK</h2>
 
 <!-- submit guestbook entry -->
-<form action="post" class="border2 border-fg p-6 w-full flex flex-col gap-4">
+<form method="POST" class="border2 border-fg p-6 w-full flex flex-col gap-4">
   <div class="flex flex-col gap-2">
     <label class="font-bold" for="name">name: </label>
     <input
@@ -112,6 +100,10 @@
 </form>
 
 <!-- guestbook entries -->
+{#if isLoading}
+  <p class="font-bold mt-10">loading guestbook...</p>
+{/if}
+
 <ul class="list['-_'] mt-10 flex flex-col gap-4">
   {#each guestbook as entry}
     <li class="border-2 border-fg p-3">

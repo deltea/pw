@@ -251,7 +251,7 @@
 </div>
 
 <!-- guestbook button -->
-<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-16 font-bold block">open guestbook</a>
+<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-16 font-bold block underline">open guestbook</a>
 
 <!-- antipixel buttons -->
 <div class="flex-wrap text-center space-x-1 space-y-1 gap-1 mt-6 w-full">
