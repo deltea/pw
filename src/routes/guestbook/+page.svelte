@@ -120,7 +120,14 @@
         </div>
 
         <!-- date -->
-        <b>{new Date(entry.timestamp).toLocaleDateString()}</b>
+        <p>
+          {new Date(entry.timestamp).toLocaleDateString()}
+          at
+          {new Date(entry.timestamp).toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+          }).toLowerCase()}</p>
       </div>
 
       {#if entry.music}

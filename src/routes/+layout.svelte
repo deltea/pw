@@ -43,14 +43,14 @@
       {@render children?.()}
     </div>
 
-    <footer class="font-bold mt-8 flex sm:justify-between justify-center items-center w-full">
+    <footer class="font-bold mt-10 flex sm:justify-between justify-center items-center w-full">
       <div class="flex gap-4 underline">
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>
         <a target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
       </div>
 
-      <span class="font-normal text-muted sm:block hidden">made with svelte</span>
+      <span class="font-normal text-muted sm:block hidden">made with sveltekit</span>
     </footer>
   </main>
 </div>
