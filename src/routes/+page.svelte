@@ -240,7 +240,7 @@
 
       <div class="flex flex-col justify-between min-w-0">
         <p class="text-muted font-bold text-xs flex items-center gap-2">
-          MOST PLAYED GAME (2 WEEKS)
+          RECENTLY PLAYED
         </p>
 
         <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
