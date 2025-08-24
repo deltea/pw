@@ -3,8 +3,12 @@
   import "iconify-icon";
 	// import favicon from "$lib/assets/favicon.svg";
   import pfp from "$lib/assets/pfp.jpg";
+  import { oneko } from "$lib/oneko";
+  import { onMount } from "svelte";
 
 	let { children } = $props();
+  
+  onMount(() => oneko());
 </script>
 
 <svelte:head>
