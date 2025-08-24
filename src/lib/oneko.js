@@ -84,7 +84,7 @@ export function oneko() {
 
   function init() {
     nekoEl.id = "oneko";
-    nekoEl.ariaHidden = true;
+    nekoEl.ariaHidden = "true";
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "absolute";
@@ -92,7 +92,7 @@ export function oneko() {
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
-    nekoEl.style.zIndex = 2147483647;
+    nekoEl.style.zIndex = "2147483647";
 
     let nekoFile = "./oneko.gif"
     const curScript = document.currentScript
@@ -104,8 +104,8 @@ export function oneko() {
     document.body.appendChild(nekoEl);
 
     document.addEventListener("mousemove", function (event) {
-      mousePosX = event.clientX;
-      mousePosY = event.clientY;
+      mousePosX = event.pageX;
+      mousePosY = event.pageY;
     });
 
     window.requestAnimationFrame(onAnimationFrame);
