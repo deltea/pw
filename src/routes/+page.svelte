@@ -16,40 +16,40 @@
   const projects = [
     // ------ game projects ------
     {
-      title: "Power Cut",
+      title: "power-cut",
       type: "game",
       description: "a short puzzle platformer made for a game jam",
       link: "https://deltea.itch.io/power-cut",
       source: "https://github.com/deltea/power-cut"
     },
     {
-      title: "Catalyst",
+      title: "catalyst",
       type: "game",
       description: "a bullet hell boss rush game made for a month long game jam",
       link: "https://deltea.itch.io/catalyst",
       source: "https://github.com/deltea/brj-exchange"
     },
     {
-      title: "JetCat",
+      title: "jetcat",
       type: "game",
       description: "a fast-paced speedrun platformer with a cat that can fly",
       link: "https://deltea.itch.io/jetcat",
       source: "https://github.com/deltea/Gravity"
     },
     {
-      title: "G R A P P L E",
+      title: "g r a p p l e",
       type: "game",
       description: "grappling in the 90s",
       link: "https://deltea.itch.io/grapple",
     },
     {
-      title: "RPGeometry",
+      title: "rpgeometry",
       type: "game",
       description: "a horde game made for bullet hell game jam 2023",
       link: "https://deltea.itch.io/rpgeometry",
     },
     {
-      title: "Long Shot",
+      title: "long-shot",
       type: "game",
       description: "an abstract shooter with a weird movement mechanic",
       link: "https://deltea.itch.io/long-shot",
@@ -64,28 +64,28 @@
       source: "https://github.com/deltea/downbeat"
     },
     {
-      title: "The Movie Game",
+      title: "the-movie-game",
       type: "web",
       description: "higher or lower game, but with movies",
       link: "https://movie-game.deltea.space/",
       source: "https://github.com/deltea/themoviegame",
     },
     {
-      title: "YouGuess",
+      title: "youguess",
       type: "web",
       description: "higher or lower game, but with youtube videos",
       link: "https://youguess.deltea.space/",
       source: "https://github.com/deltea/youguess",
     },
     {
-      title: "Atlas Academy",
+      title: "atlas-academy",
       type: "web",
       description: "a blog made to document our travels",
       link: "https://atlasacademy.blog/",
       source: "https://github.com/deltea/atlasacademy.blog",
     },
     {
-      title: "Color Pong",
+      title: "color-pong",
       type: "web",
       description: "a cool looking screensaver-ahh pong simulation",
       link: "https://color-pong.deltea.space/",
