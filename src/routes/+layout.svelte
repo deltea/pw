@@ -7,7 +7,7 @@
   import { onMount } from "svelte";
 
 	let { children } = $props();
-  
+
   onMount(() => oneko());
 </script>
 
@@ -52,6 +52,7 @@
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>
         <a target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
+        <a target="_blank" href="mailto:hello@deltea.space">contact</a>
       </div>
 
       <span class="font-normal text-muted sm:block hidden">made with sveltekit</span>
