@@ -2,7 +2,7 @@
 	import "../app.css";
   import "iconify-icon";
 	// import favicon from "$lib/assets/favicon.svg";
-  import pfp from "$lib/assets/pfp.jpg";
+  import pfp from "$lib/assets/vibing.png";
   import { oneko } from "$lib/oneko";
   import { onMount } from "svelte";
 
