@@ -32,13 +32,13 @@
       </a>
 
       <!-- title card -->
-      <div class="flex flex-col gap-1.5 justify-end">
+      <a href="/" class="flex flex-col gap-1.5 justify-end">
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
         <h2 class="fontbold text-fg">
           <span>1.01x developer</span>
           <span class="hidden sm:inline">| tinkering with hardware</span>
         </h2>
-      </div>
+      </a>
     </div>
 
     <p class="text-muted text-justify mt-6 sm:mt-0">
