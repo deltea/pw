@@ -22,9 +22,21 @@
 }
 
 body {
-  @apply bg-bg text-fg font-mono sm:text-base text-sm underline-offset-[2px];
+  @apply bg-bg text-fg selection:bg-fg selection:text-bg font-mono sm:text-base text-sm underline-offset-[2px];
 }
 
 * {
   @apply decoration-2;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 5px solid rgba(0, 0, 0, 0);
+  background-color: var(--color-bg-2);
+  background-clip: padding-box;
+  border-radius: 999px;
 }

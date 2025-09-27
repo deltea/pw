@@ -45,7 +45,7 @@
     {
       title: "rpgeometry",
       type: "game",
-      description: "a horde game made for bullet hell game jam 2023",
+      description: "a horde shooter made for bullet hell game jam 2023",
       link: "https://deltea.itch.io/rpgeometry",
     },
     {
@@ -59,7 +59,7 @@
     {
       title: "downbeat",
       type: "web",
-      description: "sync gifs with the beat of music",
+      description: "sync gifs to the beat",
       link: "https://downbeat.deltea.space/",
       source: "https://github.com/deltea/downbeat"
     },
@@ -255,7 +255,7 @@
 </div>
 
 <!-- guestbook button -->
-<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-4 font-bold block underline">open guestbook</a>
+<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-4 font-bold block hover:underline">open guestbook</a>
 
 <!-- antipixel buttons -->
 <div class="flex-wrap text-center space-x-1 space-y-1 gap-1 mt-16 w-full">

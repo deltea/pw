@@ -34,7 +34,7 @@
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
-        <h2 class="font-bold text-fg">professional wip-er</h2>
+        <h2 class="fontbold text-fg">1.01x developer</h2>
       </div>
     </div>
 
