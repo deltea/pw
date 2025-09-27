@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  const SCROLL_SPEED = 0.5;
+  const SCROLL_SPEED = 0.3;
   const buttons = [
     "button-now",
     "crashout",

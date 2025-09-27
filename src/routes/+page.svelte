@@ -14,6 +14,7 @@
   let languages: any[] = [];
   let game: any | null = null;
 
+  const languageBlacklist = ["gdscript3", "scene", "markdown"];
   const projects = [
     // ------ game projects ------
     {
@@ -102,7 +103,9 @@
     try {
       response = await fetch("/api/wakatime");
       data = await response.json();
-      languages = data.languages.slice(0, 5);
+      console.log(data.languages);
+      languages = data.languages.filter((lang: any) => !languageBlacklist.includes(lang.name.toLowerCase()));
+      languages = languages.slice(0, 5);
     } catch (error) {
       console.error("failed to fetch hackatime data:", error);
       languages = [];
