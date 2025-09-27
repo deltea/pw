@@ -3,7 +3,7 @@
   import "iconify-icon";
 	// import favicon from "$lib/assets/favicon.svg";
   import pfp from "$lib/assets/vibing.png";
-  import banner from "$lib/assets/banner.jpg"
+  import banner from "$lib/assets/banner.gif"
   import { oneko } from "$lib/oneko";
   import { onMount } from "svelte";
 
@@ -33,13 +33,13 @@
 <div class="min-h-screen flex justify-center py-8">
   <main class="w-full max-w-3xl flex flex-col items-start px-4">
     <!-- banner -->
-    <div class="grid-background border-2 border-fg w-full h-30"></div>
-    <!-- <div class="w-full h-30 p-4 border-2 border-fg">
+    <!-- <div class="grid-background border-2 border-fg w-full h-30"></div> -->
+    <div class="w-full h-30 border2 border-fg">
       <div
-        class="bg-cover bg-[center_bottom_-4rem] w-full h-full"
+        class="bg-cover bg-[center_top_-8.5rem] w-full h-full"
         style:background-image="url({banner})"
       ></div>
-    </div> -->
+    </div>
 
     <div class="flex gap-6 sm:-translate-y-8 -translate-y-4 sm:translate-x-8 translate-x-6">
       <!-- pfp -->
