@@ -24,7 +24,7 @@
 
     <div class="flex gap-6 sm:-translate-y-8 -translate-y-5 sm:translate-x-8 translate-x-6">
       <!-- pfp -->
-      <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-[16px] outline-bg bg-bg">
+      <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-3 outline-fg">
         <div
           class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg"
           style:background-image="url({pfp})"

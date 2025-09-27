@@ -34,8 +34,8 @@
 <h2 class="font-bold mt-10 mb-6">GUESTBOOK</h2>
 
 <!-- submit guestbook entry -->
-<form method="POST" class="border2 border-fg lg:px-6 w-full flex flex-col gap-4">
-  <div class="flex flex-col gap-2">
+<form method="POST" class="border2 border-fg w-full flex flex-col gap-4">
+  <div class="flex flex-col gap-2 lg:px-6">
     <label class="font-bold" for="name">name: </label>
     <input
       id="name"
@@ -46,7 +46,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 lg:px-6">
     <label class="font-bold" for="website">website: </label>
     <input
       id="website"
@@ -57,7 +57,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 lg:px-6">
     <label class="font-bold" for="music">cool music you want to share: </label>
     <input
       id="music"
@@ -68,7 +68,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 lg:px-6">
     <label class="font-bold" for="music">fav food: </label>
     <input
       id="food"
@@ -79,7 +79,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 lg:px-6">
     <label class="font-bold" for="message">message*: </label>
     <textarea
       id="message"
@@ -90,7 +90,7 @@
     ></textarea>
   </div>
 
-  <button type="submit" class="border-2 flex justify-center items-center border-fg w-min mt-2 py-2 px-4 font-bold cursor-pointer">
+  <button type="submit" class="border-2 flex justify-center items-center border-fg w-min mt-4 py-2 px-4 font-bold cursor-pointer">
     {#if isSending}
       <iconify-icon icon="svg-spinners:3-dots-scale" class="text-2xl"></iconify-icon>
     {:else}
