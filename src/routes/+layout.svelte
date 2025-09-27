@@ -34,7 +34,10 @@
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
-        <h2 class="fontbold text-fg">1.01x developer | working on downbeat</h2>
+        <h2 class="fontbold text-fg">
+          <span>1.01x developer</span>
+          <span class="hidden sm:inline">| working on downbeat</span>
+        </h2>
       </div>
     </div>
 
