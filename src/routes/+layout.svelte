@@ -55,7 +55,7 @@
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
         <h2 class="fontbold text-fg">
           <span>1.01x developer</span>
-          <span class="hidden sm:inline">| tinkering with hardware</span>
+          <span class="hidden sm:inline">| currently tinkering with hardware</span>
         </h2>
       </a>
     </div>
