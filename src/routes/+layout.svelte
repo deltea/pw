@@ -22,7 +22,7 @@
     <!-- banner -->
     <div class="grid-background border-2 border-fg w-full h-24"></div>
 
-    <div class="flex gap-6 sm:-translate-y-8 -translate-y-5 sm:translate-x-8 translate-x-6">
+    <div class="flex gap-6 sm:-translate-y-8 -translate-y-4 sm:translate-x-8 translate-x-6">
       <!-- pfp -->
       <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-3 outline-fg">
         <div
@@ -32,7 +32,7 @@
       </a>
 
       <!-- title card -->
-      <a href="/" class="flex flex-col gap-1.5 justify-end">
+      <a href="/" class="flex flex-col sm:gap-1.5 gap-1 justify-end">
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
         <h2 class="fontbold text-fg">
           <span>1.01x developer</span>
