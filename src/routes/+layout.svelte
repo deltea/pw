@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <p class="text-muted mt-6 sm:mt-0">
+    <p class="text-muted text-justify mt-6 sm:mt-0">
       hi! i'm leo (14y), and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
     </p>
 
