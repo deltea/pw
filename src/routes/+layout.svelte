@@ -34,7 +34,7 @@
       <!-- title card -->
       <div class="flex flex-col gap-0 justify-end">
         <h1 class="font-bold text-2xl sm:text-3xl">@deltea</h1>
-        <h2 class="fontbold text-fg">1.01x developer</h2>
+        <h2 class="fontbold text-fg">1.01x developer | working on downbeat</h2>
       </div>
     </div>
 
@@ -52,7 +52,8 @@
         <a target="_blank" href="https://github.com/deltea">github</a>
         <a target="_blank" href="https://deltea.itch.io">itch.io</a>
         <a target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
-        <a target="_blank" href="mailto:hello@deltea.space">contact</a>
+        <!-- <a target="_blank" href="mailto:hello@deltea.space">contact</a> -->
+        <a href="/guestbook">guestbook</a>
       </div>
 
       <span class="font-normal text-muted sm:block hidden">made with sveltekit</span>

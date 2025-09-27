@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
+  import Antipixel from "$lib/components/Antipixel.svelte";
 
   interface Track {
     title: string;
@@ -80,7 +81,7 @@
     {
       title: "atlas-academy",
       type: "web",
-      description: "a blog made to document our travels",
+      description: "a blog made to document my travels",
       link: "https://atlasacademy.blog/",
       source: "https://github.com/deltea/atlasacademy.blog",
     },
@@ -91,25 +92,6 @@
       link: "https://color-pong.deltea.space/",
       source: "https://github.com/deltea/color-pong",
     }
-  ];
-
-  const buttons = [
-    "button-now",
-    "crashout",
-    "flipnote",
-    "godot",
-    "homebrew",
-    "internet-archive",
-    "itch-io",
-    "kris-where-are-we",
-    "last-fm",
-    "neocities",
-    "peek",
-    "rain-world",
-    "rice-place",
-    "spamton",
-    "transistor",
-    "yeah"
   ];
 
   onMount(async () => {
@@ -179,7 +161,10 @@
 
 <!-- stats -->
 {#if languages.length > 0}
-  <h2 class="font-bold mt-10 mb-6">STATS</h2>
+  <h2 class="font-bold mt-10 mb-6 space-x-1">
+    <span>STATS</span>
+    <span class="text-muted font-normal">(since may 2025)</span>
+  </h2>
 
   <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
     {#each languages as language}
@@ -254,12 +239,7 @@
   {/if}
 </div>
 
-<!-- guestbook button -->
-<a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-4 font-bold block hover:underline">open guestbook</a>
+<Antipixel />
 
-<!-- antipixel buttons -->
-<div class="flex-wrap text-center space-x-1 space-y-1 gap-1 mt-16 w-full">
-  {#each buttons as button}
-    <img class="inline pixelated" src="/antipixel/{button}.webp" alt="web button">
-  {/each}
-</div>
+<!-- guestbook button -->
+<!-- <a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-4 font-bold block hover:underline">open guestbook</a> -->
