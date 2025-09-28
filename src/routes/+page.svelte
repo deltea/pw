@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
+  import { projects } from "$lib/projects";
   import Antipixel from "$lib/components/Antipixel.svelte";
 
   interface Track {
@@ -15,85 +16,6 @@
   let game: any | null = null;
 
   const languageBlacklist = ["gdscript3", "scene", "markdown"];
-  const projects = [
-    // ------ game projects ------
-    {
-      title: "power-cut",
-      type: "game",
-      description: "a short puzzle platformer made for a game jam",
-      link: "https://deltea.itch.io/power-cut",
-      source: "https://github.com/deltea/power-cut"
-    },
-    {
-      title: "catalyst",
-      type: "game",
-      description: "a bullet hell boss rush game made for a month long game jam",
-      link: "https://deltea.itch.io/catalyst",
-      source: "https://github.com/deltea/brj-exchange"
-    },
-    {
-      title: "jetcat",
-      type: "game",
-      description: "a fast-paced speedrun platformer with a cat that can fly",
-      link: "https://deltea.itch.io/jetcat",
-      source: "https://github.com/deltea/Gravity"
-    },
-    {
-      title: "g r a p p l e",
-      type: "game",
-      description: "grappling in the 90s",
-      link: "https://deltea.itch.io/grapple",
-    },
-    {
-      title: "rpgeometry",
-      type: "game",
-      description: "a horde shooter made for bullet hell game jam 2023",
-      link: "https://deltea.itch.io/rpgeometry",
-    },
-    {
-      title: "long-shot",
-      type: "game",
-      description: "an abstract shooter with a weird movement mechanic",
-      link: "https://deltea.itch.io/long-shot",
-    },
-
-    // ------ web projects ------
-    {
-      title: "downbeat",
-      type: "web",
-      description: "sync gifs to the beat",
-      link: "https://downbeat.deltea.space/",
-      source: "https://github.com/deltea/downbeat"
-    },
-    {
-      title: "the-movie-game",
-      type: "web",
-      description: "higher or lower game, but with movies",
-      link: "https://movie-game.deltea.space/",
-      source: "https://github.com/deltea/themoviegame",
-    },
-    {
-      title: "youguess",
-      type: "web",
-      description: "higher or lower game, but with youtube videos",
-      link: "https://youguess.deltea.space/",
-      source: "https://github.com/deltea/youguess",
-    },
-    {
-      title: "atlas-academy",
-      type: "web",
-      description: "a blog made to document my travels",
-      link: "https://atlasacademy.blog/",
-      source: "https://github.com/deltea/atlasacademy.blog",
-    },
-    {
-      title: "color-pong",
-      type: "web",
-      description: "a cool looking screensaver-ahh pong simulation",
-      link: "https://color-pong.deltea.space/",
-      source: "https://github.com/deltea/color-pong",
-    }
-  ];
 
   onMount(async () => {
     let response;
