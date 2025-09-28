@@ -44,7 +44,7 @@ export const projects = [
     {
       title: "downbeat",
       type: "web",
-      description: "sync gifs to the beat",
+      description: "sync gifs to the beat of your music",
       link: "https://downbeat.deltea.space/",
       source: "https://github.com/deltea/downbeat"
     },
