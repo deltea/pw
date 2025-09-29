@@ -18,6 +18,6 @@
   description="published {formatDate(data.meta.date)}"
 />
 
-<article class="prose prose-invert prose-base prose-h1:text-3xl prose-img:text-center max-w-full">
+<article class="prose prose-invert prose-base prose-h1:text-3xl prose-img:text-center max-w-full prose-ul:list-['-_']">
   <data.content />
 </article>

@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
+  import { formatDate } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -12,10 +13,11 @@
     cover: string;
   }
 
-  let track: Track | null = null;
-  let isNowPlaying: boolean = false;
-  let languages: any[] = [];
-  let game: any | null = null;
+  let { data } = $props();
+  let track: Track | null = $state(null);
+  let isNowPlaying: boolean = $state(false);
+  let languages: any[] = $state([]);
+  let game: any | null = $state(null);
 
   const languageBlacklist = ["gdscript3", "scene", "markdown"];
 
@@ -27,7 +29,6 @@
     try {
       response = await fetch("/api/wakatime");
       data = await response.json();
-      console.log(data.languages);
       languages = data.languages.filter((lang: any) => !languageBlacklist.includes(lang.name.toLowerCase()));
       languages = languages.slice(0, 5);
     } catch (error) {
@@ -95,10 +96,27 @@
   {/each}
 </ul>
 
+<a href="/blog" class="font-bold mt-10 mb-6 underline">BLOG</a>
+
+<div class="flex gap-4 w-full">
+  {#each (data.posts.filter(x => x.published).slice(0, 2)) as post}
+    <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 w-1/2">
+      <div class="flex justify-between w-full">
+        <p class="font-bold">{post.title}</p>
+        <time>{formatDate(post.date)}</time>
+      </div>
+
+      <p class="textjustify break-all line-clamp-3 text-muted">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis nihil tempora, optio veritatis est maxime sequi magni voluptas animi ut! Quis sapiente reiciendis ipsum quam maiores officiis voluptas corrupti quas?
+      </p>
+    </a>
+  {/each}
+</div>
+
 <!-- stats -->
 {#if languages.length > 0}
   <h2 class="font-bold mt-10 mb-6 space-x-1">
-    <span>STATS</span>
+    <span>LANGUAGE STATS</span>
     <span class="text-muted font-normal">(since may 2025)</span>
   </h2>
 

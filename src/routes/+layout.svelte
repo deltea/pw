@@ -4,7 +4,6 @@
   import { oneko } from "$lib/oneko";
   import { onMount } from "svelte";
 
-  import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();

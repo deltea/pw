@@ -6,10 +6,10 @@ import { mdsvex } from "mdsvex";
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	extensions: [".svelte", ".md"],
+	extensions: [".svelte", ".md", ".svx"],
 	preprocess: [
 		vitePreprocess(),
-		mdsvex({ extensions: [".md"] })
+		mdsvex()
 	],
 	kit: {
 		adapter: adapter()
