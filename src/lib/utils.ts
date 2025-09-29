@@ -5,3 +5,12 @@ export const formatDate = (date: string) => {
     day: "numeric"
   }).toLowerCase();
 }
+
+export function isMobileUserAgentData() {
+  if (navigator.userAgent) {
+    console.log(navigator.userAgent.toLowerCase());
+    return navigator.userAgent.toLowerCase().includes("mobile");
+  }
+
+  return false;
+}

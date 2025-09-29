@@ -3,19 +3,11 @@
   import "iconify-icon";
   import { oneko } from "$lib/oneko";
   import { onMount } from "svelte";
+  import { isMobileUserAgentData } from "$lib/utils";
 
   import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
-
-  function isMobileUserAgentData() {
-    if (navigator.userAgent) {
-      console.log(navigator.userAgent.toLowerCase());
-      return navigator.userAgent.toLowerCase().includes("mobile");
-    }
-
-    return false;
-  }
 
   onMount(() => {
     if (!isMobileUserAgentData()) {

@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
-  import { formatDate } from "$lib/utils";
+  import { formatDate, isMobileUserAgentData } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -65,7 +65,7 @@
 
 <Header
   title="@deltea"
-  description="1.01x dev | currently tinkering with hardware"
+  description={isMobileUserAgentData() ? "tinkering with hardware" : "1.01x dev | currently tinkering with hardware"}
 />
 
 <p class="text-muted">
@@ -96,7 +96,8 @@
   {/each}
 </ul>
 
-<a href="/blog" class="font-bold mt-10 mb-6 underline">BLOG</a>
+<!-- <a href="/blog" class="font-bold mt-10 mb-6 underline">BLOG</a> -->
+<h1 class="font-bold mt-10 mb-6">BLOG</h1>
 
 <div class="flex gap-4 w-full">
   {#each (data.posts.filter(x => x.published).slice(0, 2)) as post}
@@ -106,8 +107,8 @@
         <time>{formatDate(post.date)}</time>
       </div>
 
-      <p class="textjustify break-all line-clamp-3 text-muted">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis nihil tempora, optio veritatis est maxime sequi magni voluptas animi ut! Quis sapiente reiciendis ipsum quam maiores officiis voluptas corrupti quas?
+      <p class="break-words line-clamp-4 text-muted">
+        {post.excerpt}
       </p>
     </a>
   {/each}

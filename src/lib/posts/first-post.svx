@@ -2,6 +2,7 @@
 published: true
 title: first post
 date: "9-28-2025"
+excerpt: "this is my first post on my new blog! i'm testing all the markdown features."
 ---
 
 <script>

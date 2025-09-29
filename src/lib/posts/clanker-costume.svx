@@ -2,6 +2,7 @@
 published: true
 title: clanker costume?
 date: "9-29-2025"
+excerpt: "so 2 days ago i went to the bay area maker faire, which is basically a giant convention with people making cool stuff, like electronics, robots, art, and costumes. i saw a bunch of interesting things there, like some indie games and stuff, but one kinda stood out a lot for some reason (idk why)."
 ---
 
 <script>
