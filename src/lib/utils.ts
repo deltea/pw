@@ -1,9 +1,11 @@
 export const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString("en-US", {
+  const formatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric"
-  }).toLowerCase();
+  });
+
+  return formatter.format(new Date(date)).toLowerCase();
 }
 
 export function minutesToReadable(minutes: number): string {
