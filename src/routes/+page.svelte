@@ -2,7 +2,9 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
+
   import Antipixel from "$lib/components/Antipixel.svelte";
+  import Header from "$lib/components/Header.svelte";
 
   interface Track {
     title: string;
@@ -59,6 +61,15 @@
 <svelte:head>
   <title>@deltea</title>
 </svelte:head>
+
+<Header
+  title="@deltea"
+  description="1.01x dev | currently tinkering with hardware"
+/>
+
+<p class="text-muted">
+  hi! i'm leo (14y), and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
+</p>
 
 <!-- web apps -->
 <h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
@@ -165,6 +176,3 @@
 </div>
 
 <Antipixel />
-
-<!-- guestbook button -->
-<!-- <a href="/guestbook" class="border-2 border-fg py-3 w-full text-center mt-4 font-bold block hover:underline">open guestbook</a> -->

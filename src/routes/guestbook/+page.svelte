@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Header from "$lib/components/Header.svelte";
 
   interface GuestbookEntry {
     name?: string;
@@ -28,14 +29,19 @@
 </script>
 
 <svelte:head>
-  <title>guestbook</title>
+  <title>@deltea - guestbook</title>
 </svelte:head>
 
-<h2 class="font-bold mt-10 mb-6">GUESTBOOK</h2>
+<Header
+  title="guestbook"
+  description="leave a message (or not)!"
+/>
+
+<!-- <h2 class="font-bold mt10 mb-6">GUESTBOOK</h2> -->
 
 <!-- submit guestbook entry -->
-<form method="POST" class="border2 border-fg w-full flex flex-col gap-4">
-  <div class="flex flex-col gap-2 lg:px-6">
+<form method="POST" class="w-full flex flex-col gap-4">
+  <div class="flex flex-col gap-2">
     <label class="font-bold" for="name">name: </label>
     <input
       id="name"
@@ -46,7 +52,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2 lg:px-6">
+  <div class="flex flex-col gap-2">
     <label class="font-bold" for="website">website: </label>
     <input
       id="website"
@@ -57,7 +63,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2 lg:px-6">
+  <div class="flex flex-col gap-2">
     <label class="font-bold" for="music">cool music you want to share: </label>
     <input
       id="music"
@@ -68,7 +74,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2 lg:px-6">
+  <div class="flex flex-col gap-2">
     <label class="font-bold" for="music">fav food: </label>
     <input
       id="food"
@@ -79,7 +85,7 @@
     />
   </div>
 
-  <div class="flex flex-col gap-2 lg:px-6">
+  <div class="flex flex-col gap-2">
     <label class="font-bold" for="message">message*: </label>
     <textarea
       id="message"

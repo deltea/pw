@@ -39,7 +39,7 @@
   onMount(scroll)
 </script>
 
-<div class="flex space-x-2 overflow-hidden no-scrollbar my-6">
+<div class="flex space-x-2 overflow-hidden no-scrollbar mt-6">
   <div bind:this={container} class="flex space-x-2">
     {#each [1,2] as _}
       {#each buttons as button}

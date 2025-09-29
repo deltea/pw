@@ -227,7 +227,7 @@ export function oneko() {
     nekoPosY -= (diffY / distance) * nekoSpeed;
 
     nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
-    nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+    nekoPosY = Math.min(Math.max(16, nekoPosY), document.body.scrollHeight - 16);
 
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
