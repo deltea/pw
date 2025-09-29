@@ -6,9 +6,9 @@ excerpt: "so 2 days ago i went to the bay area maker faire, which is basically a
 ---
 
 <script>
-  import VideoEmbed from "$lib/components/VideoEmbed.svelte"
-  import Caption from "$lib/components/Caption.svelte"
-  import YoutubeEmbed from "$lib/components/YoutubeEmbed.svelte"
+  import VideoEmbed from "$components/mdsvex/VideoEmbed.svelte"
+  import Caption from "$components/mdsvex/Caption.svelte"
+  import YoutubeEmbed from "$components/mdsvex/YoutubeEmbed.svelte"
 </script>
 
 so 2 days ago i went to the bay area maker faire, which is basically a giant convention with people making cool stuff, like electronics, robots, art, and costumes. i saw a bunch of interesting things there, like some indie games and stuff, but one kinda stood out a lot for some reason (idk why).

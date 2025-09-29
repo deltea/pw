@@ -9,11 +9,14 @@ const config = {
 	extensions: [".svelte", ".md", ".svx"],
 	preprocess: [
 		vitePreprocess(),
-		mdsvex()
+		mdsvex({ extensions: [".md", ".svx"] })
 	],
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		alias: {
+			"$components": "src/lib/components",
+		}
+	},
 };
 
 export default config;

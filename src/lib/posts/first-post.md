@@ -6,9 +6,9 @@ excerpt: "this is my first post on my new blog! i'm testing all the markdown fea
 ---
 
 <script>
-  import VideoEmbed from "$lib/components/VideoEmbed.svelte"
-  import Caption from "$lib/components/Caption.svelte"
-  import YoutubeEmbed from "$lib/components/YoutubeEmbed.svelte"
+  import VideoEmbed from "$components/mdsvex/VideoEmbed.svelte";
+  import Caption from "$components/mdsvex/Caption.svelte";
+  import YoutubeEmbed from "$components/mdsvex/YoutubeEmbed.svelte";
 </script>
 
 this is my first post on my new blog! i'm testing all the markdown features. here's a random cool looking piece of art i found on pinterest.

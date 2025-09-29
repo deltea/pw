@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
-  import { formatDate, isMobileUserAgentData } from "$lib/utils";
+  import { formatDate, isMobileUserAgentData, minutesToReadable } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -66,12 +66,6 @@
     // get steam last played game
     game = await getSteamLastPlayed();
   });
-
-  function minutesToReadable(minutes: number): string {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return `${hours}h ${mins}m`;
-  }
 </script>
 
 <svelte:head>

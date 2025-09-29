@@ -1,5 +1,5 @@
 <script lang="ts">
-  import pfp from "$lib/assets/vibing.png";
+  import pfp from "$lib/assets/pfp.png";
   import banner from "$lib/assets/banner.gif"
 
   let { title, description } = $props();
