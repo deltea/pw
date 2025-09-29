@@ -21,35 +21,50 @@
 
   const languageBlacklist = ["gdscript3", "scene", "markdown"];
 
-  onMount(async () => {
-    let response;
-    let data;
-
-    // get wakatime data
+  async function getWakatimeData() {
     try {
-      response = await fetch("/api/wakatime");
-      data = await response.json();
-      languages = data.languages.filter((lang: any) => !languageBlacklist.includes(lang.name.toLowerCase()));
-      languages = languages.slice(0, 5);
+      const response = await fetch("/api/wakatime");
+      const data = await response.json();
+      const result = data.languages.filter((lang: any) => !languageBlacklist.includes(lang.name.toLowerCase()));
+      return result.slice(0, 5);
     } catch (error) {
       console.error("failed to fetch hackatime data:", error);
-      languages = [];
+      return [];
     }
+  }
+
+  async function getLastPlayedTrack() {
+    const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
+    const data = await response.json();
+    const result = data.recenttracks.track[0];
+
+    return {
+      isNowPlaying: result["@attr"]?.nowplaying,
+      track: {
+        title: result.name,
+        artist: result.artist["#text"],
+        cover: result.image[1]["#text"]
+      }
+    };
+  }
+
+  async function getSteamLastPlayed() {
+    const response = await fetch("/api/steam");
+    const data = await response.json();
+    return data.games[0];
+  }
+
+  onMount(async () => {
+    // get wakatime data
+    languages = await getWakatimeData();
 
     // get last.fm track
-    response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
-    data = await response.json();
-    isNowPlaying = data.recenttracks.track[0]["@attr"]?.nowplaying;
-    track = {
-      title: data.recenttracks.track[0].name,
-      artist: data.recenttracks.track[0].artist["#text"],
-      cover: data.recenttracks.track[0].image[1]["#text"]
-    }
+    const response = await getLastPlayedTrack();
+    track = response.track;
+    isNowPlaying = response.isNowPlaying;
 
     // get steam last played game
-    response = await fetch("/api/steam");
-    data = await response.json();
-    game = data.games[0] || null;
+    game = await getSteamLastPlayed();
   });
 
   function minutesToReadable(minutes: number): string {
