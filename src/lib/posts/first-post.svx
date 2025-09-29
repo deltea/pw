@@ -1,16 +1,19 @@
 ---
+published: true
 title: first post
 date: "9-28-2025"
-published: true
 ---
 
 <script>
   import VideoEmbed from "$lib/components/VideoEmbed.svelte"
+  import Caption from "$lib/components/Caption.svelte"
+  import YoutubeEmbed from "$lib/components/YoutubeEmbed.svelte"
 </script>
 
 this is my first post on my new blog! i'm testing all the markdown features. here's a random cool looking piece of art i found on pinterest.
 
 ![vending machine](https://i.pinimg.com/736x/03/d1/59/03d15951828a2f18ce8d0855491667c3.jpg)
+<Caption>vending machine</Caption>
 
 # header
 
@@ -32,8 +35,31 @@ here's an ordered one:
 2. two
 3. three
 
-## videos????
+## videos?
 
-here's a funny ultrakill meme
+here's a random video i have saved:
 
-<VideoEmbed src="/blog/first-post/ultrakill.mp4" />
+<VideoEmbed src="/blog/first-post/your-name-trailer.mp4" />
+<Caption>Your Name trailer</Caption>
+
+wait... can i do youtube videos???
+
+<YoutubeEmbed videoId="zhIScvlFn2w" />
+
+yes, yes i can.
+
+<Caption>sick fan-made music video</Caption>
+
+## code?
+
+here's a code block:
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(`number ${i}`);
+}
+```
+
+<Caption>javascript loop</Caption>
+
+great, but no syntax highlighting unfortunately :(

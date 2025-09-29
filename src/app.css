@@ -10,6 +10,25 @@
   --color-muted: var(--color-neutral-400);
 }
 
+@utility prose-default {
+  --tw-prose-body: var(--color-fg);
+  --tw-prose-headings: var(--color-fg);
+  --tw-prose-lead: var(--color-bg-3);
+  --tw-prose-links: var(--color-fg);
+  --tw-prose-bold: var(--color-fg);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-muted);
+  --tw-prose-hr: var(--color-bg-2);
+  --tw-prose-quotes: var(--color-fg);
+  --tw-prose-quote-borders: var(--color-bg-2);
+  --tw-prose-captions: var(--color-bg-3);
+  --tw-prose-code: var(--color-fg);
+  --tw-prose-pre-code: var(--color-muted);
+  --tw-prose-pre-bg: var(--color-fg);
+  --tw-prose-th-borders: var(--color-bg-2);
+  --tw-prose-td-borders: var(--color-bg-2);
+}
+
 .grid-background {
   background-size: 30px 30px;
   background-position: 15px 15px;
