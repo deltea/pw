@@ -46,10 +46,10 @@ here's a random video i have saved:
 wait... can i do youtube videos???
 
 <YoutubeEmbed videoId="zhIScvlFn2w" />
+<Caption>sick fan-made music video</Caption>
 
 yes, yes i can.
 
-<Caption>sick fan-made music video</Caption>
 
 ## code?
 
@@ -60,7 +60,6 @@ for (let i = 0; i < 10; i++) {
   console.log(`number ${i}`);
 }
 ```
-
 <Caption>javascript loop</Caption>
 
 great, but no syntax highlighting unfortunately :(
