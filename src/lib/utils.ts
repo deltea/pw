@@ -15,10 +15,9 @@ export function minutesToReadable(minutes: number): string {
 }
 
 export function isMobileUserAgentData() {
-  if (navigator.userAgent) {
-    console.log(navigator.userAgent.toLowerCase());
-    return navigator.userAgent.toLowerCase().includes("mobile");
+  if (typeof navigator === "undefined" || !navigator.userAgent) {
+    return false;
   }
 
-  return false;
+  return navigator.userAgent.toLowerCase().includes("mobile");
 }

@@ -56,15 +56,15 @@
 
   onMount(async () => {
     // get wakatime data
-    // languages = await getWakatimeData();
+    languages = await getWakatimeData();
 
-    // // get last.fm track
-    // const response = await getLastPlayedTrack();
-    // track = response.track;
-    // isNowPlaying = response.isNowPlaying;
+    // get last.fm track
+    const response = await getLastPlayedTrack();
+    track = response.track;
+    isNowPlaying = response.isNowPlaying;
 
-    // // get steam last played game
-    // game = await getSteamLastPlayed();
+    // get steam last played game
+    game = await getSteamLastPlayed();
   });
 </script>
 
