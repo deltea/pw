@@ -74,7 +74,7 @@
 
 <Header
   title="@deltea"
-  description={"tinkering with hardware"}
+  description={isMobileUserAgentData() ? "tinkering with hardware" : "1.01x dev | currently tinkering with hardware"}
 />
 
 <p class="text-muted">
