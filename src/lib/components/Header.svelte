@@ -9,7 +9,7 @@
 <!-- <div class="grid-background border-2 border-fg w-full h-30"></div> -->
 <div class="w-full h-30 border2 border-fg">
   <div
-    class="bg-cover bg-[center_top_-125px] -scale-x-100 w-full h-full"
+    class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full"
     style:background-image="url({banner})"
   ></div>
 </div>
