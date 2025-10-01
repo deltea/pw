@@ -24,7 +24,7 @@
 <div class="min-h-screen flex justify-center py-8">
   <main class="w-full max-w-3xl flex flex-col items-start px-4">
     <!-- main page content -->
-    {@render children?.()}
+    <div class="grow">{@render children?.()}</div>
 
     <Footer />
   </main>
