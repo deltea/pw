@@ -13,15 +13,6 @@
 
   let { data } = $props();
   let isSending = $state(false);
-  // let guestbook: GuestbookEntry[] = $state([]);
-
-  // onMount(async () => {
-  //   isLoading = true;
-  //   const response = await fetch("/api/guestbook");
-  //   const data = await response.json();
-  //   guestbook = data || [];
-  //   isLoading = false;
-  // });
 
   function prettyURL(url: string): string {
     return url.replace(/https?:\/\//, "").replace(/www\./, "");
@@ -36,8 +27,6 @@
   title="guestbook"
   description="leave a message (or not)!"
 />
-
-<!-- <h2 class="font-bold mt10 mb-6">GUESTBOOK</h2> -->
 
 <!-- submit guestbook entry -->
 <form method="POST" class="w-full flex flex-col gap-4">
@@ -108,10 +97,6 @@
 <hr class="border-bg-2 w-full border-1 mt-8">
 
 <!-- guestbook entries -->
-<!-- {#if isLoading}
-  <p class="font-bold mt-8">loading guestbook...</p>
-{/if}
- -->
 <ul class="list['-_'] mt-10 flex flex-col gap-4">
   {#each data.entries as entry}
     <li class="border-2 border-fg p-3">

@@ -123,6 +123,10 @@
   {/each}
 </div>
 
+<a href="/blog" class="underline font-bold mt-4">
+  see more posts >
+</a>
+
 <!-- stats -->
 {#if languages.length > 0}
   <h2 class="font-bold mt-10 mb-6 space-x-1">
