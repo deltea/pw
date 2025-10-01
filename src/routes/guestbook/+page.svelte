@@ -11,17 +11,17 @@
     message: string;
   }
 
+  let { data } = $props();
   let isSending = $state(false);
-  let isLoading = $state(true);
-  let guestbook: GuestbookEntry[] = $state([]);
+  // let guestbook: GuestbookEntry[] = $state([]);
 
-  onMount(async () => {
-    isLoading = true;
-    const response = await fetch("/api/guestbook");
-    const data = await response.json();
-    guestbook = data || [];
-    isLoading = false;
-  });
+  // onMount(async () => {
+  //   isLoading = true;
+  //   const response = await fetch("/api/guestbook");
+  //   const data = await response.json();
+  //   guestbook = data || [];
+  //   isLoading = false;
+  // });
 
   function prettyURL(url: string): string {
     return url.replace(/https?:\/\//, "").replace(/www\./, "");
@@ -108,12 +108,12 @@
 <hr class="border-bg-2 w-full border-1 mt-8">
 
 <!-- guestbook entries -->
-{#if isLoading}
+<!-- {#if isLoading}
   <p class="font-bold mt-8">loading guestbook...</p>
 {/if}
-
+ -->
 <ul class="list['-_'] mt-10 flex flex-col gap-4">
-  {#each guestbook as entry}
+  {#each data.entries as entry}
     <li class="border-2 border-fg p-3">
       <div class="flex justify-between text-muted">
         <!-- name and website -->

@@ -1,3 +1,4 @@
+import type { PageServerLoad } from "./$types";
 import type { Actions } from "./$types";
 import { KV_REST_API_URL, KV_REST_API_TOKEN } from "$env/static/private";
 import { Redis } from "@upstash/redis";
@@ -27,3 +28,10 @@ export const actions = {
     });
 	}
 } satisfies Actions;
+
+export const load = (async ({ fetch }) => {
+  const response = await fetch("/api/guestbook");
+  const entries = await response.json();
+
+  return { entries };
+}) satisfies PageServerLoad;

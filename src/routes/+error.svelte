@@ -1,6 +1,6 @@
 <script>
 	import { page } from "$app/state";
-    import Header from "$lib/components/Header.svelte";
+  import Header from "$lib/components/Header.svelte";
 </script>
 
 <Header title="oops!" description="something went wrong" />
