@@ -6,7 +6,6 @@
 </script>
 
 <!-- banner -->
-<!-- <div class="grid-background border-2 border-fg w-full h-30"></div> -->
 <div class="w-full h-30 border2 border-fg">
   <div
     class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full"
