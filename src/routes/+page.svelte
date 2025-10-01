@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
-  import { formatDate, isMobileUserAgentData, minutesToReadable } from "$lib/utils";
+  import { formatDate, minutesToReadable } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -74,7 +74,7 @@
 
 <Header
   title="@deltea"
-  description={isMobileUserAgentData() ? "tinkering with hardware" : "1.01x dev | currently tinkering with hardware"}
+  description="tinkering with hardware"
 />
 
 <p class="text-muted">
