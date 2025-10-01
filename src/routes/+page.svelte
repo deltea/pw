@@ -113,10 +113,10 @@
     <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 w-1/2">
       <div class="flex justify-between w-full">
         <p class="font-bold">{post.title}</p>
-        <time>{formatDate(post.date)}</time>
+        <time>{(post.date)}</time>
       </div>
 
-      <p class="break-words text-muted">
+      <p class="break-words line-clamp-4 text-muted">
         {post.excerpt}
       </p>
     </a>
