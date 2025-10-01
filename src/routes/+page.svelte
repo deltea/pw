@@ -106,10 +106,10 @@
 </ul>
 
 <!-- <a href="/blog" class="font-bold mt-10 mb-6 underline">BLOG</a> -->
-<!-- <h1 class="font-bold mt-10 mb-6">BLOG</h1>
+<h1 class="font-bold mt-10 mb-6">BLOG</h1>
 
 <div class="flex gap-4 w-full">
-  {#each (data.posts.filter(x => x.published).slice(0, 2)) as post}
+  {#each data.posts as post}
     <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 w-1/2">
       <div class="flex justify-between w-full">
         <p class="font-bold">{post.title}</p>
@@ -121,7 +121,7 @@
       </p>
     </a>
   {/each}
-</div> -->
+</div>
 
 <!-- stats -->
 {#if languages.length > 0}
