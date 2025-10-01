@@ -116,7 +116,7 @@
         <time>{formatDate(post.date)}</time>
       </div>
 
-      <p class="break-words line-clamp-4 text-muted">
+      <p class="break-words text-muted">
         {post.excerpt}
       </p>
     </a>
