@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
-  import { formatDate, isMobileUserAgentData, minutesToReadable } from "$lib/utils";
+  import { formatDate, minutesToReadable } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -74,7 +74,7 @@
 
 <Header
   title="@deltea"
-  description={isMobileUserAgentData() ? "tinkering with hardware" : "1.01x dev | currently tinkering with hardware"}
+  description={"1.01x dev | currently tinkering with hardware"}
 />
 
 <p class="text-muted">
@@ -105,7 +105,6 @@
   {/each}
 </ul>
 
-<!-- <a href="/blog" class="font-bold mt-10 mb-6 underline">BLOG</a> -->
 <h1 class="font-bold mt-10 mb-6">BLOG</h1>
 
 <div class="flex gap-4 w-full">
@@ -124,7 +123,7 @@
 </div>
 
 <a href="/blog" class="underline font-bold mt-4">
-  see more posts >
+  {"see more posts >"}
 </a>
 
 <!-- stats -->

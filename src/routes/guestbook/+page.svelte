@@ -1,15 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import Header from "$lib/components/Header.svelte";
-
-  interface GuestbookEntry {
-    name?: string;
-    timestamp: string;
-    website?: string;
-    music?: string;
-    food?: string;
-    message: string;
-  }
 
   let { data } = $props();
   let isSending = $state(false);

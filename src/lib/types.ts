@@ -5,3 +5,12 @@ export type Post = {
 	excerpt: string
 	published: boolean
 }
+
+export type GuestbookEntry = {
+	name?: string;
+	timestamp: string;
+	website?: string;
+	music?: string;
+	food?: string;
+	message: string;
+}

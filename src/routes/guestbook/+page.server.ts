@@ -2,6 +2,7 @@ import type { PageServerLoad } from "./$types";
 import type { Actions } from "./$types";
 import { KV_REST_API_URL, KV_REST_API_TOKEN } from "$env/static/private";
 import { Redis } from "@upstash/redis";
+import type { GuestbookEntry } from "$lib/types";
 
 const redis = new Redis({
   url: KV_REST_API_URL || "",
@@ -31,7 +32,7 @@ export const actions = {
 
 export const load = (async ({ fetch }) => {
   const response = await fetch("/api/guestbook");
-  const entries = await response.json();
+  const entries: GuestbookEntry[] = await response.json();
 
   return { entries };
 }) satisfies PageServerLoad;
