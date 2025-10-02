@@ -107,9 +107,9 @@
 
 <h1 class="font-bold mt-10 mb-6">BLOG</h1>
 
-<div class="flex gap-4 w-full">
+<div class="flex flex-col sm:flex-row gap-4 w-full">
   {#each data.posts as post}
-    <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 w-1/2">
+    <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 sm:w-1/2">
       <div class="flex justify-between w-full">
         <p class="font-bold">{post.title}</p>
         <time>{formatDate(post.date)}</time>
