@@ -9,7 +9,7 @@
 </script>
 
 <!-- banner -->
-<div class="w-full h-30 border2 border-fg">
+<div class="w-full sm:h-36 h-30 border2 border-fg">
   <div
     class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full"
     style:background-image="url({banner})"
