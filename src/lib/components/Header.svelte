@@ -26,7 +26,7 @@
   </a>
 
   <!-- title card -->
-  <a href="/" class="flex flex-col gap-2 sm:gap-1.5 justify-end text-center sm:text-left px-8">
+  <a href="/" class="flex flex-col gap-2 sm:gap-1.5 text-center sm:text-left sm:px-0 px-10">
     <h1 class="font-bold text-2xl sm:text-2xl">{title}</h1>
     <h2 class="text-fg sm:w-full">{description}</h2>
   </a>

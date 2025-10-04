@@ -74,7 +74,7 @@
 
 <Header
   title="@deltea"
-  description={"1.01x dev | currently tinkering with hardware"}
+  description={"1.01x dev | tinkering with hardware"}
 />
 
 <p class="text-muted">
