@@ -107,7 +107,11 @@
           {formatDate(new Date(entry.timestamp).toDateString())}
           <span class="hidden sm:inline">
             at
-            {formatTime(new Date(entry.timestamp).toTimeString())}
+            {new Date(entry.timestamp).toLocaleTimeString("en-US", {
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true
+            }).toLowerCase()}
           </span>
         </p>
       </div>

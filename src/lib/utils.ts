@@ -1,5 +1,4 @@
 export const formatDate = (date: string) => {
-  console.log(date);
   const dateToFormat = new Date(date.replaceAll("-", "/"));
   const formatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
