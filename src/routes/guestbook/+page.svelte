@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
+  import { formatDate, formatTime } from "$lib/utils";
 
   let { data } = $props();
   let isSending = $state(false);
@@ -103,14 +104,10 @@
 
         <!-- date -->
         <p>
-          {new Date(entry.timestamp).toLocaleDateString()}
+          {formatDate(new Date(entry.timestamp).toDateString())}
           <span class="hidden sm:inline">
             at
-            {new Date(entry.timestamp).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "2-digit",
-              hour12: true
-            }).toLowerCase()}
+            {formatTime(new Date(entry.timestamp).toTimeString())}
           </span>
         </p>
       </div>
