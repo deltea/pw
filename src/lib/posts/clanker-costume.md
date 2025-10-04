@@ -21,7 +21,7 @@ i saw a robot head thingymajig where it's literally just a box with a screen on 
 another interesting booth that caught my eye was the *CyberDragon*. it's basically a bunch of adafruit led matrix panels stuck to a helmet, and loaded with custom animations to make it look like a dragon. the single guy who made it takes it to raves, and is starting to sell them for like 3000 dollars. here's a photo
 
 ![CyberDragon](https://framerusercontent.com/images/ojMptVZY0N4z7kbvnrGOsrgv8.jpg?width=720&height=953)
-<Caption>CyberDragon (bestseller in the furry community i'm sure!)</Caption>
+<Caption>CyberDragon</Caption>
 
 so how do these 2 projects tie into possibly my next project??? here's how: *halloween costume*
 
