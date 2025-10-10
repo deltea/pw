@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import { formatDate, formatTime } from "$lib/utils";
+  import { formatDate } from "$lib/utils";
 
   let { data } = $props();
   let isSending = $state(false);
