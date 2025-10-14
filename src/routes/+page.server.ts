@@ -54,7 +54,6 @@ export const load = (async ({ fetch }) => {
   // get steam last played game
   const game = await getSteamLastPlayed();
 
-
   return {
     posts,
     languages,

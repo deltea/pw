@@ -33,3 +33,7 @@ export function isMobileUserAgentData() {
 
   return navigator.userAgent.toLowerCase().includes("mobile");
 }
+
+export function prettyURL(url: string): string {
+  return url.replace(/https?:\/\//, "").replace(/www\./, "");
+}

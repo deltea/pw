@@ -1,13 +1,9 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import { formatDate } from "$lib/utils";
+  import { formatDate, prettyURL } from "$lib/utils";
 
   let { data } = $props();
   let isSending = $state(false);
-
-  function prettyURL(url: string): string {
-    return url.replace(/https?:\/\//, "").replace(/www\./, "");
-  }
 </script>
 
 <svelte:head>
