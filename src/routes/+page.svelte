@@ -1,71 +1,14 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { PUBLIC_LASTFM_API_KEY } from "$env/static/public";
   import { projects } from "$lib/projects";
   import { formatDate, minutesToReadable } from "$lib/utils";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
 
-  interface Track {
-    title: string;
-    artist: string;
-    cover: string;
-  }
-
   let { data } = $props();
-  let track: Track | null = $state(null);
   let isNowPlaying: boolean = $state(false);
   let languages: any[] = $state([]);
-  let game: any | null = $state(null);
 
-  // const languageBlacklist = ["gdscript3", "scene", "markdown"];
-
-  // async function getWakatimeData() {
-  //   try {
-  //     const response = await fetch("/api/wakatime");
-  //     const data = await response.json();
-  //     const result = data.languages.filter((lang: any) => !languageBlacklist.includes(lang.name.toLowerCase()));
-  //     return result.slice(0, 5);
-  //   } catch (error) {
-  //     console.error("failed to fetch hackatime data:", error);
-  //     return [];
-  //   }
-  // }
-
-  // async function getLastPlayedTrack() {
-  //   const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=deltea_&api_key=${PUBLIC_LASTFM_API_KEY}&format=json&limit=1`);
-  //   const data = await response.json();
-  //   const result = data.recenttracks.track[0];
-
-  //   return {
-  //     isNowPlaying: result["@attr"]?.nowplaying,
-  //     track: {
-  //       title: result.name,
-  //       artist: result.artist["#text"],
-  //       cover: result.image[1]["#text"]
-  //     }
-  //   };
-  // }
-
-  // async function getSteamLastPlayed() {
-  //   const response = await fetch("/api/steam");
-  //   const data = await response.json();
-  //   return data.games[0];
-  // }
-
-  onMount(async () => {
-    // // get wakatime data
-    // languages = await getWakatimeData();
-
-    // // get last.fm track
-    // const response = await getLastPlayedTrack();
-    // track = response.track;
-    // isNowPlaying = response.isNowPlaying;
-
-    // // get steam last played game
-    // game = await getSteamLastPlayed();
-  });
 </script>
 
 <svelte:head>
