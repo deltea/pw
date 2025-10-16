@@ -30,3 +30,7 @@ i originally wanted to make a keyboard themed around the japanese probiotic beve
 one thing i'm not really sure about is whether i want high-profile or low-profile mechanical switches. i like pressing the normal mechanical switches, but i feel like low-profile switches are actually better for typing fast. i also need to take in account what keycaps will fit onto each type of switch, since i don't think you can just put any keycap on a low-profile switch. i like the low-profile keycaps, since they are all flat and more consistent, but there doesn't seem to be that many of them.
 
 i don't really know what i want to theme the keyboard around now, so i'll need to think about it some more. this keyboard is not just for aesthetics, so i'll need to come up with the best layout for it. i've already decided that i want a split ortholinear keyboard, so maybe i can start with that?
+
+---
+
+ok so halfway into thinking about the design of the keyboard, i realize that it might actually be better to make a non-split wireless ortholinear keyboard and the reason for that is because i don't love the layout of most split keyboards. having 2 halves also means i have to have 2 separate microcontrollers in each halve.
