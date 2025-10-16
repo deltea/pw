@@ -6,9 +6,6 @@
   import Header from "$lib/components/Header.svelte";
 
   let { data } = $props();
-  let isNowPlaying: boolean = $state(false);
-  let languages: any[] = $state([]);
-
 </script>
 
 <svelte:head>
@@ -70,14 +67,14 @@
 </a>
 
 <!-- stats -->
-{#if languages.length > 0}
+{#if data.languages.length > 0}
   <h2 class="font-bold mt-10 mb-6 space-x-1">
     <span>LANGUAGE STATS</span>
     <span class="text-muted font-normal">(since may 2025)</span>
   </h2>
 
   <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
-    {#each languages as language}
+    {#each data.languages as language}
       <div class="flex flex-col gap-2 font-bold">
         <div class="flex items-center lowercase justify-between">
           <h2>[{language.name}]</h2>
@@ -108,11 +105,11 @@
 
       <div class="flex flex-col justify-between min-w-0">
         <p class="text-muted font-bold text-xs flex items-center gap-2">
-          {#if isNowPlaying}
+          {#if data.isNowPlaying}
             <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
           {/if}
 
-          {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+          {data.isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
         </p>
 
         <h3 title={data.track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
