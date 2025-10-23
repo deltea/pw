@@ -23,20 +23,23 @@
 
   let container: HTMLDivElement;
   let scrollAmount = 0;
+  let interval: NodeJS.Timeout;
 
   function scroll() {
-    scrollAmount += SCROLL_SPEED;
+    scrollAmount += 4;
+
     if (container) {
       if (scrollAmount >= container.scrollWidth / 2) {
         scrollAmount = 0;
       }
       container.style.transform = `translateX(-${scrollAmount}px)`;
     }
-
-    requestAnimationFrame(scroll);
   }
 
-  onMount(scroll)
+  onMount(() => {
+    interval = setInterval(scroll, 100);
+    return () => clearInterval(interval);
+  });
 </script>
 
 <div class="flex space-x-2 overflow-hidden no-scrollbar mt-16 -mb-8">
