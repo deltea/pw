@@ -56,6 +56,13 @@ export const projects = [
       source: "https://github.com/deltea/themoviegame",
     },
     {
+      title: "button-maker",
+      type: "web",
+      description: "a small tool to make 88x31 buttons",
+      link: "https://buttons.deltea.space/",
+      source: "https://github.com/deltea/button-maker",
+    },
+    {
       title: "youguess",
       type: "web",
       description: "higher or lower game, but with youtube videos",
