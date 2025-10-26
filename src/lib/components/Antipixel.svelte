@@ -3,22 +3,23 @@
 
   const SCROLL_SPEED = 0.4;
   const buttons = [
-    "button-now",
-    "crashout",
-    "flipnote",
-    "godot",
-    "homebrew",
-    "internet-archive",
-    "itch-io",
-    "kris-where-are-we",
-    "last-fm",
-    "neocities",
-    "peek",
-    "rain-world",
-    "rice-place",
-    "spamton",
-    "transistor",
-    "yeah"
+    "button-now.webp",
+    "crashout.webp",
+    "flipnote.webp",
+    "godot.webp",
+    "homebrew.webp",
+    "internet-archive.webp",
+    "itch-io.webp",
+    "peek.webp",
+    "kris-where-are-we.webp",
+    "last-fm.webp",
+    "neocities.webp",
+    "rain-world.webp",
+    "rice-place.webp",
+    "spamton.webp",
+    "transistor.webp",
+    "yeah.webp",
+    "lain.png"
   ];
 
   let container: HTMLDivElement;
@@ -46,7 +47,7 @@
   <div bind:this={container} class="flex space-x-2">
     {#each [1,2] as _}
       {#each buttons as button}
-        <img class="inline pixelated" src="/antipixel/{button}.webp" alt="web button">
+        <img class="inline pixelated" src="/antipixel/{button}" alt="web button">
       {/each}
     {/each}
   </div>
