@@ -1,7 +1,7 @@
 export const projects = [
     // ------ game projects ------
     {
-      title: "power-cut",
+      title: "power cut",
       type: "game",
       description: "a short puzzle platformer made for a game jam",
       link: "https://deltea.itch.io/power-cut",
@@ -34,7 +34,7 @@ export const projects = [
       link: "https://deltea.itch.io/rpgeometry",
     },
     {
-      title: "long-shot",
+      title: "long shot",
       type: "game",
       description: "an abstract shooter with a weird movement mechanic",
       link: "https://deltea.itch.io/long-shot",
@@ -49,14 +49,14 @@ export const projects = [
       source: "https://github.com/deltea/downbeat"
     },
     {
-      title: "the-movie-game",
+      title: "the movie game",
       type: "web",
       description: "higher or lower game, but with movies",
       link: "https://movie-game.deltea.space/",
       source: "https://github.com/deltea/themoviegame",
     },
     {
-      title: "button-maker",
+      title: "button maker",
       type: "web",
       description: "a small tool to make 88x31 buttons",
       link: "https://buttons.deltea.space/",
@@ -70,14 +70,14 @@ export const projects = [
       source: "https://github.com/deltea/youguess",
     },
     {
-      title: "atlas-academy",
+      title: "atlas academy",
       type: "web",
       description: "a blog made to document my travels",
       link: "https://atlasacademy.blog/",
       source: "https://github.com/deltea/atlasacademy.blog",
     },
     {
-      title: "color-pong",
+      title: "color pong",
       type: "web",
       description: "a cool looking screensaver-ahh pong simulation",
       link: "https://color-pong.deltea.space/",
