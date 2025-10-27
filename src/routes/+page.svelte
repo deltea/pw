@@ -27,7 +27,7 @@
 <ul class="list-['-_'] pl-8">
   {#each projects.filter(p => p.type === "web") as project}
     <li class="space-x-0">
-      <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
       <span class="text-muted">/ {project.description}</span>
     </li>
   {/each}
@@ -39,7 +39,7 @@
 <ul class="list-['-_'] pl-8">
   {#each projects.filter(p => p.type === "game") as project}
     <li class="space-x-0">
-      <a href={project.link} target="_blank" class="font-bold underline">{project.title}</a>
+      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
       <span class="text-muted">/ {project.description}</span>
     </li>
   {/each}
@@ -49,9 +49,9 @@
 
 <div class="flex flex-col sm:flex-row gap-4 w-full">
   {#each data.posts as post}
-    <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 sm:w-1/2">
+    <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 group sm:w-1/2">
       <div class="flex justify-between w-full">
-        <p class="font-bold">{post.title}</p>
+        <p class="font-bold group-hover:underline">{post.title}</p>
         <time>{formatDate(post.date)}</time>
       </div>
 
@@ -62,7 +62,7 @@
   {/each}
 </div>
 
-<a href="/blog" class="underline font-bold mt-4">
+<a href="/blog" class="hover:underline font-bold mt-4">
   {"see more posts >"}
 </a>
 
@@ -145,5 +145,9 @@
     </div>
   {/if}
 </div>
+
+<a href="/playlists" class="hover:underline font-bold mt-4">
+  {"see my playlists >"}
+</a>
 
 <Antipixel />
