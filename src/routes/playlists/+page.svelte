@@ -11,7 +11,7 @@
 
 <Header
   title="playlists"
-  description="all my mixes over the years"
+  description="all my mixes sorted in chronological order"
 />
 
 {#each data.playlists as playlist}
