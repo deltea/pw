@@ -1,6 +1,7 @@
 <script lang="ts">
   import { projects } from "$lib/projects";
   import { formatDate, minutesToReadable } from "$lib/utils";
+  import musicPlaceholder from "$lib/assets/music-placeholder.webp";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
@@ -100,7 +101,7 @@
     <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
       <div
         class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-        style:background-image="url('{data.track?.cover ? data.track.cover : "/music-placeholder.webp"}')"
+        style:background-image="url('{data.track?.cover ? data.track.cover : musicPlaceholder}')"
       ></div>
 
       <div class="flex flex-col justify-between min-w-0">
