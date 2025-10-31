@@ -5,8 +5,6 @@
   import { PUBLIC_YOUTUBE_API_KEY } from "$env/static/public";
   import { musicPlayerUrl } from "$lib/stores";
 
-  // let { playlistUrl } = $props();
-
   let playerElement: HTMLIFrameElement;
   let player: YT.Player;
   let tracks: string[] = $state([]);
@@ -16,21 +14,39 @@
 
   musicPlayerUrl.subscribe((url) => {
     console.log("new url: ", url);
-    loadPlaylist(url);
+    loadNewPlaylist(url);
   });
 
-  async function loadPlaylist(url: string) {
-    player?.loadPlaylist({
-      listType: "playlist",
-      list: url.split("list=")[1],
-    });
+  async function loadNewPlaylist(url: string) {
+    if (!window.YT) return;
+    if (player) player.destroy();
 
-    tracks = [];
-    setTimeout(() => {
-      currentTrackIndex = 0;
-      tracks = player?.getPlaylist() || [];
-      console.log($state.snapshot(tracks));
-    }, 1500);
+    player = new YT.Player(playerElement, {
+      playerVars: {
+        listType: "playlist",
+        list: url.split("list=")[1],
+      },
+      events: {
+        onReady: (event) => {
+          console.log("player ready");
+          isReady = true;
+
+          const playlist = player.getPlaylist();
+          tracks = playlist;
+          currentTrackIndex = 0;
+          event.target.playVideoAt(0);
+        },
+        onStateChange: (event) => {
+          console.log("state changed: ", event.data);
+          if (event.data === YT.PlayerState.PLAYING || event.data === YT.PlayerState.BUFFERING || event.data === YT.PlayerState.UNSTARTED) {
+            isPlaying = true;
+            currentTrackIndex = player.getPlaylistIndex();
+          } else {
+            isPlaying = false;
+          }
+        },
+      },
+    });
   }
 
   function togglePlay() {
@@ -87,27 +103,7 @@
     }
 
     window.onYouTubeIframeAPIReady = () => {
-      if (player) return;
-      player = new YT.Player(playerElement, {
-        playerVars: {
-          listType: "playlist",
-        },
-        events: {
-          onReady: (event) => {
-            console.log("player ready");
-            loadPlaylist($musicPlayerUrl);
-            isReady = true;
-          },
-          onStateChange: (event) => {
-            console.log("state changed: ", event.data);
-            if (event.data === YT.PlayerState.PLAYING || event.data === YT.PlayerState.BUFFERING) {
-              isPlaying = true;
-            } else {
-              isPlaying = false;
-            }
-          },
-        },
-      });
+      loadNewPlaylist($musicPlayerUrl);
     };
 
     return () => {
