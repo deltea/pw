@@ -82,12 +82,14 @@
       return {
         title: snippet.title,
         artist: snippet.channelTitle,
+        artistId: snippet.channelId,
         cover: snippet.thumbnails?.high?.url || snippet.thumbnails?.default?.url || musicPlaceholder
       };
     } else {
       return {
         title: "unknown title",
         artist: "unknown artist",
+        artistId: "",
         cover: musicPlaceholder
       };
     }
@@ -134,8 +136,20 @@
       ></div>
 
       <div class="flex flex-col w-full text-center mt-4">
-        <h3 class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">{data.title}</h3>
-        <p class="text-muted font-bold overflow-hidden whitespace-nowrap text-sm overflow-ellipsis">{data.artist.replaceAll(" - Topic", "")}</p>
+        <a
+          target="_blank"
+          href="https://music.youtube.com/watch?v={tracks[currentTrackIndex]}&list={$musicPlayerUrl.split("list=")[1]}"
+          class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis hover:underline"
+        >
+          {data.title}
+        </a>
+        <a
+          target="_blank"
+          href="https://music.youtube.com/channel/{data.artistId}"
+          class="text-muted font-bold overflow-hidden whitespace-nowrap text-sm overflow-ellipsis hover:underline"
+        >
+          {data.artist.replaceAll(" - Topic", "")}
+        </a>
       </div>
     {/await}
 
