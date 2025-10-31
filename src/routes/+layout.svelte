@@ -34,8 +34,8 @@
   </main>
 </div>
 
-{#if $musicPlayerUrl}
-  <div class="fixed bottom-0 right-0 m-4 w-80">
-    <MusicPlayer />
-  </div>
-{/if}
+<div class="fixed bottom-0 right-0 m-4 w-80">
+  <MusicPlayer />
+</div>
+<!-- {#if $musicPlayerUrl}
+{/if} -->

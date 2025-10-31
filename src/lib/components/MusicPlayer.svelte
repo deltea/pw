@@ -1,25 +1,27 @@
 <script lang="ts">
   import { browser } from "$app/environment";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
   import { PUBLIC_YOUTUBE_API_KEY } from "$env/static/public";
   import { musicPlayerUrl } from "$lib/stores";
 
   let playerElement: HTMLIFrameElement;
-  let player: YT.Player;
+  let player: YT.Player | null = $state(null);
   let tracks: string[] = $state([]);
   let currentTrackIndex: number = $state(0);
   let isReady = $state(false);
   let isPlaying = $state(false);
 
-  musicPlayerUrl.subscribe((url) => {
-    console.log("new url: ", url);
+  const unsubscribe = musicPlayerUrl.subscribe((url) => {
+    // console.log("new url: ", url);
     loadNewPlaylist(url);
   });
 
   async function loadNewPlaylist(url: string) {
-    if (!window.YT) return;
+    if (!browser || !window.YT) return;
     if (player) player.destroy();
+
+    console.log(url);
 
     player = new YT.Player(playerElement, {
       playerVars: {
@@ -30,9 +32,7 @@
         onReady: (event) => {
           console.log("player ready");
           isReady = true;
-
-          const playlist = player.getPlaylist();
-          tracks = playlist;
+          tracks = player.getPlaylist();
           currentTrackIndex = 0;
           event.target.playVideoAt(0);
         },
@@ -97,8 +97,7 @@
 
   onMount(() => {
     if (!browser) return;
-
-    if (!window.YT) {
+    if (window && !window.YT) {
       const tag = document.createElement("script");
 			tag.src = "https://www.youtube.com/iframe_api";
 			document.body.appendChild(tag);
@@ -114,11 +113,24 @@
       }
     };
   });
+
+  onDestroy(unsubscribe);
 </script>
 
-{#if tracks}
-
+{#if tracks && tracks.length > 0}
   <div class="border-2 border-fg p-3 bg-bg w-[20rem] h-[32rem] flex flex-col items-center">
+    <div class="w-full flex items-center mb-2 gap-1">
+      <button
+        onclick={() => musicPlayerUrl.set("")}
+        class="flex justify-center items-center cursor-pointer"
+      >
+        <iconify-icon icon="mdi:close" class="text-2xl"></iconify-icon>
+      </button>
+      <a href={$musicPlayerUrl} class="flex justify-center items-center cursor-pointer">
+        <iconify-icon icon="mdi:arrow-top-right" class="text-2xl"></iconify-icon>
+      </a>
+    </div>
+
     {#await getTrackData(tracks[currentTrackIndex])}
       <div
         class="w-full aspect-video bg-cover bg-center"
@@ -155,13 +167,13 @@
 
     <div class="flex items-center justify-center gap-3 w-full mt-1">
       <button
-        on:click={() => changeTrack(-1)}
+        onclick={() => changeTrack(-1)}
         class="flex justify-center items-center cursor-pointer"
       >
         <iconify-icon icon="mdi:skip-previous" class="text-3xl"></iconify-icon>
       </button>
       <button
-        on:click={togglePlay}
+        onclick={togglePlay}
         class="flex justify-center items-center cursor-pointer"
       >
         <iconify-icon
@@ -171,7 +183,7 @@
       </button>
 
       <button
-        on:click={() => changeTrack(1)}
+        onclick={() => changeTrack(1)}
         class="flex justify-center items-center cursor-pointer"
       >
         <iconify-icon icon="mdi:skip-next" class="text-3xl"></iconify-icon>
@@ -182,7 +194,7 @@
       {#if tracks.length > 0}
         {#each tracks as track, i}
           <button
-            on:click={() => {
+            onclick={() => {
               currentTrackIndex = i;
               player.playVideoAt(i);
             }}
@@ -208,6 +220,6 @@
       {/if}
     </div>
   </div>
-
-  <div bind:this={playerElement} class="hidden"></div>
 {/if}
+
+<div bind:this={playerElement} class="hidden"></div>
