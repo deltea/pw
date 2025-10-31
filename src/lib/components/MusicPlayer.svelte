@@ -126,7 +126,7 @@
       >
         <iconify-icon icon="mdi:close" class="text-2xl"></iconify-icon>
       </button>
-      <a href={$musicPlayerUrl} class="flex justify-center items-center cursor-pointer">
+      <a target="_blank" href={$musicPlayerUrl} class="flex justify-center items-center cursor-pointer">
         <iconify-icon icon="mdi:arrow-top-right" class="text-2xl"></iconify-icon>
       </a>
     </div>
