@@ -25,11 +25,12 @@
       list: url.split("list=")[1],
     });
 
+    tracks = [];
     setTimeout(() => {
       currentTrackIndex = 0;
       tracks = player?.getPlaylist() || [];
       console.log($state.snapshot(tracks));
-    }, 1000);
+    }, 1500);
   }
 
   function togglePlay() {

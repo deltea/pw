@@ -1,10 +1,18 @@
 import type { PageServerLoad } from "./$types";
+import { removeParentheses } from "$lib/utils";
 
 export const load = (async ({ fetch }) => {
   const response = await fetch("/api/playlists");
   const data = await response.json();
-  console.log(data);
   const filtered = data.filter((item: any) => /- Mix/.test(item.snippet.title));
+
+  const unsortedPlaylists = data
+    .filter((item: any) => !/- Mix/.test(item.snippet.title))
+    .map((item: any) => ({
+      title: removeParentheses(item.snippet.title),
+      url: `https://music.youtube.com/playlist?list=${item.id}`,
+    }));
+
   const playlists = filtered.map((item: any) => {
     const num = item.snippet.title.match(/Mix (\d+)/);
     const title = item.snippet.title.replace(/ - Mix \d+/, "").trim();
@@ -17,5 +25,5 @@ export const load = (async ({ fetch }) => {
     }
   });
 
-  return { playlists };
+  return { playlists, unsortedPlaylists };
 }) satisfies PageServerLoad;

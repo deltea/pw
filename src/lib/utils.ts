@@ -37,3 +37,7 @@ export function isMobileUserAgentData() {
 export function prettyURL(url: string): string {
   return url.replace(/https?:\/\//, "").replace(/www\./, "");
 }
+
+export function removeParentheses(text: string) {
+  return text.replace(/\s*\(.*?\)\s*/g, "").trim();
+}
