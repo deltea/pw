@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from "$components/Header.svelte";
+  import { musicPlayerUrl } from "$lib/stores.js";
   import { formatDate } from "$lib/utils";
 
   let { data } = $props();
@@ -17,9 +18,15 @@
 {#each data.playlists as playlist}
   <div class="flex">
     <p class="w-16">#{playlist.num}</p>
-    <a target="_blank" href={playlist.url} class="font-bold grow hover:underline">
+    <!-- <a target="_blank" href={playlist.url} class="font-bold grow hover:underline">
       {playlist.title.toLowerCase()}
-    </a>
+    </a> -->
+    <button
+      onclick={() => (musicPlayerUrl.set(playlist.url))}
+      class="font-bold grow hover:underline text-left cursor-pointer"
+    >
+      {playlist.title.toLowerCase()}
+    </button>
     <p class="text-muted">{formatDate(playlist.date)}</p>
   </div>
 {/each}

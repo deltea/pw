@@ -4,8 +4,10 @@
   import { oneko } from "$lib/oneko";
   import { onMount } from "svelte";
   import { isMobileUserAgentData } from "$lib/utils";
+  import { musicPlayerUrl } from "$lib/stores";
 
   import Footer from "$lib/components/Footer.svelte";
+  import MusicPlayer from "$components/MusicPlayer.svelte";
 
 	let { children } = $props();
 
@@ -31,3 +33,9 @@
     <Footer />
   </main>
 </div>
+
+{#if $musicPlayerUrl}
+  <div class="fixed bottom-0 right-0 m-4 w-80">
+    <MusicPlayer />
+  </div>
+{/if}
