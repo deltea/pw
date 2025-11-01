@@ -1,7 +1,7 @@
 <script lang="ts">
   import Header from "$components/Header.svelte";
   import { musicPlayerUrl } from "$lib/stores.js";
-  import { formatDate } from "$lib/utils";
+  import { formatDate, isMobileUserAgentData } from "$lib/utils";
 
   let { data } = $props();
 </script>
@@ -23,12 +23,21 @@
 {#each data.playlists as playlist}
   <div class="flex">
     <p class="w-16">#{playlist.num}</p>
-    <button
-      onclick={() => (musicPlayerUrl.set(playlist.url))}
-      class="font-bold grow hover:underline text-left cursor-pointer"
-    >
-      {playlist.title.toLowerCase()}
-    </button>
+    {#if isMobileUserAgentData()}
+      <a
+        href={playlist.url}
+        class="font-bold grow hover:underline text-left"
+      >
+        {playlist.title.toLowerCase()}
+      </a>
+    {:else}
+      <button
+        onclick={() => (musicPlayerUrl.set(playlist.url))}
+        class="font-bold grow hover:underline text-left cursor-pointer"
+      >
+        {playlist.title.toLowerCase()}
+      </button>
+    {/if}
     <p class="text-muted">{formatDate(playlist.date)}</p>
   </div>
 {/each}
@@ -40,12 +49,22 @@
 <div class="grid grid-cols-1 sm:grid-cols-2">
   {#each data.unsortedPlaylists as playlist}
     <div class="flex">
-      <button
-        onclick={() => (musicPlayerUrl.set(playlist.url))}
-        class="font-bold grow hover:underline text-left cursor-pointer overflow-hidden whitespace-nowrap overflow-ellipsis"
-      >
-        {playlist.title.toLowerCase()}
-      </button>
+
+      {#if isMobileUserAgentData()}
+        <a
+          href={playlist.url}
+          class="font-bold grow hover:underline text-left overflow-hidden whitespace-nowrap overflow-ellipsis"
+        >
+          {playlist.title.toLowerCase()}
+        </a>
+      {:else}
+        <button
+          onclick={() => (musicPlayerUrl.set(playlist.url))}
+          class="font-bold grow hover:underline text-left cursor-pointer overflow-hidden whitespace-nowrap overflow-ellipsis"
+        >
+          {playlist.title.toLowerCase()}
+        </button>
+      {/if}
     </div>
   {/each}
 </div>
