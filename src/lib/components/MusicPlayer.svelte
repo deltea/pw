@@ -17,7 +17,7 @@
   });
 
   async function loadNewPlaylist(url: string) {
-    if (!url || !browser || !window.YT) return;
+    if (url === null || !browser || !window.YT) return;
     if (player) player.destroy();
 
     console.log(url);
