@@ -7,6 +7,7 @@
 
   import Footer from "$lib/components/Footer.svelte";
   import MusicPlayer from "$components/MusicPlayer.svelte";
+    import DraggableWindow from "$components/DraggableWindow.svelte";
 
 	let { children } = $props();
 
@@ -33,6 +34,6 @@
   </main>
 </div>
 
-<div class="fixed bottom-0 right-0 m-4 w-80">
+<DraggableWindow>
   <MusicPlayer />
-</div>
+</DraggableWindow>
