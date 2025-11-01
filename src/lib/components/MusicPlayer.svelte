@@ -4,7 +4,6 @@
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
   import { PUBLIC_YOUTUBE_API_KEY } from "$env/static/public";
   import { musicPlayerUrl } from "$lib/stores";
-  import { YT } from "$lib/types";
 
   let playerElement: HTMLDivElement;
   let player: YT.Player | null = $state(null);
@@ -14,7 +13,6 @@
   let isPlaying = $state(false);
 
   const unsubscribe = musicPlayerUrl.subscribe((url) => {
-    // console.log("new url: ", url);
     loadNewPlaylist(url);
   });
 
@@ -39,7 +37,11 @@
         },
         onStateChange: (event) => {
           console.log("state changed: ", event.data);
-          if (event.data === 1 || event.data === 3 || event.data === -1) {
+          if (
+            event.data === YT.PlayerState.PLAYING ||
+            event.data === YT.PlayerState.BUFFERING ||
+            event.data === YT.PlayerState.UNSTARTED
+          ) {
             isPlaying = true;
             currentTrackIndex = player?.getPlaylistIndex() || 0;
           } else {
