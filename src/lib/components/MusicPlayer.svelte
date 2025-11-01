@@ -4,8 +4,9 @@
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
   import { PUBLIC_YOUTUBE_API_KEY } from "$env/static/public";
   import { musicPlayerUrl } from "$lib/stores";
+  import { YT } from "$lib/types";
 
-  let playerElement: HTMLIFrameElement;
+  let playerElement: HTMLDivElement;
   let player: YT.Player | null = $state(null);
   let tracks: string[] = $state([]);
   let currentTrackIndex: number = $state(0);
@@ -18,7 +19,7 @@
   });
 
   async function loadNewPlaylist(url: string) {
-    if (!browser || !window.YT) return;
+    if (!url || !browser || !window.YT) return;
     if (player) player.destroy();
 
     console.log(url);
@@ -32,15 +33,15 @@
         onReady: (event) => {
           console.log("player ready");
           isReady = true;
-          tracks = player.getPlaylist();
+          tracks = player?.getPlaylist() || [];
           currentTrackIndex = 0;
           event.target.playVideoAt(0);
         },
         onStateChange: (event) => {
           console.log("state changed: ", event.data);
-          if (event.data === YT.PlayerState.PLAYING || event.data === YT.PlayerState.BUFFERING || event.data === YT.PlayerState.UNSTARTED) {
+          if (event.data === 1 || event.data === 3 || event.data === -1) {
             isPlaying = true;
-            currentTrackIndex = player.getPlaylistIndex();
+            currentTrackIndex = player?.getPlaylistIndex() || 0;
           } else {
             isPlaying = false;
           }
@@ -52,7 +53,7 @@
   function togglePlay() {
     if (!player) return;
     const state = player.getPlayerState();
-    if (state === YT.PlayerState.PLAYING) {
+    if (state === 1) {
       player.pauseVideo();
     } else {
       player.playVideo();
@@ -119,14 +120,20 @@
 
 {#if tracks && tracks.length > 0}
   <div class="border-2 border-fg p-3 bg-bg w-[20rem] h-[32rem] flex flex-col items-center">
-    <div class="w-full flex items-center mb-2 gap-1">
+    <div class="w-full flex items-center mb-2 justify-between">
       <button
         onclick={() => musicPlayerUrl.set("")}
         class="flex justify-center items-center cursor-pointer"
+        aria-label="close music player"
       >
         <iconify-icon icon="mdi:close" class="text-2xl"></iconify-icon>
       </button>
-      <a target="_blank" href={$musicPlayerUrl} class="flex justify-center items-center cursor-pointer">
+      <a
+        target="_blank"
+        href={$musicPlayerUrl}
+        class="flex justify-center items-center cursor-pointer"
+        aria-label="open in youtube music"
+      >
         <iconify-icon icon="mdi:arrow-top-right" class="text-2xl"></iconify-icon>
       </a>
     </div>
@@ -150,7 +157,7 @@
       <div class="flex flex-col w-full text-center mt-4">
         <a
           target="_blank"
-          href="https://music.youtube.com/watch?v={tracks[currentTrackIndex]}&list={$musicPlayerUrl.split("list=")[1]}"
+          href="https://music.youtube.com/watch?v={tracks[currentTrackIndex]}&list={$musicPlayerUrl?.split("list=")[1]}"
           class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis hover:underline"
         >
           {data.title}
@@ -169,22 +176,24 @@
       <button
         onclick={() => changeTrack(-1)}
         class="flex justify-center items-center cursor-pointer"
+        aria-label="previous track"
       >
         <iconify-icon icon="mdi:skip-previous" class="text-3xl"></iconify-icon>
       </button>
       <button
         onclick={togglePlay}
         class="flex justify-center items-center cursor-pointer"
+        aria-label="play/pause"
       >
         <iconify-icon
           icon={isPlaying ? "mdi:pause" : "mdi:play"}
           class="text-5xl"
         ></iconify-icon>
       </button>
-
       <button
         onclick={() => changeTrack(1)}
         class="flex justify-center items-center cursor-pointer"
+        aria-label="next track"
       >
         <iconify-icon icon="mdi:skip-next" class="text-3xl"></iconify-icon>
       </button>
@@ -196,7 +205,7 @@
           <button
             onclick={() => {
               currentTrackIndex = i;
-              player.playVideoAt(i);
+              player?.playVideoAt(i);
             }}
             class="border-2 border-fg p-2 pl-2.5 w-full cursor-pointer text-left group"
           >
@@ -222,4 +231,8 @@
   </div>
 {/if}
 
-<div bind:this={playerElement} class="hidden"></div>
+<div
+  title="music player"
+  bind:this={playerElement}
+  class="hidden"
+></div>
