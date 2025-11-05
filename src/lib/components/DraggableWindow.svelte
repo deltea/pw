@@ -27,7 +27,7 @@
 </script>
 
 <div
-  class="fixed w-80"
+  class="fixed w-80 hover:cursor-move"
   style:top="{position.y}px"
   style:left="{position.x}px"
   onmousedown={onMouseDown}
