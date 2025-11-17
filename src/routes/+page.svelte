@@ -15,11 +15,11 @@
 
 <Header
   title="@deltea"
-  description={"1.01x dev | tinkering with hardware"}
+  description={"currently tinkering with some hardware"}
 />
 
 <p class="text-muted">
-  hi! i'm leo (14y), and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
+  hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, and other random stuff!
 </p>
 
 <!-- web apps -->
