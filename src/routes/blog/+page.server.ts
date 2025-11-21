@@ -5,6 +5,9 @@ export const load = (async ({ fetch }) => {
   const response = await fetch("/api/posts");
   let posts: Post[] = await response.json();
   posts = posts.filter(post => post.published);
+  posts = posts.sort((first, second) =>
+    new Date(second.date).getTime() - new Date(first.date).getTime()
+  );
 
   return { posts };
 }) satisfies PageServerLoad;
