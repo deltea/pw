@@ -43,7 +43,7 @@
   });
 </script>
 
-<div class="flex space-x-2 overflow-hidden no-scrollbar mt-16 -mb-8">
+<div class="flex space-x-2 overflow-hidden no-scrollbar mt-4">
   <div bind:this={container} class="flex space-x-2">
     {#each [1,2] as _}
       {#each buttons as button}
