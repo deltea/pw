@@ -11,7 +11,7 @@ export const GET: RequestHandler = async () => {
     track: {
       title: result.name,
       artist: result.artist["#text"],
-      cover: result.image[1]["#text"]
+      cover: result.image[2]["#text"]
     }
   });
 }
