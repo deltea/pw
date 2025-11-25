@@ -2,7 +2,7 @@
   <div class="flex gap-4">
     <a class="hover:underline" target="_blank" href="https://github.com/deltea">github</a>
     <a class="hover:underline" target="_blank" href="https://deltea.itch.io">itch.io</a>
-    <a class="hover:underline" target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a>
+    <!-- <a class="hover:underline" target="_blank" href="https://github.com/deltea/dotfiles">dotfiles</a> -->
     <!-- <a target="_blank" href="mailto:hello@deltea.space">contact</a> -->
     <a class="hover:underline" href="/guestbook">guestbook</a>
   </div>
