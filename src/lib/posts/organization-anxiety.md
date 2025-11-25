@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 title: design patterns
 date: "11-19-2025"
 excerpt: "why do i have anxiety about structure and design patterns?"
