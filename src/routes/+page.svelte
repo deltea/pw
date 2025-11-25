@@ -70,7 +70,7 @@
 <!-- stats -->
 {#if data.languages.length > 0}
   <h2 class="font-bold mt-10 mb-6 space-x-1">
-    <span>LANGUAGE STATS</span>
+    <span>WAKATIME STATS</span>
     <span class="text-muted font-normal">(since may 2025)</span>
   </h2>
 
