@@ -46,7 +46,12 @@
   {/each}
 </ul>
 
-<h1 class="font-bold mt-10 mb-6">BLOG</h1>
+<div class="flex items-center justify-between w-full">
+  <h1 class="font-bold mt-10 mb-6">BLOG</h1>
+  <a href="/blog" class="hover:underline font-bold mt-4">
+    {"see more posts >"}
+  </a>
+</div>
 
 <div class="flex flex-col sm:flex-row gap-4 w-full">
   {#each data.posts as post}
@@ -62,10 +67,6 @@
     </a>
   {/each}
 </div>
-
-<a href="/blog" class="hover:underline font-bold mt-4">
-  {"see more posts >"}
-</a>
 
 <!-- stats -->
 {#if data.languages.length > 0}
@@ -93,7 +94,12 @@
   </div>
 {/if}
 
-<h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
+<div class="flex items-center justify-between w-full">
+  <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
+  <a href="/playlists" class="hover:underline font-bold mt-4">
+    {"see my playlists >"}
+  </a>
+</div>
 
 <div class="flex md:flex-row flex-col gap-4 w-full">
   {#if data.track}
@@ -146,9 +152,5 @@
     </div>
   {/if}
 </div>
-
-<a href="/playlists" class="hover:underline font-bold mt-4">
-  {"see my playlists >"}
-</a>
 
 <Antipixel />
