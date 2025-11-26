@@ -82,5 +82,18 @@ export const projects = [
       description: "a cool looking screensaver-ahh pong simulation",
       link: "https://color-pong.deltea.space/",
       source: "https://github.com/deltea/color-pong",
+    },
+
+    // ------ hardware projects ------
+    {
+      title: "yume",
+      type: "hardware",
+      description: "a custom mp3 player with an oled screen",
+      link: "https://github.com/deltea/yume_os",
+    },
+    {
+      title: "naicha68",
+      type: "hardware",
+      description: "a 68% gasket-mounted mechanical keyboard with custom pcb"
     }
   ];

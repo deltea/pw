@@ -76,6 +76,23 @@
   {/each}
 </ul>
 
+<!-- hardware -->
+<h2 class="font-bold mt-10 mb-4">HARDWARE PROJECTS</h2>
+
+<ul class="list-['-_'] pl-8">
+  {#each projects.filter(p => p.type === "hardware") as project}
+    <li class="space-x-0">
+      {#if project.link}
+        <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
+      {:else}
+        <p class="font-bold inline">{project.title}</p>
+      {/if}
+      <span class="text-muted">/ {project.description}</span>
+    </li>
+  {/each}
+</ul>
+
+<!-- blog -->
 <div class="flex items-center justify-between w-full">
   <h1 class="font-bold mt-10 mb-6">BLOG</h1>
   <a href="/blog" class="hover:underline font-bold mt-4">
