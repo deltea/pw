@@ -1,6 +1,6 @@
 <script lang="ts">
   import pfp from "$lib/assets/pfp.png";
-  import banner from "$lib/assets/banner.gif"
+  import banner from "$lib/assets/banner.gif";
 
   let { title, description }: {
     title: string;
@@ -9,11 +9,16 @@
 </script>
 
 <!-- banner -->
-<div class="w-full sm:h-36 h-30 border2 border-fg">
+<div class="w-full sm:h-36 h-30 border-fg">
   <div
-    class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full"
+    class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full relative"
     style:background-image="url({banner})"
-  ></div>
+  >
+    <div
+      class="absolute bottom-0 w-full bg-contain bg-repeat-x h-6 left-0"
+      style:background-image="url('/spike.svg')"
+    ></div>
+  </div>
 </div>
 
 <div class="flex flex-col sm:flex-row sm:gap-6 gap-4 sm:-translate-y-8 -translate-y-4 items-center sm:items-end sm:translate-x-8 translate-x-0 mb-6 sm:mb-2">

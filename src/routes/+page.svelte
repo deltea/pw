@@ -7,7 +7,7 @@
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
-    import SkeletonLoader from "$components/SkeletonLoader.svelte";
+  import SkeletonLoader from "$components/SkeletonLoader.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: any[] = $state([]);
