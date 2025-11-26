@@ -35,7 +35,7 @@
   >
     <div
       bind:this={spikesElement}
-      class="absolute bottom-[-1px] w-full bg-contain bg-repeat-x h-6 left-0"
+      class="absolute bottom-[-1px] w-full bg-contain bg-repeat-x sm:h-6 h-4 left-0"
       style:background-image="url('/spike.svg')"
     ></div>
   </div>
