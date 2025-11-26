@@ -88,7 +88,7 @@ export const projects = [
     {
       title: "yume",
       type: "hardware",
-      description: "a custom mp3 player with an oled screen",
+      description: "a custom mp3 player with an oled display and rotary encoder",
       link: "https://github.com/deltea/yume_os",
     },
     {
