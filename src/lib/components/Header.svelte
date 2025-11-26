@@ -1,11 +1,30 @@
 <script lang="ts">
   import pfp from "$lib/assets/pfp.png";
   import banner from "$lib/assets/banner.gif";
+  import { onMount } from "svelte";
 
   let { title, description }: {
     title: string;
     description: string;
   } = $props();
+
+  let spikesElement: HTMLDivElement;
+  let scrollAmount = 0;
+  let interval: NodeJS.Timeout;
+
+  function scroll() {
+    scrollAmount += 6;
+
+    if (spikesElement) {
+      spikesElement.style.backgroundPositionX = `-${scrollAmount}px`;
+    }
+  }
+
+  onMount(() => {
+    interval = setInterval(scroll, 150);
+    return () => clearInterval(interval);
+  });
+
 </script>
 
 <!-- banner -->
@@ -15,6 +34,7 @@
     style:background-image="url({banner})"
   >
     <div
+      bind:this={spikesElement}
       class="absolute bottom-0 w-full bg-contain bg-repeat-x h-6 left-0"
       style:background-image="url('/spike.svg')"
     ></div>
