@@ -60,7 +60,12 @@
 </ul>
 
 <!-- games -->
-<h2 class="font-bold mt-10 mb-4">GAMES</h2>
+<div class="flex items-center justify-between w-full">
+  <h1 class="font-bold mt-10 mb-6">GAMES</h1>
+  <a href="https://deltea.itch.io" target="_blank" class="hover:underline font-bold mt-4">
+    {"see my itch.io >"}
+  </a>
+</div>
 
 <ul class="list-['-_'] pl-8">
   {#each projects.filter(p => p.type === "game") as project}
