@@ -16,7 +16,8 @@
 />
 
 <p class="text-muted mb-6">
-  click a playlist to load it in the music player! (note: these playlist names are literally just random things idk)<br>
+  click a playlist to load it in the music player! (note: these playlist names are literally just random things idk)
+  <br><br>
   these are all sorted by chronological order:
 </p>
 
