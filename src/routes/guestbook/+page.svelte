@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import { formatDate, prettyURL } from "$lib/utils";
+  import { formatDate, isMobileUserAgentData, prettyURL } from "$lib/utils";
 
   let { data } = $props();
   let isSending = $state(false);
@@ -90,9 +90,13 @@
       <div class="flex justify-between text-muted">
         <!-- name and website -->
         <div class="flex gap-4">
-          <p class="font-bold text-fg">[{entry.name}]</p>
+          {#if isMobileUserAgentData()}
+            <a href="{entry.website}" class="font-bold text-fg">[{entry.name}]</a>
+          {:else}
+            <p class="font-bold text-fg">[{entry.name}]</p>
+          {/if}
           {#if entry.website}
-            <a class="underline" target="_blank" href={entry.website}>
+            <a class="underline hidden sm:block" target="_blank" href={entry.website}>
               {prettyURL(entry.website)}
             </a>
           {/if}
