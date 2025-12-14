@@ -76,20 +76,20 @@ export const projects = [
       link: "https://youguess.deltea.space/",
       source: "https://github.com/deltea/youguess",
     },
-    {
-      title: "atlas academy",
-      type: "web",
-      description: "a blog made to document my travels",
-      link: "https://atlasacademy.blog/",
-      source: "https://github.com/deltea/atlasacademy.blog",
-    },
     // {
-    //   title: "color pong",
+    //   title: "atlas academy",
     //   type: "web",
-    //   description: "a cool looking screensaver-ahh pong simulation",
-    //   link: "https://color-pong.deltea.space/",
-    //   source: "https://github.com/deltea/color-pong",
+    //   description: "a blog made to document my travels",
+    //   link: "https://atlasacademy.blog/",
+    //   source: "https://github.com/deltea/atlasacademy.blog",
     // },
+    {
+      title: "color pong",
+      type: "web",
+      description: "a cool looking screensaver-ahh pong simulation",
+      link: "https://color-pong.deltea.space/",
+      source: "https://github.com/deltea/color-pong",
+    },
 
     // ------ hardware projects ------
     {
