@@ -42,6 +42,13 @@ export const projects = [
 
     // ------ web projects ------
     {
+      title: "peridot",
+      type: "web",
+      description: "obsidian meets pinterest, store your ideas locally",
+      link: "https://peridot.deltea.space/",
+      source: "https://github.com/deltea/peridot",
+    },
+    {
       title: "downbeat",
       type: "web",
       description: "a small tool for syncing gifs to the beat",
@@ -76,13 +83,13 @@ export const projects = [
       link: "https://atlasacademy.blog/",
       source: "https://github.com/deltea/atlasacademy.blog",
     },
-    {
-      title: "color pong",
-      type: "web",
-      description: "a cool looking screensaver-ahh pong simulation",
-      link: "https://color-pong.deltea.space/",
-      source: "https://github.com/deltea/color-pong",
-    },
+    // {
+    //   title: "color pong",
+    //   type: "web",
+    //   description: "a cool looking screensaver-ahh pong simulation",
+    //   link: "https://color-pong.deltea.space/",
+    //   source: "https://github.com/deltea/color-pong",
+    // },
 
     // ------ hardware projects ------
     {
