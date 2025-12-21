@@ -102,7 +102,6 @@
           {/if}
         </div>
 
-        <!-- date -->
         <p>
           {formatDate(new Date(entry.timestamp).toDateString())}
           <span class="hidden sm:inline">

@@ -16,21 +16,28 @@
   let game: Game | null = $state(null);
 
   onMount(async () => {
-    const response = await fetch("/api/posts");
-    posts = await response.json();
-    posts = posts.filter(post => post.published);
-    posts = posts.slice(0, 2);
+    fetch("/api/posts").then(async res => {
+      posts = await res.json();
+      posts = posts.filter(post => post.published);
+      posts = posts.slice(0, 2);
+    });
 
     // get wakatime data
-    wakatime = await fetch("/api/wakatime").then(res => res.json()).catch(() => []);
+    fetch("/api/wakatime").then(async res => {
+      wakatime = await res.json();
+    }).catch(() => []);
 
     // get last.fm track
-    const lastfm = await fetch("/api/lastfm").then(res => res.json());
-    track = lastfm.track;
-    isNowPlaying = lastfm.isNowPlaying;
+    fetch("/api/lastfm").then(async res => {
+      const data = await res.json();
+      track = data.track;
+      isNowPlaying = data.isNowPlaying;
+    });
 
     // get steam last played game
-    game = await fetch("/api/steam").then(res => res.json());
+    fetch("/api/steam").then(async res => {
+      game = await res.json();
+    });
   });
 </script>
 
