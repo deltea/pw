@@ -160,7 +160,7 @@
     <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
       <div
         class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-        style:background-image="url('{track?.cover ? track.cover : musicPlaceholder}')"
+        style:background-image="url('{track.cover ?? musicPlaceholder}')"
       ></div>
 
       <div class="flex flex-col justify-between min-w-0">
