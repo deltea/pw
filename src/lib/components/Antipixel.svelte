@@ -19,7 +19,8 @@
     "spamton.webp",
     "transistor.webp",
     "yeah.webp",
-    "lain.png"
+    "lain.png",
+    "pearto.png"
   ];
 
   let container: HTMLDivElement;
