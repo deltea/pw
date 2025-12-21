@@ -3,17 +3,17 @@
   import { formatDate, minutesToReadable } from "$lib/utils";
   import { onMount } from "svelte";
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
-  import type { Post } from "$lib/types.js";
+  import type { Game, MusicTrack, Post, WakatimeLanguage } from "$lib/types.js";
 
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
 
   let posts: Post[] = $state([]);
-  let wakatime: any[] = $state([]);
-  let track: any = $state(null);
+  let wakatime: WakatimeLanguage[] = $state([]);
+  let track: MusicTrack | null = $state(null);
   let isNowPlaying = $state(false);
-  let game: any = $state(null);
+  let game: Game | null = $state(null);
 
   onMount(async () => {
     const response = await fetch("/api/posts");
@@ -25,12 +25,12 @@
     wakatime = await fetch("/api/wakatime").then(res => res.json()).catch(() => []);
 
     // get last.fm track
-    const lastfm = await fetch("/api/lastfm").then(res => res.json()).catch(() => null);
+    const lastfm = await fetch("/api/lastfm").then(res => res.json());
     track = lastfm.track;
     isNowPlaying = lastfm.isNowPlaying;
 
     // get steam last played game
-    game = await fetch("/api/steam").then(res => res.json()).catch(() => null);
+    game = await fetch("/api/steam").then(res => res.json());
   });
 </script>
 

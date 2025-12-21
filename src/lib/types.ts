@@ -15,3 +15,21 @@ export type GuestbookEntry = {
 	food?: string;
 	message: string;
 }
+
+export type MusicTrack = {
+	title: string;
+	artist: string;
+	cover?: string;
+}
+
+export type Game = {
+	name: string;
+	playtime_forever: number;
+	appid: number;
+}
+
+export type WakatimeLanguage = {
+	name: string;
+	text: string;
+	percent: number;
+}
