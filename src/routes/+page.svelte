@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { projects } from "$lib/projects";
+  import { featuredProjects } from "$lib/projects";
   import { formatDate, minutesToReadable } from "$lib/utils";
   import { onMount } from "svelte";
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
@@ -54,46 +54,18 @@
   hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, hardware, and other random stuff!
 </p>
 
-<!-- web apps -->
-<h2 class="font-bold mt-10 mb-4">WEB APPS</h2>
-
-<ul class="list-['-_'] pl-8">
-  {#each projects.filter(p => p.type === "web") as project}
-    <li class="space-x-0">
-      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
-      <span class="text-muted">/ {project.description}</span>
-    </li>
-  {/each}
-</ul>
-
-<!-- games -->
+<!-- projects -->
 <div class="flex items-center justify-between w-full">
-  <h1 class="font-bold mt-10 mb-6">GAMES</h1>
-  <a href="https://deltea.itch.io" target="_blank" class="hover:underline font-bold mt-4">
-    {"see my itch.io >"}
+  <h1 class="font-bold mt-10 mb-6">PROJECTS</h1>
+  <a href="/projects" class="hover:underline font-bold mt-4">
+    {"see all projects >"}
   </a>
 </div>
 
 <ul class="list-['-_'] pl-8">
-  {#each projects.filter(p => p.type === "game") as project}
+  {#each featuredProjects as project}
     <li class="space-x-0">
-      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
-      <span class="text-muted">/ {project.description}</span>
-    </li>
-  {/each}
-</ul>
-
-<!-- hardware -->
-<h2 class="font-bold mt-10 mb-4">HARDWARE PROJECTS</h2>
-
-<ul class="list-['-_'] pl-8">
-  {#each projects.filter(p => p.type === "hardware") as project}
-    <li class="space-x-0">
-      {#if project.link}
-        <a href={project.link} target="_blank" class="font-bold hover:underline">{project.title}</a>
-      {:else}
-        <p class="font-bold inline">{project.title}</p>
-      {/if}
+      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
       <span class="text-muted">/ {project.description}</span>
     </li>
   {/each}

@@ -1,3 +1,6 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 export const formatDate = (date: string) => {
   const dateToFormat = new Date(date.replaceAll("-", "/"));
   const formatter = new Intl.DateTimeFormat("en-US", {
@@ -40,4 +43,8 @@ export function prettyURL(url: string): string {
 
 export function removeParentheses(text: string) {
   return text.replace(/\s*\(.*?\)\s*/g, "").trim();
+}
+
+export function cn(...values: ClassValue[]) {
+  return twMerge(clsx(values));
 }

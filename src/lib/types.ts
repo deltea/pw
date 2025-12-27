@@ -33,3 +33,18 @@ export type WakatimeLanguage = {
 	text: string;
 	percent: number;
 }
+
+export enum STATUS { DONE, DOING, DRAFT };
+export type Project = {
+	name: string,
+	status: STATUS,
+	description: string,
+	link?: string,
+	source?: string
+}
+
+export type Projects = {
+	[type: string]: {
+		[name: string]: Project
+	}
+}
