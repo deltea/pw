@@ -136,7 +136,11 @@
 {#if track && game}
   <div class="flex md:flex-row flex-col gap-4 w-full">
     <!-- music -->
-    <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+    <a
+      href="https://last.fm/user/deltea_"
+      target="_blank"
+      class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis"
+    >
       <div
         class="bg-cover bg-center min-w-[4.5rem] aspect-square"
         style:background-image="url('{
@@ -162,7 +166,7 @@
           {track.artist ? track.artist : "----------"}
         </p>
       </div>
-    </div>
+    </a>
 
     <!-- last played game -->
     <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
