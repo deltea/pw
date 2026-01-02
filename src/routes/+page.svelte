@@ -171,7 +171,7 @@
     <!-- last played game -->
     <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
       <div
-        class="bg-cover min-w-[4.5rem] aspect-square bg-left"
+        class="bg-cover min-w-[4.5rem] aspect-square bg-center"
         style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
       ></div>
 
