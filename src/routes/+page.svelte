@@ -47,7 +47,7 @@
 
 <Header
   title="@deltea"
-  description={"currently tinkering with some hardware"}
+  description={"🥭 currently working on <a href='https://fruity.deltea.space' class='underline'>fruity!</a> for hack club"}
 />
 
 <p class="text-muted">
@@ -105,7 +105,7 @@
 
 <!-- stats -->
 {#if wakatime.length > 0}
-  <div class="flex flex-col gap-4 w-full bg-bg1 border2 border-fg lg:pl-4 text-sm">
+  <div class="flex flex-col gap-4 w-full border2 border-fg lg:pl-4 text-sm">
     {#each wakatime as language}
       <div class="flex flex-col gap-2 font-bold">
         <div class="flex items-center lowercase justify-between">
