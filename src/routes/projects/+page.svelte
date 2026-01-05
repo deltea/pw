@@ -10,7 +10,7 @@
 
 <Header
   title="projects"
-  description="all my projects i have worked on or am currently working on"
+  description="all my projects and stuff i've made"
 />
 
 <div class="space-y-10">

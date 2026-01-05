@@ -2,6 +2,13 @@ import { STATUS, type Project, type Projects } from "./types";
 
 export const projects: Projects = {
   "web": {
+    "fruity!": {
+      name: "fruity!",
+      status: STATUS.DOING,
+      description: "a hack club ysws where you ship a music-related project, and get fl studio!",
+      link: "https://fruity.deltea.space",
+      source: "https://github.com/deltea/fruity"
+    },
     "peridot": {
       name: "peridot",
       status: STATUS.DOING,
