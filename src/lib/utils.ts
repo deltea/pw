@@ -48,3 +48,10 @@ export function removeParentheses(text: string) {
 export function cn(...values: ClassValue[]) {
   return twMerge(clsx(values));
 }
+
+export function fixURL(url: string | undefined): string {
+  if (!url?.startsWith("http://") && !url?.startsWith("https://")) {
+    return `https://${url}`;
+  }
+  return url;
+}

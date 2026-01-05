@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import { formatDate, isMobileUserAgentData, prettyURL } from "$lib/utils";
+  import { fixURL, formatDate, isMobileUserAgentData, prettyURL } from "$lib/utils";
 
   let { data } = $props();
   let isSending = $state(false);
@@ -91,12 +91,12 @@
         <!-- name and website -->
         <div class="flex gap-4">
           {#if isMobileUserAgentData()}
-            <a href="{entry.website}" class="font-bold text-fg">[{entry.name}]</a>
+            <a href={fixURL(entry.website)} class="font-bold text-fg">[{entry.name}]</a>
           {:else}
             <p class="font-bold text-fg">[{entry.name}]</p>
           {/if}
           {#if entry.website}
-            <a class="underline hidden sm:block" target="_blank" href={entry.website}>
+            <a class="underline hidden sm:block" target="_blank" rel="noopener noreferrer" href={fixURL(entry.website)}>
               {prettyURL(entry.website)}
             </a>
           {/if}
