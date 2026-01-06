@@ -47,7 +47,7 @@
 
 <Header
   title="@deltea"
-  description={"🥭 currently working on <a href='https://fruity.deltea.space' class='underline'>fruity!</a> for hack club"}
+  description={"🥭 currently running <a href='https://fruity.deltea.space' class='underline'>fruity!</a> for hack club"}
 />
 
 <p class="text-muted">
