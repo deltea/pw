@@ -139,37 +139,44 @@
     <a
       href="https://last.fm/user/deltea_"
       target="_blank"
-      class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis"
+      class="border-2 border-fg p-2 group flex flex-1 overflow-hidden overflow-ellipsis"
     >
-      <div
-        class="bg-cover bg-center min-w-[4.5rem] aspect-square"
-        style:background-image="url('{
-          track.cover && track.cover?.length > 0 ?
-            track.cover :
-            musicPlaceholder
-        }')"
-      ></div>
+      <div class="flex gap-3 overflow-hidden overflow-ellipsis group-hover:hidden">
+        <div
+          class="bg-cover bg-center min-w-[4.5rem] aspect-square"
+          style:background-image="url('{
+            track.cover && track.cover?.length > 0 ?
+              track.cover :
+              musicPlaceholder
+          }')"
+        ></div>
 
-      <div class="flex flex-col justify-between min-w-0">
-        <p class="text-muted font-bold text-xs flex items-center gap-2">
-          {#if isNowPlaying}
-            <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
-          {/if}
+        <div class="flex flex-col justify-between min-w-0">
+          <p class="text-muted font-bold text-xs flex items-center gap-2">
+            {#if isNowPlaying}
+              <iconify-icon icon="svg-spinners:bars-scale-middle" class="text-base"></iconify-icon>
+            {/if}
+            {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+          </p>
+          <h3 title={track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
+            {track.title ? track.title : "----------"}
+          </h3>
+          <p title={track.artist} class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
+            {track.artist ? track.artist : "----------"}
+          </p>
+        </div>
+      </div>
 
-          {isNowPlaying ? "NOW LISTENING" : "LAST PLAYED TRACK"}
+      <div class="gap-1 items-center justify-center w-full h-full hidden group-hover:flex">
+        <p class="font-bold text-center">
+          my last.fm
         </p>
-
-        <h3 title={track.title} class="font-bold text-base overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {track.title ? track.title : "----------"}
-        </h3>
-        <p title={track.artist} class="text-muted font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {track.artist ? track.artist : "----------"}
-        </p>
+        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-xl"></iconify-icon>
       </div>
     </a>
 
     <!-- last played game -->
-    <div class="flex border-2 border-fg p-2 gap-3 w-full overflow-hidden overflow-ellipsis">
+    <div class="flex flex-1 border-2 border-fg p-2 gap-3 overflow-hidden overflow-ellipsis">
       <div
         class="bg-cover min-w-[4.5rem] aspect-square bg-center"
         style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
