@@ -138,7 +138,6 @@
     <!-- music -->
     <a
       href="https://last.fm/user/deltea_"
-      target="_blank"
       class="border-2 border-fg p-2 group flex flex-1 overflow-hidden overflow-ellipsis"
     >
       <div class="flex gap-3 overflow-hidden overflow-ellipsis group-hover:hidden">
@@ -176,7 +175,10 @@
     </a>
 
     <!-- last played game -->
-    <div class="flex flex-1 border-2 border-fg p-2 gap-3 overflow-hidden overflow-ellipsis">
+    <a
+      href="https://steamcommunity.com/id/_deltea/"
+      class="flex flex-1 border-2 border-fg p-2 gap-3 overflow-hidden overflow-ellipsis"
+    >
       <div
         class="bg-cover min-w-[4.5rem] aspect-square bg-center"
         style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
@@ -194,7 +196,14 @@
           {minutesToReadable(game.playtime_forever)}
         </p>
       </div>
-    </div>
+
+      <div class="gap-1 items-center justify-center w-full h-full hidden group-hover:flex">
+        <p class="font-bold text-center">
+          my steam
+        </p>
+        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-xl"></iconify-icon>
+      </div>
+    </a>
   </div>
 {:else}
   <SkeletonLoader class="h-23!" />
