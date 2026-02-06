@@ -10,7 +10,7 @@ export const GET: RequestHandler = async () => {
   const track: MusicTrack = {
     title: result.name,
     artist: result.artist["#text"],
-    cover: result.image[2]["#text"]
+    cover: result.image[1]["#text"]
   }
 
   return json({ isNowPlaying, track });
