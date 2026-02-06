@@ -177,29 +177,30 @@
     <!-- last played game -->
     <a
       href="https://steamcommunity.com/id/_deltea/"
-      class="flex flex-1 border-2 border-fg p-2 gap-3 overflow-hidden overflow-ellipsis"
+      class="border-2 border-fg p-2 group flex flex-1 overflow-hidden overflow-ellipsis"
     >
-      <div
-        class="bg-cover min-w-[4.5rem] aspect-square bg-center"
-        style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
-      ></div>
+      <div class="flex gap-3 overflow-hidden overflow-ellipsis group-hover:hidden">
+        <div
+          class="bg-cover min-w-[4.5rem] aspect-square bg-center"
+          style:background-image="url('{`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg`}')"
+        ></div>
 
-      <div class="flex flex-col justify-between min-w-0">
-        <p class="text-muted font-bold text-xs flex items-center gap-2">
-          RECENTLY PLAYED
-        </p>
-
-        <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
-          {game.name}
-        </h3>
-        <p title={minutesToReadable(game.playtime_forever)} class="text-muted font-bold">
-          {minutesToReadable(game.playtime_forever)}
-        </p>
+        <div class="flex flex-col justify-between min-w-0">
+          <p class="text-muted font-bold text-xs flex items-center gap-2">
+            RECENTLY PLAYED
+          </p>
+          <h3 title={game.name} class="font-bold text-base w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+            {game.name}
+          </h3>
+          <p title={minutesToReadable(game.playtime_forever)} class="text-muted font-bold">
+            {minutesToReadable(game.playtime_forever)}
+          </p>
+        </div>
       </div>
 
       <div class="gap-1 items-center justify-center w-full h-full hidden group-hover:flex">
         <p class="font-bold text-center">
-          my steam
+          my steam account
         </p>
         <iconify-icon icon="mdi:arrow-top-right-thick" class="text-xl"></iconify-icon>
       </div>
