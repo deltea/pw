@@ -66,7 +66,7 @@
   {#each featuredProjects as project}
     <li class="space-x-0">
       <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
-      <span class="text-muted">/ {project.description}</span>
+      <span class="text-muted lowercase">/ {project.description}</span>
     </li>
   {/each}
 </ul>
