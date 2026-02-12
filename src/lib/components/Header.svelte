@@ -30,7 +30,7 @@
 <!-- banner -->
 <div class="w-full sm:h-36 h-30 border-fg">
   <div
-    class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full relative"
+    class="bg-cover bg-[center_40%] -scale-x-100 w-full h-full relative overflow-hidden"
     style:background-image="url({banner})"
   >
     <div
@@ -43,11 +43,12 @@
 
 <div class="flex flex-col sm:flex-row sm:gap-6 gap-4 sm:-translate-y-8 -translate-y-4 items-center sm:items-end sm:translate-x-8 translate-x-0 mb-6 sm:mb-2">
   <!-- pfp -->
-  <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-fg">
+  <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-fg relative group overflow-hidden">
     <div
       class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg"
       style:background-image="url({pfp})"
     ></div>
+    <img src="/shades.png" alt="Shades" class="absolute group-hover:top-3.5 -top-16 -rotate-3 left-1/4 size-16 -scale-x-100 duration-150">
   </a>
 
   <!-- title card -->
