@@ -7,7 +7,7 @@
 
   import Footer from "$lib/components/Footer.svelte";
   import MusicPlayer from "$components/MusicPlayer.svelte";
-    import DraggableWindow from "$components/DraggableWindow.svelte";
+  import DraggableWindow from "$components/DraggableWindow.svelte";
 
 	let { children } = $props();
 
