@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PageProps } from "../$types";
+  import type { PageProps } from "./$types";
   import { formatDate } from "$lib/utils";
 
   import Header from "$lib/components/Header.svelte";
