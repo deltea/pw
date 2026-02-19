@@ -12,7 +12,7 @@
 
 <Header
   title="guestbook"
-  description="leave a message (or not)!"
+  description="leave a message!"
 />
 
 <!-- submit guestbook entry -->
