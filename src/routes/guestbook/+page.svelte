@@ -23,7 +23,7 @@
       id="name"
       name="name"
       type="text"
-      class="border-2 border-bg-3 focus:border-fg p-2 w-full outline-none"
+      class="border-2 border-bg-3 focus:border-fg p-2 px-3 w-full outline-none"
       placeholder="guest"
     />
   </div>
@@ -34,7 +34,7 @@
       id="website"
       name="website"
       type="text"
-      class="border-2 border-bg-3 focus:border-fg p-2 w-full outline-none"
+      class="border-2 border-bg-3 focus:border-fg p-2 px-3 w-full outline-none"
       placeholder="optional"
     />
   </div>
@@ -45,7 +45,7 @@
       id="music"
       name="music"
       type="text"
-      class="border-2 border-bg-3 focus:border-fg p-2 w-full outline-none"
+      class="border-2 border-bg-3 focus:border-fg p-2 px-3 w-full outline-none"
       placeholder="optional"
     />
   </div>
@@ -56,7 +56,7 @@
       id="food"
       name="food"
       type="text"
-      class="border-2 border-bg-3 focus:border-fg p-2 w-full outline-none"
+      class="border-2 border-bg-3 focus:border-fg p-2 px-3 w-full outline-none"
       placeholder="optional"
     />
   </div>
@@ -66,17 +66,17 @@
     <textarea
       id="message"
       name="message"
-      class="border-2 border-bg-3 focus:border-fg p-2 w-full outline-none"
+      class="border-2 border-bg-3 focus:border-fg p-2 px-3 w-full outline-none"
       placeholder="say something nice..."
       required
     ></textarea>
   </div>
 
-  <button type="submit" class="border-2 flex justify-center items-center outline-none border-fg w-min mt-4 py-2 px-4 font-bold cursor-pointer">
+  <button type="submit" class="border-2 flex justify-center items-center outline-none border-fg w-min mt-4 py-2 px-4 font-bold cursor-pointer group">
     {#if isSending}
       <iconify-icon icon="svg-spinners:3-dots-scale" class="text-2xl"></iconify-icon>
     {:else}
-      <span>send</span>
+      <span class="group-hover:underline">send</span>
     {/if}
   </button>
 </form>

@@ -54,6 +54,23 @@
   hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, hardware, and other random stuff!
 </p>
 
+<div class="flex justifycenter justify-evenly gap-6 mt-4 font-bold items-center">
+  <!-- <hr class="border grow border-bg-3"> -->
+  <div
+    class="w-full bg-contain bg-repeat-x h-3"
+    style:background-image="url('/spiky-divider.svg')"
+  ></div>
+  <a class="hover:underline" href="https://github.com/deltea">github</a>
+  <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
+  <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
+  <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
+  <a class="hover:underline" href="/guestbook">guestbook</a>
+  <div
+    class="w-full bg-contain bg-repeat-x h-3"
+    style:background-image="url('/spiky-divider.svg')"
+  ></div>
+</div>
+
 <!-- projects -->
 <div class="flex items-center justify-between w-full">
   <h1 class="font-bold mt-10 mb-6">PROJECTS</h1>

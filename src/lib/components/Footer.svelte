@@ -1,4 +1,5 @@
 <footer class="font-bold mt-16 flex sm:justify-between justify-center items-center w-full">
+  <!-- TODO: hack club webring´® -->
   <div class="flex gap-4">
     <a class="hover:underline" target="_blank" href="https://github.com/deltea">github</a>
     <a class="hover:underline" target="_blank" href="https://deltea.itch.io">itch.io</a>
