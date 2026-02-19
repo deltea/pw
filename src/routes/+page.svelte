@@ -8,6 +8,7 @@
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
+    import SpikyDivider from "$components/SpikyDivider.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: WakatimeLanguage[] = $state([]);
@@ -15,7 +16,7 @@
   let isNowPlaying = $state(false);
   let game: Game | null = $state(null);
 
-  onMount(async () => {
+  onMount(() => {
     fetch("/api/posts").then(async res => {
       posts = await res.json();
       posts = posts.filter(post => post.published);
@@ -55,20 +56,13 @@
 </p>
 
 <div class="flex justifycenter justify-evenly gap-6 mt-4 font-bold items-center">
-  <!-- <hr class="border grow border-bg-3"> -->
-  <div
-    class="w-full bg-contain bg-repeat-x h-3"
-    style:background-image="url('/spiky-divider.svg')"
-  ></div>
+  <SpikyDivider />
   <a class="hover:underline" href="https://github.com/deltea">github</a>
   <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
   <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
   <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
   <a class="hover:underline" href="/guestbook">guestbook</a>
-  <div
-    class="w-full bg-contain bg-repeat-x h-3"
-    style:background-image="url('/spiky-divider.svg')"
-  ></div>
+  <SpikyDivider />
 </div>
 
 <!-- projects -->

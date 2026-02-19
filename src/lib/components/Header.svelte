@@ -24,7 +24,6 @@
     interval = setInterval(scroll, 150);
     return () => clearInterval(interval);
   });
-
 </script>
 
 <!-- banner -->
