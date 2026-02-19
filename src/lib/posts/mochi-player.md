@@ -1,7 +1,7 @@
 ---
 published: true
 title: mochi player!
-date: "11-1-2025"
+date: "2-18-2026"
 excerpt: "after a while, i have returned to work on my mp3 player, with a new approach and a new name!"
 ---
 
