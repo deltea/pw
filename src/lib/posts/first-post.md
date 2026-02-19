@@ -40,7 +40,7 @@ here's an ordered one:
 
 here's a random video i have saved:
 
-<VideoEmbed src="/blog/first-post/your-name-trailer.mp4" />
+<VideoEmbed src="/blog/your-name-trailer.mp4" />
 <Caption>Your Name trailer</Caption>
 
 wait... can i do youtube videos???
