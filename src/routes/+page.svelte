@@ -1,6 +1,6 @@
 <script lang="ts">
   import { featuredProjects } from "$lib/projects";
-  import { formatDate, minutesToReadable } from "$lib/utils";
+  import { formatDate, isMobileUserAgentData, minutesToReadable } from "$lib/utils";
   import { onMount } from "svelte";
   import musicPlaceholder from "$lib/assets/music-placeholder.webp";
   import type { Game, MusicTrack, Post, WakatimeLanguage } from "$lib/types.js";
@@ -8,13 +8,14 @@
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
-    import SpikyDivider from "$components/SpikyDivider.svelte";
+  import SpikyDivider from "$components/SpikyDivider.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: WakatimeLanguage[] = $state([]);
   let track: MusicTrack | null = $state(null);
   let isNowPlaying = $state(false);
   let game: Game | null = $state(null);
+  let isSocialsOpen = $state(!isMobileUserAgentData());
 
   onMount(() => {
     fetch("/api/posts").then(async res => {
@@ -55,13 +56,19 @@
   hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, hardware, and other random stuff!
 </p>
 
-<div class="flex justifycenter justify-evenly gap-6 mt-4 font-bold items-center">
+<div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 mt-4 font-bold items-center">
   <SpikyDivider />
-  <a class="hover:underline" href="https://github.com/deltea">github</a>
-  <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
-  <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
-  <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
-  <a class="hover:underline" href="/guestbook">guestbook</a>
+  {#if isSocialsOpen}
+    <div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 items-center">
+      <a class="hover:underline" href="https://github.com/deltea">github</a>
+      <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
+      <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
+      <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
+      <a class="hover:underline" href="/guestbook">guestbook</a>
+    </div>
+  {:else}
+    <button class="font-bold" onclick={() => (isSocialsOpen = !isSocialsOpen)}>view socials</button>
+  {/if}
   <SpikyDivider />
 </div>
 
