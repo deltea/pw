@@ -64,10 +64,13 @@
       <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
       <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
       <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
-      <a class="hover:underline" href="/guestbook">guestbook</a>
+      <!-- <a class="hover:underline" href="/guestbook">guestbook</a>
+      <a class="hover:underline" href="/now">now</a> -->
     </div>
   {:else}
-    <button class="font-bold" onclick={() => (isSocialsOpen = !isSocialsOpen)}>view socials</button>
+    <button class="font-bold" onclick={() => (isSocialsOpen = !isSocialsOpen)}>
+      view links
+    </button>
   {/if}
   <SpikyDivider />
 </div>

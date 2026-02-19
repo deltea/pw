@@ -47,7 +47,7 @@
       class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg"
       style:background-image="url({pfp})"
     ></div>
-    <img src="/shades.png" alt="Shades" class="absolute group-hover:top-3.5 -top-16 -rotate-3 left-1/4 size-16 -scale-x-100 duration-150">
+    <img src="/shades.png" alt="Shades" class="absolute group-hover:top-3.5 -top-16 -rotate-3 left-1/4 size-16 -scale-x-100 duration-100">
   </a>
 
   <!-- title card -->

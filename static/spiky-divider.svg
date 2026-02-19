@@ -14,7 +14,7 @@
   <g
      id="layer1">
     <path
-       style="fill:none;stroke:#404040;stroke-width:1.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       style="fill:none;stroke:#404040;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        d="M -0.45,0.75 5,3.875 10.45,0.75"
        id="path1" />
   </g>
