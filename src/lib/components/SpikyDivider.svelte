@@ -21,6 +21,6 @@
 
 <div
   bind:this={dividerElement}
-  class="grow bg-contain bg-repeat-x h-3"
+  class="grow max-w-full bg-contain bg-repeat-x h-3"
   style:background-image="url('/spiky-divider.svg')"
 ></div>
