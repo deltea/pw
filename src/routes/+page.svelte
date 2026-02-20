@@ -85,9 +85,10 @@
 
 <ul class="list-['-_'] pl-8">
   {#each featuredProjects as project}
-    <li class="space-x-0">
+    <li class="gap-3 flex">
       <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
-      <span class="text-muted lowercase">/ {project.description}</span>
+      <span class="text-bg-3">:</span>
+      <p class="text-muted lowercase">{project.description}</p>
     </li>
   {/each}
 </ul>
