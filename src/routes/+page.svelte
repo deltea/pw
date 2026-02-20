@@ -119,9 +119,14 @@
   <SkeletonLoader class="h-41" />
 {/if}
 
-<h2 class="font-bold mt-10 mb-6 space-x-1">
-  <span>WAKATIME STATS</span>
-  <span class="text-muted font-normal">(since may 2025)</span>
+<h2 class="font-bold mt-10 mb-6 flex items-center justify-between w-full">
+  <div class="space-x-1">
+    <span>HACKATIME STATS</span>
+    <span class="text-muted font-normal">(since may 2025)</span>
+  </div>
+  <a href="https://hackatime.hackclub.com/@deltea" class="hover:underline font-bold">
+    {"see my hackatime >"}
+  </a>
 </h2>
 
 <!-- stats -->
