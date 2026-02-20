@@ -65,11 +65,13 @@
   </a>
 </div>
 
-<ul class="list-['-_'] pl-4">
+<ul class="list-['-_'] pl-4 space-y-4 sm:space-y-0">
   {#each featuredProjects as project}
-    <li class="gap-3 flex">
-      <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
-      <span class="text-bg-3">\</span>
+    <li class="gap-2 sm:gap-3 flex flex-col sm:flex-row">
+      <div>
+        <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
+        <span class="text-bg-3">\</span>
+      </div>
       <p class="text-muted lowercase">{project.description}</p>
     </li>
   {/each}
@@ -107,7 +109,7 @@
     <span>HACKATIME STATS</span>
     <span class="text-muted font-normal">(since may 2025)</span>
   </div>
-  <a href="https://hackatime.hackclub.com/@deltea" class="hover:underline font-bold">
+  <a href="https://hackatime.hackclub.com/@deltea" class="hover:underline font-bold hidden sm:block">
     {"see my hackatime >"}
   </a>
 </h2>
