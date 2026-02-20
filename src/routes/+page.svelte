@@ -9,6 +9,7 @@
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
   import Socials from "$components/Socials.svelte";
+    import SpikyDivider from "$components/SpikyDivider.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: WakatimeLanguage[] = $state([]);
@@ -65,7 +66,7 @@
   </a>
 </div>
 
-<ul class="list-['-_'] pl-4 space-y-4 sm:space-y-0">
+<ul class="list-['-_'] lg:px-4 space-y-4 sm:space-y-0">
   {#each featuredProjects as project}
     <li class="gap-2 sm:gap-3 flex flex-col sm:flex-row">
       <div class="flex gap-3">
@@ -77,6 +78,10 @@
   {/each}
 </ul>
 
+<div class="mt-8">
+  <SpikyDivider />
+</div>
+
 <!-- blog -->
 <div class="flex items-center justify-between w-full">
   <h1 class="font-bold mt-10 mb-6">BLOG</h1>
@@ -86,7 +91,7 @@
 </div>
 
 {#if posts.length > 0}
-  <div class="flex flex-col sm:flex-row gap-4 w-full">
+  <div class="flex flex-col sm:flex-row gap-4 w-full lg:px-4">
     {#each posts as post}
       <a href="/blog/{post.slug}" class="flex flex-col border-2 border-fg gap-4 p-3 group sm:w-1/2">
         <div class="flex justify-between w-full">
@@ -104,6 +109,11 @@
   <SkeletonLoader class="h-41" />
 {/if}
 
+<div class="mt-8">
+  <SpikyDivider />
+</div>
+
+<!-- stats -->
 <h2 class="font-bold mt-10 mb-6 flex items-center justify-between w-full">
   <div class="space-x-1">
     <span>HACKATIME STATS</span>
@@ -114,9 +124,8 @@
   </a>
 </h2>
 
-<!-- stats -->
 {#if wakatime.length > 0}
-  <div class="flex flex-col gap-4 w-full border2 border-fg lg:pl-4 text-sm">
+  <div class="flex flex-col gap-4 w-full border2 border-fg lg:px-4 text-sm">
     {#each wakatime as language}
       <div class="flex flex-col gap-2 font-bold">
         <div class="flex items-center lowercase justify-between">
@@ -137,6 +146,10 @@
   <SkeletonLoader class="h-61" />
 {/if}
 
+<div class="mt-8">
+  <SpikyDivider />
+</div>
+
 <div class="flex items-center justify-between w-full">
   <h2 class="font-bold mt-10 mb-6">FUN STUFF</h2>
   <a href="/playlists" class="hover:underline font-bold mt-4">
@@ -145,7 +158,7 @@
 </div>
 
 {#if track && game}
-  <div class="flex md:flex-row flex-col gap-4 w-full">
+  <div class="flex md:flex-row flex-col gap-4 w-full lg:px-4">
     <!-- music -->
     <a
       href="https://last.fm/user/deltea_"
