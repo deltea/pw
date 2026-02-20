@@ -5,7 +5,7 @@
   let isSocialsOpen = $state(!isMobileUserAgentData());
 </script>
 
-<div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 mt-4 font-bold items-center">
+<div class="w-full flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 mt-4 font-bold items-center">
   <SpikyDivider />
   {#if isSocialsOpen}
     <div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 items-center">
