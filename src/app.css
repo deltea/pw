@@ -39,10 +39,6 @@
     linear-gradient(to bottom, var(--color-bg-2) 2px, transparent 1px);
 }
 
-@utility pixelated {
-  image-rendering: pixelated;
-}
-
 .crt::before {
   content: " ";
   display: block;
@@ -89,6 +85,7 @@
 
 body {
   @apply bg-bg text-fg selection:bg-fg selection:text-bg font-mono sm:text-base text-sm underline-offset-[2px];
+  image-rendering: pixelated;
 }
 
 * {

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  const SCROLL_SPEED = 0.4;
   const buttons = [
     "button-now.webp",
     "crashout.webp",
     "flipnote.webp",
     "godot.webp",
+    "deltea-space.gif",
     "homebrew.webp",
     "internet-archive.webp",
     "itch-io.webp",
@@ -20,7 +20,7 @@
     "transistor.webp",
     "yeah.webp",
     "lain.png",
-    "pearto.png"
+    "pearto.png",
   ];
 
   let container: HTMLDivElement;
