@@ -33,7 +33,7 @@ export const projects: Projects = {
     "button maker": {
       name: "button maker",
       status: STATUS.DONE,
-      description: "A small tool for making 88x31 buttons",
+      description: "A small tool for making indie web 88x31 buttons",
       link: "https://buttons.deltea.space/",
       source: "https://github.com/deltea/button-maker",
     },
@@ -111,7 +111,7 @@ export const projects: Projects = {
 export const featuredProjects: Project[] = [
   projects.web["downbeat"],
   projects.hardware["mochi"],
-  projects.web["button maker"],
+  projects.web["fruity!"],
   projects.games["catalyst"],
-  projects.web["peridot"],
+  projects.web["button maker"],
 ];

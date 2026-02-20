@@ -68,7 +68,7 @@
 <ul class="list-['-_'] pl-4 space-y-4 sm:space-y-0">
   {#each featuredProjects as project}
     <li class="gap-2 sm:gap-3 flex flex-col sm:flex-row">
-      <div>
+      <div class="flex gap-3">
         <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
         <span class="text-bg-3">\</span>
       </div>

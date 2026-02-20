@@ -27,7 +27,7 @@
     <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {#each Object.values(projects[key]) as project}
         <a
-        href={project.link}
+          href={project.link}
           class="flex flex-col border-2 border-fg gap-4 p-3 group"
         >
           <div class="flex justify-between w-full">
@@ -35,7 +35,7 @@
             <StatusTag status={project.status} />
           </div>
 
-          <p class="break-words line-clamp-4 text-muted">
+          <p class="break-words line-clamp-4 text-muted lowercase">
             {project.description}
           </p>
         </a>

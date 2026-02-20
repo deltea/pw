@@ -9,7 +9,7 @@
   --color-bg-3: var(--color-neutral-700);
   --color-muted: var(--color-neutral-400);
 
-  --max-width-content: 52rem;
+  --max-width-content: 56rem;
 }
 
 @utility prose-default {
