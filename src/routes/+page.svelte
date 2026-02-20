@@ -191,7 +191,7 @@
         <p class="font-bold text-center">
           my last.fm
         </p>
-        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-xl"></iconify-icon>
+        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-lg"></iconify-icon>
       </div>
     </a>
 
@@ -223,7 +223,7 @@
         <p class="font-bold text-center">
           my steam account
         </p>
-        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-xl"></iconify-icon>
+        <iconify-icon icon="mdi:arrow-top-right-thick" class="text-lg"></iconify-icon>
       </div>
     </a>
   </div>
