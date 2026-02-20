@@ -24,7 +24,7 @@
 </svelte:head>
 
 <div class="min-h-screen flex justify-center py-8 crt">
-  <main class="w-full max-w-3xl flex flex-col items-start px-4">
+  <main class="w-full max-w-content flex flex-col items-start px-4">
     <!-- main page content -->
     <div class="grow w-full flex flex-col">
       {@render children?.()}
