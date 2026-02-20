@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-fg: var(--color-neutral-100);
+  --color-fg: var(--color-white);
   --color-bg: var(--color-neutral-950);
   --color-bg-1: var(--color-neutral-900);
   --color-bg-2: var(--color-neutral-800);
