@@ -17,6 +17,8 @@ export const load = (async ({ fetch }) => {
     const num = item.snippet.title.match(/Mix (\d+)/);
     const title = item.snippet.title.replace(/ - Mix \d+/, "").trim();
 
+    console.log(item.snippet);
+
     return {
       num: parseInt(num[1], 10),
       title,

@@ -8,14 +8,13 @@
   import Antipixel from "$lib/components/Antipixel.svelte";
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
-  import SpikyDivider from "$components/SpikyDivider.svelte";
+  import Socials from "$components/Socials.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: WakatimeLanguage[] = $state([]);
   let track: MusicTrack | null = $state(null);
   let isNowPlaying = $state(false);
   let game: Game | null = $state(null);
-  let isSocialsOpen = $state(!isMobileUserAgentData());
 
   onMount(() => {
     fetch("/api/posts").then(async res => {
@@ -56,24 +55,7 @@
   hi! i'm leo, and this is my personal website where i put the things i make, like games, web apps, hardware, and other random stuff!
 </p>
 
-<div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 mt-4 font-bold items-center">
-  <SpikyDivider />
-  {#if isSocialsOpen}
-    <div class="flex flex-col sm:flex-row justify-between sm:gap-6 gap-4 items-center">
-      <a class="hover:underline" href="https://github.com/deltea">github</a>
-      <a class="hover:underline" href="https://deltea.itch.io">itch.io</a>
-      <a class="hover:underline" href="https://youtube.com/@delteaa">youtube</a>
-      <a class="hover:underline" href="mailto:hello@deltea.space">email</a>
-      <!-- <a class="hover:underline" href="/guestbook">guestbook</a>
-      <a class="hover:underline" href="/now">now</a> -->
-    </div>
-  {:else}
-    <button class="font-bold" onclick={() => (isSocialsOpen = !isSocialsOpen)}>
-      view links
-    </button>
-  {/if}
-  <SpikyDivider />
-</div>
+<Socials />
 
 <!-- projects -->
 <div class="flex items-center justify-between w-full">
@@ -83,7 +65,7 @@
   </a>
 </div>
 
-<ul class="list-['-_'] pl-8">
+<ul class="list-['-_'] pl-4">
   {#each featuredProjects as project}
     <li class="gap-3 flex">
       <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
