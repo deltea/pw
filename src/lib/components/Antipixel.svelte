@@ -19,7 +19,7 @@
     "spamton.webp",
     "transistor.webp",
     "yeah.webp",
-    "lain.png",
+    "lain.gif",
     "pearto.png",
   ];
 
