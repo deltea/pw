@@ -3,7 +3,7 @@ import { STATUS, type Project, type Projects } from "./types";
 export const projects: Projects = {
   "web": {
     "p3r pause menu": {
-      name: "persona 3 reload pause menu",
+      name: "p3r pause menu",
       status: STATUS.DONE,
       description: "A recreation of the persona 3 reload pause menu in the browser",
       link: "https://p3r.deltea.space/",
