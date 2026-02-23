@@ -2,6 +2,13 @@ import { STATUS, type Project, type Projects } from "./types";
 
 export const projects: Projects = {
   "web": {
+    "persona 3 reload pause menu": {
+      name: "persona 3 reload pause menu",
+      status: STATUS.DONE,
+      description: "A recreation of the persona 3 reload pause menu in the browser",
+      link: "https://p3r.deltea.space/",
+      source: "https://github.com/deltea/p3r-pause-menu"
+    },
     "fruity!": {
       name: "fruity!",
       status: STATUS.DOING,
@@ -112,6 +119,7 @@ export const featuredProjects: Project[] = [
   projects.web["downbeat"],
   projects.hardware["mochi"],
   projects.web["fruity!"],
+  projects.web["p3r pause menu"],
   projects.games["catalyst"],
   projects.web["button maker"],
 ];
