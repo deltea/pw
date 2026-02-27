@@ -9,7 +9,7 @@
   import Header from "$lib/components/Header.svelte";
   import SkeletonLoader from "$components/SkeletonLoader.svelte";
   import Socials from "$components/Socials.svelte";
-    import SpikyDivider from "$components/SpikyDivider.svelte";
+  import SpikyDivider from "$components/SpikyDivider.svelte";
 
   let posts: Post[] = $state([]);
   let wakatime: WakatimeLanguage[] = $state([]);
