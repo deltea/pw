@@ -63,7 +63,7 @@ export const projects: Projects = {
     "starbird": {
       name: "starbird",
       status: STATUS.DOING,
-      description: "smol fast birb game go weeeeeeee",
+      description: "smol fast birb game go weeee",
       link: "https://deltea.itch.io/starbird",
       source: "https://github.com/deltea/starbird"
     },
