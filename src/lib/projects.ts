@@ -60,6 +60,13 @@ export const projects: Projects = {
     }
   },
   "games": {
+    "starbird": {
+      name: "starbird",
+      status: STATUS.DOING,
+      description: "smol fast birb game",
+      link: "https://deltea.itch.io/starbird",
+      source: "https://github.com/deltea/starbird"
+    },
     "power cut": {
       name: "power cut",
       status: STATUS.DONE,
@@ -117,8 +124,9 @@ export const projects: Projects = {
 
 export const featuredProjects: Project[] = [
   projects.web["downbeat"],
+  projects.games["starbird"],
   projects.hardware["mochi"],
-  projects.web["fruity!"],
+  // projects.web["fruity!"],
   projects.web["p3r pause menu"],
   projects.games["catalyst"],
   projects.web["button maker"],
