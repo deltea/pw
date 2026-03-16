@@ -2,7 +2,7 @@ import { SLACK_BOT_TOKEN, SLACK_USER_TOKEN } from "$env/static/private";
 import { redis } from "$lib/redis";
 import { json, type RequestHandler } from "@sveltejs/kit";
 
-const DEV_MODE = true;
+const DEV_MODE = false;
 const USER_ID = "U08SS7Z7LJD";
 const TESTING_PING_GROUP_ID = "S0ALB7AGUNB";
 const PING_GROUP_ID = "S0AM5FJCTMF";
