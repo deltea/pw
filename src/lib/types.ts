@@ -48,3 +48,13 @@ export type Projects = {
 		[name: string]: Project
 	}
 }
+
+export type DiaryEntry = {
+	timestamp: number;
+	body: string;
+	url: string;
+	files: {
+		name: string;
+		url: string;
+	}[];
+}

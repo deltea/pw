@@ -1,13 +1,8 @@
 import type { PageServerLoad } from "./$types";
 import type { Actions } from "./$types";
-import { KV_REST_API_URL, KV_REST_API_TOKEN } from "$env/static/private";
-import { Redis } from "@upstash/redis";
 import type { GuestbookEntry } from "$lib/types";
-
-const redis = new Redis({
-  url: KV_REST_API_URL || "",
-  token: KV_REST_API_TOKEN || ""
-});
+import { redis } from "$lib/redis";
+import { json } from "@sveltejs/kit";
 
 export const actions = {
 	default: async (e) => {
@@ -30,9 +25,12 @@ export const actions = {
 	}
 } satisfies Actions;
 
-export const load = (async ({ fetch }) => {
-  const response = await fetch("/api/guestbook");
-  const entries: GuestbookEntry[] = await response.json();
+export const load = (async () => {
+  const entries: GuestbookEntry[] = await redis.lrange("guestbook", 0, -1);
+
+  if (entries === null) {
+    return json({ error: "guestbook not found" }, { status: 404 });
+  }
 
   return { entries };
 }) satisfies PageServerLoad;

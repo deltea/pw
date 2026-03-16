@@ -1,11 +1,5 @@
-import { KV_REST_API_URL, KV_REST_API_TOKEN } from "$env/static/private";
+import { redis } from "$lib/redis";
 import { json } from "@sveltejs/kit";
-import { Redis } from "@upstash/redis";
-
-const redis = new Redis({
-  url: KV_REST_API_URL || "",
-  token: KV_REST_API_TOKEN || ""
-});
 
 export const GET = async () => {
   const result = await redis.lrange("guestbook", 0, -1);

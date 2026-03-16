@@ -1,7 +1,8 @@
-import { SLACK_BOT_TOKEN } from "$env/static/private";
+import { SLACK_BOT_TOKEN, SLACK_USER_TOKEN } from "$env/static/private";
+import { redis } from "$lib/redis";
 import { json, type RequestHandler } from "@sveltejs/kit";
 
-const DEV_MODE = false;
+const DEV_MODE = true;
 const USER_ID = "U08SS7Z7LJD";
 const TESTING_PING_GROUP_ID = "S0ALB7AGUNB";
 const PING_GROUP_ID = "S0AM5FJCTMF";
@@ -13,8 +14,10 @@ export const POST: RequestHandler = async ({ request }) => {
 
   const pingMention = `<!subteam^${DEV_MODE ? TESTING_PING_GROUP_ID : PING_GROUP_ID}>`;
   if (event.user !== USER_ID || !event.text.startsWith(pingMention)) {
+    console.log("ignoring message", { user: event.user, text: event.text });
     return json("OK", { status: 200 });
   }
+  console.log("create");
 
   // post the slack confirmation message
   await fetch("https://slack.com/api/chat.postMessage", {
@@ -47,8 +50,36 @@ export const POST: RequestHandler = async ({ request }) => {
     })
   });
 
+  // add the uploaded images
+  const files = [];
+  if (event.files) {
+    for (const file of event.files) {
+      if (!file.mimetype.startsWith("image/")) continue;
+      // make the image public and get the public url
+      const response = await fetch("https://slack.com/api/files.sharedPublicURL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${SLACK_USER_TOKEN}`
+        },
+        body: JSON.stringify({ file: file.id })
+      });
+      const data = await response.json();
+      files.push({
+        name: file.name,
+        url: data.file.url_private + `?pub_secret=${data.file.permalink_public.split("-").slice(-1)[0]}`
+      });
+    }
+  }
+
   // post the journal entry
-  console.log("journal entry: ", event.text.slice(pingMention.length).trim());
+  const entry = {
+    timestamp: event_time,
+    body: event.text.slice(pingMention.length).trim(),
+    url: `https://hackclub.slack.com/archives/${event.channel}/p${event.thread_ts ? event.thread_ts.replace(".", "") : event.ts.replace(".", "")}`,
+    files
+  }
+  await redis.lpush("journal", entry);
 
   return json("OK", { status: 200 });
 }
