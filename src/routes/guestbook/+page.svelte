@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Header from "$lib/components/Header.svelte";
+  import SpikyDivider from "$components/SpikyDivider.svelte";
+import Header from "$lib/components/Header.svelte";
   import { fixURL, formatDate, isMobileUserAgentData, prettyURL } from "$lib/utils";
 
   let { data } = $props();
@@ -81,7 +82,9 @@
   </button>
 </form>
 
-<hr class="border-bg-2 w-full border-1 mt-8">
+<div class="mt-8">
+  <SpikyDivider />
+</div>
 
 <!-- guestbook entries -->
 <ul class="list['-_'] mt-10 flex flex-col gap-4">
