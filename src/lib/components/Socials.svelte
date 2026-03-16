@@ -9,7 +9,7 @@
   <SpikyDivider />
   {#if isSocialsOpen}
     <div class="flex flex-col sm:flex-row justify-between sm:gap-8 gap-4 items-center">
-      <a class="hover:underline" href="https://github.com/deltea">💽 github</a>
+      <a class="hover:underline" href="https://github.com/deltea">💾 github</a>
       <a class="hover:underline" href="https://deltea.itch.io">🎮 itch.io</a>
       <a class="hover:underline" href="https://youtube.com/@delteaa">📺 youtube</a>
       <!-- <a class="hover:underline" href="https://last.fm/user/deltea_">last.fm</a> -->
