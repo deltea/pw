@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from '$components/Header.svelte';
+    import { formatUnixDate } from '$lib/utils.js';
 
   let { data } = $props();
 </script>
@@ -17,7 +18,7 @@
   {#each data.entries as entry}
     <li class="border-2 border-fg p-3">
       <div class="flex justify-between">
-        <b>{new Date(entry.timestamp * 1000).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).toLowerCase()}</b>
+        <b>{formatUnixDate(entry.timestamp)}</b>
         <a
           href={entry.url}
           class="flex justify-center items-center cursor-pointer"

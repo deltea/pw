@@ -55,3 +55,13 @@ export function fixURL(url: string | undefined): string {
   }
   return url;
 }
+
+export function formatUnixDate(timestamp: number): string {
+  return new Date(timestamp * 1000).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "America/Los_Angeles"
+  }).toLowerCase()
+}

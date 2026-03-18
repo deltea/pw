@@ -1,5 +1,6 @@
 import { SLACK_BOT_TOKEN, SLACK_USER_TOKEN } from "$env/static/private";
 import { redis } from "$lib/redis";
+import { formatUnixDate } from "$lib/utils";
 import { json, type RequestHandler } from "@sveltejs/kit";
 
 const DEV_MODE = false;
@@ -9,15 +10,12 @@ const PING_GROUP_ID = "S0AM5FJCTMF";
 
 export const POST: RequestHandler = async ({ request }) => {
   const { event, event_time } = await request.json();
-  const date = new Date(event_time * 1000);
-  const formattedDate = date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).toLowerCase();
+  const date = formatUnixDate(event_time);
 
   const pingMention = `<!subteam^${DEV_MODE ? TESTING_PING_GROUP_ID : PING_GROUP_ID}>`;
   if (event.user !== USER_ID || !event.text.startsWith(pingMention)) {
-    console.log("ignoring message", { user: event.user, text: event.text });
     return json("OK", { status: 200 });
   }
-  console.log("create");
 
   // post the slack confirmation message
   await fetch("https://slack.com/api/chat.postMessage", {
@@ -29,7 +27,7 @@ export const POST: RequestHandler = async ({ request }) => {
     body: JSON.stringify({
       channel: event.channel,
       text: [
-        `:jimbospin: journal entry created for *${formattedDate}*!`,
+        `:jimbospin: journal entry created for *${date}*!`,
         // ` ↳ _check it out <https://deltea.space/journal/${date.toISOString().slice(0, 10)}|here>!_`
       ].join("\n"),
       thread_ts: event.thread_ts || event.ts
