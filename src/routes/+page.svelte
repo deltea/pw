@@ -71,7 +71,7 @@
     <li class="gap-2 sm:gap-3 flex flex-col sm:flex-row">
       <div class="flex gap-3">
         <a href={project.link} target="_blank" class="font-bold hover:underline">{project.name}</a>
-        <span class="text-bg-3">\</span>
+        <span class="text-bg-3">\\</span>
       </div>
       <p class="text-muted lowercase">{project.description}</p>
     </li>
