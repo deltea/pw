@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from '$components/Header.svelte';
-    import { formatUnixDate } from '$lib/utils.js';
+  import { formatUnixDate } from '$lib/utils.js';
 
   let { data } = $props();
 </script>
@@ -28,7 +28,7 @@
           <iconify-icon icon="mdi:arrow-top-right" class="text-2xl"></iconify-icon>
         </a>
       </div>
-      <pre class="mt-4">{entry.body}</pre>
+      <pre class="mt-4 whitespace-pre-wrap">{entry.body}</pre>
 
       {#if entry.files}
         {#if entry.files.length > 0}
