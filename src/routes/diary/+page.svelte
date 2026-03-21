@@ -32,9 +32,9 @@
 
       {#if entry.files}
         {#if entry.files.length > 0}
-          <div class="mt-4 flex gap-2 h-64 overflow-x-auto snap-x">
+          <div class="mt-4 h-64 overflow-x-auto overflow-y-hidden flex flex-nowrap gap-2">
             {#each entry.files as file}
-              <img src={file.url} alt={file.name} class="h-full flex-shrink-0 snap-center" />
+              <img src={file.url} alt={file.name} class="h-full w-auto max-w-none shrink-0 object-contain" />
             {/each}
           </div>
         {/if}
