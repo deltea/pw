@@ -28,7 +28,7 @@ export const POST: RequestHandler = async ({ request }) => {
       channel: event.channel,
       text: [
         `:jimbospin: journal entry created for *${date}*!`,
-        // ` ↳ _check it out <https://deltea.space/journal/${date.toISOString().slice(0, 10)}|here>!_`
+        ` ↳ _check out the diary <https://deltea.space/diary|here>!_`
       ].join("\n"),
       thread_ts: event.thread_ts || event.ts
     })
