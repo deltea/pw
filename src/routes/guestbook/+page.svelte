@@ -94,7 +94,11 @@ import Header from "$lib/components/Header.svelte";
         <!-- name and website -->
         <div class="flex gap-4">
           {#if isMobileUserAgentData()}
-            <a href={fixURL(entry.website)} class="font-bold text-fg">[{entry.name}]</a>
+            {#if entry.website}
+              <a href={fixURL(entry.website)} class="font-bold text-fg">[{entry.name}]</a>
+            {:else}
+              <p class="font-bold text-fg">[{entry.name}]</p>
+            {/if}
           {:else}
             <p class="font-bold text-fg">[{entry.name}]</p>
           {/if}
