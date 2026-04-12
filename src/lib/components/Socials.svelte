@@ -14,7 +14,7 @@
       <a class="hover:underline" href="https://youtube.com/@delteaa">📺 youtube</a>
       <!-- <a class="hover:underline" href="https://last.fm/user/deltea_">last.fm</a> -->
       <a class="hover:underline" href="mailto:hey@deltea.space">📫 email</a>
-      <a class="hover:underline" href="/diary">🔖 diary</a>
+      <!-- <a class="hover:underline" href="/diary">🔖 diary</a> -->
     </div>
   {:else}
     <button class="font-bold" onclick={() => (isSocialsOpen = !isSocialsOpen)}>
