@@ -1,6 +1,6 @@
 <script lang="ts">
   import SpikyDivider from "$components/SpikyDivider.svelte";
-import Header from "$lib/components/Header.svelte";
+  import Header from "$lib/components/Header.svelte";
   import { fixURL, formatDate, isMobileUserAgentData, prettyURL } from "$lib/utils";
 
   let { data } = $props();
