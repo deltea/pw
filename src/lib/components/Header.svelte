@@ -42,7 +42,7 @@
 
 <div class="flex flex-col sm:flex-row sm:gap-6 gap-4 sm:-translate-y-8 -translate-y-4 items-center sm:items-end sm:translate-x-8 translate-x-0 mb-6 sm:mb-2">
   <!-- pfp -->
-  <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full outline-fg relative group overflow-hidden">
+  <a aria-label="home" href="/" class="block sm:size-28 size-20 rounded-full relative group overflow-hidden">
     <div
       class="bg-cover bg-center size-full rounded-full outline-[16px] outline-bg"
       style:background-image="url({pfp})"
