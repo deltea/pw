@@ -49,7 +49,7 @@
 
 <Header
   title="@deltea"
-  description={"currently organizing flanger for hack club"}
+  description={"currently making a cool movement shooter"}
 />
 
 <p class="text-muted">
