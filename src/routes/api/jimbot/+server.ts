@@ -13,7 +13,8 @@ export const POST: RequestHandler = async ({ request }) => {
   // this offset adds to the cutoff date for the send time
   const hour_offset = 5;
   const unix_offset = hour_offset * 60 * 60;
-  const date = formatUnixDate(event_time + unix_offset);
+  const timestamp = event_time - unix_offset;
+  const date = formatUnixDate(timestamp);
 
   const pingMention = `<!subteam^${DEV_MODE ? TESTING_PING_GROUP_ID : PING_GROUP_ID}>`;
   if (event.user !== USER_ID || !event.text.startsWith(pingMention)) {
@@ -75,7 +76,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
   // post the journal entry
   const entry = {
-    timestamp: event_time,
+    timestamp,
     body: event.text.slice(pingMention.length).trim(),
     url: `https://hackclub.slack.com/archives/${event.channel}/p${event.thread_ts ? event.thread_ts.replace(".", "") : event.ts.replace(".", "")}`,
     files
